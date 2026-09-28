@@ -1,0 +1,4375 @@
+[
+  {
+    "id": "opencreator",
+    "nombre": "OpenCreator",
+    "url": "https://github.com/krillinai/OpenCreator",
+    "tipo": "Herramienta",
+    "categoria": "general",
+    "descripcion": "AI workspace open-source para creadores. Combina herramientas visuales de creacion (video, imagen, voz, avatar, traduccion) con un workspace de Agentes. Antes KrillinAI.",
+    "estrellas": 12415,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-26",
+    "tags": [
+      "video-translation",
+      "video-generation",
+      "image-generation",
+      "tts",
+      "skills",
+      "codex-cli",
+      "dubbing",
+      "creator-tools"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Creacion de contenido multimedia con IA en un workspace local",
+    "por_que": "10 creator tools visuales + agent workspace + skills reutilizables. Todo local con Codex CLI.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "Creator Tools",
+        "descripcion": "10 herramientas visuales: video translation, descarga, imagen, voz, doblaje, miniaturas, articulos"
+      },
+      {
+        "nombre": "Video Production Skills",
+        "descripcion": "Skills reutilizables para flujos de video en skills/"
+      },
+      {
+        "nombre": "Agent Workspace",
+        "descripcion": "Conversaciones por proyecto, Runs background, MCP, memoria, schedules, notificaciones"
+      }
+    ],
+    "casos_de_uso": [
+      "Creacion de contenido multimedia: usar las Creator Tools visuales (dashboard) para traduccion y descarga de videos, generacion de imagen/video, voz y doblaje. Configurar servicios AI en Settings > AI Services con cualquier provider OpenAI-compatible.",
+      "Redaccion automatica: usar el Dashboard para escribir articulos, posts para redes sociales y guiones de video corto. Los resultados se editan y versionan en el workspace. Las tools de redaccion usan el modelo configurado en AI Services.",
+      "Automatizacion de flujos creativos: crear Skills reutilizables en skills/ para pipelines de produccion. Programar ejecuciones con Schedules y mantener resultados con Memory. Las Skills se pueden exportar como SKILL.md para usar con cualquier CLI.",
+      "Produccion local sin dependencias cloud: ejecutar OpenCreator Desktop con Codex CLI incluido. Usar FFmpeg, Whisper y yt-dlp integrados para procesamiento local. Para entornos agnosticos, usar solo las tools visuales y conectar Hermes como orquestador."
+    ],
+    "modelos_limitados": [
+      "codex"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "OpenCreator usa Codex CLI como motor de agentes (no reemplazable directamente). Sin embargo, las Creator Tools visuales son agnosticas porque llaman a APIs configurables en Settings > AI Services. Pasos: 1) Configurar un provider OpenAI-compatible (OpenRouter, Groq, etc.) en AI Services 2) Las tools de video/imagen usan servicios externos configurables (no Codex) 3) El Agent workspace seguira limitado a Codex, pero las tools visuales funcionan con cualquier API compatible 4) Para flujos completamente agnosticos, exportar las Skills a SKILL.md y usar Hermes como orquestador.",
+    "fecha_guardado": "2026-09-26",
+    "fuente": "busqueda-propia",
+    "notas": "Ideal para clientes que necesiten produccion de contenido multimedia local. Las Creator Tools son agnosticas (API configurable en Settings). El Agent workspace requiere Codex. Para uso completamente agnostico: usar solo las Creator Tools visuales + Hermes como orquestador de flujos.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "video"
+    ],
+    "pasos_implementacion": [
+      "Instalar Node.js 22+ y pnpm, clonar el repo: git clone https://github.com/krillinai/OpenCreator",
+      "Ejecutar corepack enable && pnpm install && pnpm web:dev para modo desarrollo",
+      "Configurar AI Services en Settings > AI Services con API keys de proveedores compatibles",
+      "Usar las Creator Tools del Dashboard para crear contenido multimedia",
+      "Opcional: ejecutar pnpm desktop:build para empaquetar como app de escritorio",
+      "Exportar Skills a SKILL.md para usar con otros CLIs"
+    ]
+  },
+  {
+    "id": "the-agency",
+    "nombre": "The Agency",
+    "url": "https://github.com/msitarzewski/agency-agents",
+    "tipo": "Agente IA",
+    "categoria": "general",
+    "descripcion": "Agencia de IA completa con 200+ agentes especializados: desde frontend hasta community managers, analistas, marketers y mas.",
+    "estrellas": 154880,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "agents",
+      "multi-agent",
+      "automation",
+      "business",
+      "agency"
+    ],
+    "nivel_recomendado": "N4",
+    "para_que": "Desplegar agentes IA especializados para diferentes areas de negocio sin desarrollar cada uno desde cero",
+    "por_que": "154k estrellas, 200+ agentes listos para usar, cada uno con prompt especializado. Cobertura completa de areas empresariales.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "Frontend Wizard",
+        "descripcion": "Desarrollo de interfaces y componentes"
+      },
+      {
+        "nombre": "Reddit Community Ninja",
+        "descripcion": "Gestion de comunidades y redes sociales"
+      },
+      {
+        "nombre": "Data Analyst",
+        "descripcion": "Analisis de datos y reportes"
+      },
+      {
+        "nombre": "Marketing Agent",
+        "descripcion": "Automatizacion de marketing y campañas"
+      },
+      {
+        "nombre": "Customer Support",
+        "descripcion": "Atencion al cliente automatizada"
+      }
+    ],
+    "casos_de_uso": [
+      "Atencion al cliente: usar Customer Support Agent para responder consultas, Claims Manager para reclamaciones. Configurar el agente con el knowledge base del negocio.",
+      "Marketing y ventas: usar Marketing Agent para campañas, Lead Scorer para calificar prospectos, Sales Agent para seguimiento. Integrar con CRM via API.",
+      "Operaciones: usar Data Analyst para reportes, Scheduler para agenda, Report Generator para dashboards. Conectar con fuentes de datos internas.",
+      "Desarrollo: usar Frontend Wizard para prototipos, Code Reviewer para revision de codigo. Cada agente tiene prompt independiente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Cada agente usa prompts independientes en texto plano. Se pueden extraer como SKILL.md de Hermes sin dependencia de ningun CLI especifico. Los agentes se ejecutan via API estandar.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "El repo mas completo de agentes de negocio. Ideal como base para implementaciones N4. Cada agente se puede exportar a skill individual.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "atencion-cliente",
+      "marketing",
+      "ventas",
+      "agentes"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/msitarzewski/agency-agents",
+      "Explorar el directorio /agents para identificar los agentes relevantes para el cliente",
+      "Copiar los prompts de los agentes seleccionados a SKILL.md de Hermes",
+      "Configurar cada agente con el contexto y conocimiento del negocio del cliente",
+      "Probar agentes individualmente antes de integrarlos en un flujo coordinado",
+      "Desplegar los agentes en el entorno del cliente (local o cloud)"
+    ]
+  },
+  {
+    "id": "awesome-llm-apps",
+    "nombre": "Awesome LLM Apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "tipo": "Recursos",
+    "categoria": "general",
+    "descripcion": "100+ aplicaciones, agentes, skills y RAG apps de IA. Coleccion curada de recursos open-source para construir con LLMs.",
+    "estrellas": 139972,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "agents",
+      "llms",
+      "python",
+      "rag",
+      "voice-agents",
+      "mcp"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Encontrar ejemplos practicos de apps con IA: RAG, agentes de voz, MCP servers, chatbots, y mas",
+    "por_que": "140k estrellas, actualizado diariamente. Cubre desde RAG basico hasta agentes de voz avanzados. Ejemplos listos para ejecutar.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "RAG Apps",
+        "descripcion": "Ejemplos de Retrieval Augmented Generation con diferentes backends"
+      },
+      {
+        "nombre": "Voice Agents",
+        "descripcion": "Agentes de voz con Speech-to-Text y TTS integrados"
+      },
+      {
+        "nombre": "MCP Servers",
+        "descripcion": "Servidores MCP para conectar herramientas con LLMs"
+      },
+      {
+        "nombre": "Chatbots",
+        "descripcion": "Ejemplos de chatbots con diferentes frameworks"
+      },
+      {
+        "nombre": "Agent Skills",
+        "descripcion": "Skills reutilizables para agentes"
+      }
+    ],
+    "casos_de_uso": [
+      "Implementar RAG: seguir los ejemplos de RAG Apps para conectar documentos internos con LLMs. Usar los patrones de chunking, embedding y retrieval del repo.",
+      "Agentes de voz: usar los Voice Agents como base para asistentes de voz. Incluyen Speech-to-Text (Whisper) y TTS. Configurar con el proveedor deseado.",
+      "MCP para integraciones: los MCP Servers del repo muestran como conectar herramientas externas. Copiar el patron para conectar CRMs, ERPs o bases de datos.",
+      "Prototipado rapido: elegir un ejemplo del repositorio, adaptarlo al caso de uso y desplegar. Todos los ejemplos son auto-contenidos y ejecutables."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Los ejemplos usan OpenAI API por defecto pero son compatibles con cualquier API OpenAI-compatible (OpenRouter, Groq, etc.). Solo cambiar la base URL y API key.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Excelente referencia de patrones de implementacion. No es un producto sino una coleccion de ejemplos. Ideal para aprender y prototipar.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "desarrollo",
+      "datos",
+      "agentes"
+    ],
+    "pasos_implementacion": [
+      "Explorar el repositorio para identificar ejemplos relevantes (RAG, voz, MCP, chatbots)",
+      "Clonar el repo: git clone https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "Seleccionar un ejemplo, leer su README y seguir las instrucciones de instalacion",
+      "Configurar API keys (OpenRouter, OpenAI, etc.) segun el ejemplo elegido",
+      "Ejecutar y adaptar el ejemplo al caso de uso del cliente",
+      "Usar como referencia para implementaciones personalizadas"
+    ]
+  },
+  {
+    "id": "mattpocock-skills",
+    "nombre": "Matt Pocock Skills",
+    "url": "https://github.com/mattpocock/skills",
+    "tipo": "Skills",
+    "categoria": "desarrollo",
+    "descripcion": "Skills para ingenieros reales. 25 skills de programacion directamente del directorio .agents de Matt Pocock.",
+    "estrellas": 270602,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "claude-code",
+      "skills",
+      "programming",
+      "engineering",
+      "typescript"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Skills de programacion listas para usar con Claude Code: testing, debugging, refactoring, code review y mas",
+    "por_que": "270k estrellas. Skills creadas por un reconocido ingeniero. Cubren flujos reales de desarrollo de software.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "Testing Skills",
+        "descripcion": "Skills para escribir y ejecutar tests"
+      },
+      {
+        "nombre": "Debugging Skills",
+        "descripcion": "Skills para depuracion sistematica"
+      },
+      {
+        "nombre": "Refactoring Skills",
+        "descripcion": "Skills para refactorizacion de codigo"
+      },
+      {
+        "nombre": "Code Review Skills",
+        "descripcion": "Skills para revision de codigo"
+      },
+      {
+        "nombre": "Architecture Skills",
+        "descripcion": "Skills para diseno de arquitectura"
+      }
+    ],
+    "casos_de_uso": [
+      "Code review automatizado: usar las Code Review Skills para revisar PRs. Configurar como paso previo al merge en el flujo de CI/CD.",
+      "Testing: usar las Testing Skills para generar tests unitarios y de integracion. Adaptar los prompts al framework de testing del proyecto.",
+      "Debugging: usar las Debugging Skills para seguir un proceso sistematico de depuracion. Incluye metodos para aislamiento de bugs.",
+      "Refactorizacion: aplicar las Refactoring Skills para mejorar codigo existente. Cada skill tiene instrucciones paso a paso para el agente."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Las skills usan formato .claude.md especifico de Claude Code. Para hacerlas agnosticas: 1) Extraer el contenido de cada .claude.md a SKILL.md de Hermes 2) Reemplazar referencias a 'claude' por 'el agente' 3) Los comandos CLI especificos de Claude se pueden reemplazar por scripts bash/python universales.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Skills de alta calidad para ingenieros. Limitadas a Claude Code pero faciles de adaptar a SKILL.md de Hermes.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/mattpocock/skills",
+      "Revisar los archivos .claude.md en el directorio raiz",
+      "Extraer las skills relevantes a SKILL.md de Hermes (formato universal)",
+      "Adaptar referencias de Claude a 'el agente' en los prompts extraidos",
+      "Probar las skills adaptadas con el CLI/agente que uses"
+    ]
+  },
+  {
+    "id": "ruflo",
+    "nombre": "Ruflo",
+    "url": "https://github.com/ruvnet/ruflo",
+    "tipo": "Framework",
+    "categoria": "infraestructura",
+    "descripcion": "Harness original para agentes. Despliega swarms multi-agente, coordina flujos autonomos y construye conversaciones inteligentes.",
+    "estrellas": 73387,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "multi-agent",
+      "swarm",
+      "orchestration",
+      "agents",
+      "mcp-server",
+      "typescript"
+    ],
+    "nivel_recomendado": "N4",
+    "para_que": "Orquestar multiples agentes que trabajan en equipo, con memoria compartida y flujos coordinados",
+    "por_que": "73k estrellas, framework maduro para orquestacion multi-agente. Incluye MCP server, swarms, y memoria persistente.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "Swarm Engine",
+        "descripcion": "Motor de enjambres multi-agente con coordinacion automatica"
+      },
+      {
+        "nombre": "MCP Server",
+        "descripcion": "Servidor MCP integrado para conectar herramientas"
+      },
+      {
+        "nombre": "Memory System",
+        "descripcion": "Memoria persistente entre sesiones con resumen automatico"
+      },
+      {
+        "nombre": "CLI Tool",
+        "descripcion": "Interfaz de linea de comandos para gestionar flujos"
+      }
+    ],
+    "casos_de_uso": [
+      "Orquestacion multi-agente: usar Ruflo para coordinar agentes especializados. Definir flujos en YAML con `npx ruflo init` y ejecutar con `npx ruflo run`. Cada agente puede tener su propia skill.",
+      "Swarms para soporte: desplegar un enjambre de agentes de atencion al cliente. El swarm leader deriva consultas al agente especializado correspondiente.",
+      "Automatizacion de procesos: crear pipelines multi-paso donde diferentes agentes colaboran. Usar el sistema de memoria para mantener contexto entre pasos.",
+      "MCP integration: usar el MCP server de Ruflo para conectar con herramientas externas (bases de datos, APIs, CRMs) desde cualquier agente del swarm."
+    ],
+    "modelos_limitados": [
+      "claude",
+      "codex"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Ruflo tiene archivos .claude.md y .codex/ en su estructura. Para hacerlo agnostico: 1) Extraer la logica de orquestacion a SKILL.md de Hermes 2) Los flujos YAML son universales y funcionan con cualquier backend 3) Reemplazar los hooks de Claude/Codex por scripts bash. El MCP server es agnostico por si mismo.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "El framework de orquestacion mas popular. Ideal como base N4. La configuracion YAML es portable a cualquier CLI.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "agentes",
+      "infraestructura",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Instalar: npx ruflo init en el directorio del proyecto",
+      "Definir agentes y flujos en archivos YAML de configuracion",
+      "Configurar MCP server: ruflo mcp:start para exponer herramientas a agentes",
+      "Ejecutar: npx ruflo run para iniciar el flujo multi-agente",
+      "Monitorear ejecucion y ajustar prompts segun resultados",
+      "Extraer configuracion a SKILL.md para portabilidad entre CLIs"
+    ]
+  },
+  {
+    "id": "scientific-agent-skills",
+    "nombre": "Scientific Agent Skills",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "tipo": "Skills",
+    "categoria": "conocimiento",
+    "descripcion": "165 skills cientificas para convertir cualquier agente IA en un AI Scientist. Usado por 190,000+ cientificos globalmente.",
+    "estrellas": 46830,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "agent-skills",
+      "ai-scientist",
+      "bioinformatics",
+      "claude",
+      "claude-skills",
+      "drug-discovery",
+      "genomics"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Skills especializadas para investigacion cientifica: bioinformatica, genomica, descubrimiento de farmacos, etc.",
+    "por_que": "46k estrellas, 165 skills, usado por 190k cientificos. Cobertura de multiples dominios cientificos con prompts especializados.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "Bioinformatics Skills",
+        "descripcion": "Analisis genomico, proteinas, secuencias"
+      },
+      {
+        "nombre": "Drug Discovery Skills",
+        "descripcion": "Descubrimiento de farmacos y screening molecular"
+      },
+      {
+        "nombre": "Clinical Research Skills",
+        "descripcion": "Analisis de datos clinicos y ensayos"
+      },
+      {
+        "nombre": "Data Analysis Skills",
+        "descripcion": "Analisis estadistico y visualizacion cientifica"
+      },
+      {
+        "nombre": "Materials Science Skills",
+        "descripcion": "Ciencia de materiales y quimica computacional"
+      }
+    ],
+    "casos_de_uso": [
+      "Investigacion asistida: usar las Bioinformatics Skills para analisis genomico. Cargar datos de secuencias y usar los prompts especializados para interpretacion.",
+      "Descubrimiento de farmacos: aplicar las Drug Discovery Skills para screening virtual. Las skills guian al agente en el proceso paso a paso con metodos establecidos.",
+      "Analisis de datos cientificos: usar Data Analysis Skills para procesar y visualizar datos de experimentos. Incluye metodos estadisticos y de graficacion.",
+      "Revision de literatura: las skills pueden ayudar a buscar y resumir papers. Configurar con el gestor de referencias del investigador."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Las skills usan formato Claude Code. Para hacerlas agnosticas: extraer el prompt cientifico de cada skill a SKILL.md de Hermes. El conocimiento cientifico (protocolos, metodos) es independiente del modelo. La logica de dominio se mantiene intacta.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "La coleccion de skills cientificas mas grande. Ideal para clientes en investigacion, farmaceutica o biotech.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "desarrollo",
+      "datos"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/K-Dense-AI/scientific-agent-skills",
+      "Identificar las skills relevantes por dominio (bioinfo, farmacos, genomica, etc.)",
+      "Extraer los prompts cientificos a SKILL.md de Hermes",
+      "Adaptar el formato Claude Code a formato universal",
+      "Probar cada skill con datos de prueba del dominio correspondiente"
+    ]
+  },
+  {
+    "id": "wondelai-skills",
+    "nombre": "Wondelai Skills",
+    "url": "https://github.com/wondelai/skills",
+    "tipo": "Skills",
+    "categoria": "general",
+    "descripcion": "50 skills de negocios basadas en libros bestseller + 12 guided journeys. Marketing, UX, codigo y estrategia de producto.",
+    "estrellas": 2272,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "business",
+      "marketing",
+      "ux",
+      "product-strategy",
+      "claude-code-skills",
+      "frameworks"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Skills de negocio basadas en metodologias probadas: marketing, UX, estrategia de producto, frameworks de codigo",
+    "por_que": "Skills extraidas de libros bestseller de negocio. Incluyen metodologias como Jobs-to-be-Done, Lean Startup, Design Sprint.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "Business Strategy Skills",
+        "descripcion": "JTBD, Lean Canvas, Business Model Canvas"
+      },
+      {
+        "nombre": "Marketing Skills",
+        "descripcion": "Growth loops, copywriting, SEO, content strategy"
+      },
+      {
+        "nombre": "UX Skills",
+        "descripcion": "Design thinking, user research, prototipado"
+      },
+      {
+        "nombre": "Coding Frameworks",
+        "descripcion": "Patrones de codigo, arquitectura, testing"
+      },
+      {
+        "nombre": "Guided Journeys",
+        "descripcion": "12 journeys guiados para procesos completos"
+      }
+    ],
+    "casos_de_uso": [
+      "Estrategia de producto: usar las Business Strategy Skills para aplicar JTBD o Lean Canvas. El agente guia el proceso paso a paso con las preguntas de cada metodologia.",
+      "Marketing: aplicar las Marketing Skills para crear copy, planificar contenido o disenar growth loops. Basado en frameworks de libros validados.",
+      "UX Research: usar las UX Skills para conducir design thinking o user research. Incluye templates de entrevistas y pruebas de usabilidad.",
+      "Planificacion de negocio: los Guided Journeys combinan multiples skills en un flujo completo. Ideal para lanzar un nuevo producto o servicio."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skills en formato Claude Code. Para hacerlas agnosticas: extraer las metodologias de negocio a SKILL.md. El conocimiento de negocio (frameworks, preguntas, templates) es independiente del modelo. Cada skill se convierte en un prompt independiente.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Skills de negocio basadas en libros. Buenos frameworks de metodologia. Limitadas a Claude pero el conocimiento de negocio es universal.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "marketing",
+      "ventas",
+      "diseno"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/wondelai/skills",
+      "Revisar las 50 skills de negocio y los 12 guided journeys",
+      "Seleccionar skills segun la necesidad del cliente (marketing, UX, estrategia)",
+      "Extraer las metodologias de negocio a SKILL.md",
+      "Aplicar el framework paso a paso con el cliente usando el agente"
+    ]
+  },
+  {
+    "id": "tooljet",
+    "nombre": "ToolJet",
+    "url": "https://github.com/ToolJet/ToolJet",
+    "tipo": "Plataforma",
+    "categoria": "infraestructura",
+    "descripcion": "Plataforma open-source para crear apps internas, dashboards y automatizaciones. Low-code con conectores a bases de datos y APIs.",
+    "estrellas": 41002,
+    "licencia": "AGPL-3.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "low-code",
+      "internal-tools",
+      "dashboard",
+      "workflow-automation",
+      "react",
+      "typescript"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Crear aplicaciones internas (paneles, CRUDs, reportes) sin programar, conectando a bases de datos y APIs existentes",
+    "por_que": "41k estrellas. Plataforma madura con 50+ conectores nativos. Interfaz visual drag-and-drop. Auto-hospedable.",
+    "alternativas": [
+      "retool",
+      "appsmith"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Dashboard de negocio: conectar ToolJet a la base de datos del cliente y crear paneles visuales con graficos y tablas. Los datos se actualizan en tiempo real desde las queries SQL configuradas.",
+      "App de gestion interna: crear formularios CRUD para gestionar clientes, inventario o pedidos. Usar los conectores nativos a PostgreSQL, MySQL, REST APIs.",
+      "Workflows automatizados: disenar flujos de aprobacion, notificaciones y actualizaciones de datos usando el builder visual de workflows.",
+      "Portal de cliente: construir un portal donde los clientes puedan ver su historial, facturas y estado de servicios. Autenticacion integrada con SSO."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "ToolJet es una plataforma SaaS auto-hospedable con API REST. No depende de ningun LLM o CLI especifico. Se conecta a cualquier base de datos o API via conectores nativos.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Excelente para crear apps internas rapidamente. Ideal como alternativa low-code a desarrollo tradicional. Licencia AGPL requiere consideration para uso comercial.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "desarrollo",
+      "infraestructura",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Desplegar ToolJet via Docker: docker run -d -p 3000:3000 tooljet/tooljet",
+      "O crear cuenta en ToolJet Cloud (tooljet.com) para prueba rapida",
+      "Conectar a las bases de datos del cliente (PostgreSQL, MySQL, REST API, etc.)",
+      "Crear dashboards y apps internas usando el builder visual drag-and-drop",
+      "Configurar workflows de automatizacion y permisos de usuarios",
+      "Desplegar y capacitar al equipo en el uso de las apps creadas"
+    ]
+  },
+  {
+    "id": "multiagent-biz-auto",
+    "nombre": "Multiagent Business Automation",
+    "url": "https://github.com/agruai/multiagent-business-automation",
+    "tipo": "Framework",
+    "categoria": "operaciones",
+    "descripcion": "Plataforma de orquestacion multi-agente para automatizacion de negocios y soporte a decisiones.",
+    "estrellas": 49,
+    "licencia": "N/A",
+    "ultimo_commit": "2026-08-31",
+    "tags": [
+      "agent",
+      "automation",
+      "business"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Automatizar procesos de negocio con multiples agentes coordinados",
+    "por_que": "Proyecto nuevo (49⭐) pero conceptualmente interesante. Enfoque en automatizacion de negocio real con agentes.",
+    "alternativas": [
+      "ruflo",
+      "the-agency"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Automatizacion de procesos: usar la plataforma para modelar procesos de negocio como flujos multi-agente. Definir agentes especializados por tarea y el orquestador coordina la ejecucion.",
+      "Soporte a decisiones: los agentes analizan datos de multiples fuentes y presentan recomendaciones. El humano revisa y aprueba antes de ejecutar.",
+      "Integracion de sistemas: conectar con sistemas existentes (ERP, CRM) via APIs. Los agentes leen y escriben datos segun las reglas de negocio definidas."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Proyecto nuevo sin dependencias evidentes de modelos especificos. La arquitectura parece usar APIs estandar.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Proyecto en etapa temprana (49⭐). Monitorear evolucion. Por ahora Ruflo o The Agency son opciones mas maduras.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "agentes",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/agruai/multiagent-business-automation",
+      "Revisar la documentacion para entender la arquitectura de agentes",
+      "Configurar los agentes segun los procesos de negocio del cliente",
+      "Definir flujos de decision y reglas de escalamiento",
+      "Probar con datos de prueba antes de poner en produccion"
+    ]
+  },
+  {
+    "id": "agentic-biz-analysis",
+    "nombre": "Agentic Business Analysis",
+    "url": "https://github.com/AlekseiUL/agentic-business-analysis",
+    "tipo": "Metodologia",
+    "categoria": "operaciones",
+    "descripcion": "Metodologia practica para mapear procesos de negocio y disenar pilotos seguros y medibles de automatizacion con IA.",
+    "estrellas": 15,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-19",
+    "tags": [
+      "agentic-workflows",
+      "business-analysis",
+      "consulting",
+      "process-mapping",
+      "pilot-scoping",
+      "hermes-skill"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Metodologia para consultoria: mapear procesos, identificar candidatos a automatizar y disenar pilotos de IA",
+    "por_que": "Incluye el tag 'hermes-skill' — compatible con Hermes. Enfoque practico y estructurado para consultoria de automatizacion.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Diagnostico de procesos: seguir la metodologia para mapear procesos actuales del cliente. Identificar cuellos de botella y candidatear tareas para automatizacion.",
+      "Diseno de pilotos: usar el framework para definir alcance, metricas de exito y riesgos de cada piloto. La metodologia incluye templates para presentar al cliente.",
+      "Consultoria estructurada: aplicar los pasos de la metodologia en sesiones con el cliente. El resultado es un reporte con procesos mapeados y recomendaciones priorizadas.",
+      "Integracion con ImplementarIA: la metodologia se complementa con los niveles de ImplementarIA. Usar el mapeo de procesos como entrada para el paso 1 (Contexto)."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Es una metodologia en texto, no un software. Funciona con cualquier agente o CLI. Incluye tag 'hermes-skill' indicando compatibilidad nativa con Hermes.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Metodologia de consultoria compatible con Hermes. Ideal como paso previo a ImplementarIA para diagnosticar procesos antes de recomendar soluciones.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "consultoria",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/AlekseiUL/agentic-business-analysis",
+      "Seguir la metodologia para mapear procesos actuales del cliente",
+      "Identificar candidatos a automatizar usando los criterios del framework",
+      "Disenar pilotos con alcance definido y metricas de exito",
+      "Presentar resultados al cliente como insumo para ImplementarIA"
+    ]
+  },
+  {
+    "id": "deskcommcrm",
+    "nombre": "DeskcommCRM",
+    "url": "https://github.com/melgarafael/DeskcommCRM",
+    "tipo": "CRM",
+    "categoria": "atencion-cliente",
+    "descripcion": "CRM open-source con agentes IA nativos y WhatsApp (WAHA). Alternativa open-source a Kommo, Octadesk.",
+    "estrellas": 4119,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "crm",
+      "ai-agents",
+      "whatsapp",
+      "chatbot",
+      "customer-support"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "CRM con agentes IA integrados + WhatsApp para automatizar ventas y atencion al cliente",
+    "por_que": "4.1k estrellas, MIT, agentes IA nativos + WhatsApp integrado. Ideal como alternativa todo-en-uno.",
+    "alternativas": [
+      "chatwoot",
+      "twenty"
+    ],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "AI Agents nativos",
+        "descripcion": "Agentes IA integrados para ventas y soporte"
+      },
+      {
+        "nombre": "WhatsApp WAHA",
+        "descripcion": "Conexion WhatsApp via WAHA (no oficial)"
+      },
+      {
+        "nombre": "CRM completo",
+        "descripcion": "Gestion de contactos, pipeline, historial"
+      }
+    ],
+    "casos_de_uso": [
+      "CRM con agentes de ventas: usar los AI Agents nativos para calificar leads y automatizar seguimiento. Los agentes interactuan con clientes via WhatsApp y web chat.",
+      "Atencion al cliente automatizada: configurar agentes IA que respondan consultas frecuentes y deriven casos complejos a humanos. Todo desde la misma bandeja del CRM.",
+      "Pipeline de ventas: usar el CRM para gestionar el pipeline completo. Los agentes IA actualizan automaticamente las etapas segun las interacciones con el cliente.",
+      "WhatsApp integrado: conectar WhatsApp Business para recibir y enviar mensajes desde el CRM. Nota: WAHA no es API oficial de Meta, hay riesgo de baneo."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Plataforma web con API. Los agentes IA se configuran con prompts que pueden usar cualquier LLM via API compatible.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Alternativa interesante a Chatwoot con agentes nativos. Riesgo: WAHA no es API oficial de Meta. Preferir WhatsApp Cloud API para produccion.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "atencion-cliente",
+      "ventas"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/melgarafael/DeskcommCRM",
+      "Seguir las instrucciones de instalacion en el README (Docker recomendado)",
+      "Configurar conexion WhatsApp via WAHA (considerar riesgo de baneo)",
+      "Configurar agentes IA nativos para ventas y soporte",
+      "Importar datos de clientes existentes al CRM",
+      "Capacitar al equipo en uso del CRM y agentes"
+    ]
+  },
+  {
+    "id": "twenty-crm",
+    "nombre": "Twenty CRM",
+    "url": "https://github.com/twentyhq/twenty",
+    "tipo": "CRM",
+    "categoria": "atencion-cliente",
+    "descripcion": "Alternativa open-source a Salesforce, disenada para IA. CRM moderno con GraphQL y APIs nativas.",
+    "estrellas": 57570,
+    "licencia": "NOASSERTION",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "crm",
+      "graphql",
+      "react",
+      "typescript",
+      "salesforce-alternative"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "CRM moderno como alternativa a Salesforce, con APIs nativas para integracion con agentes IA",
+    "por_que": "57k estrellas. Disenado para IA desde el inicio con GraphQL API. Interfaz moderna y limpia.",
+    "alternativas": [
+      "salesforce",
+      "hubspot"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "CRM como base de datos de clientes: usar Twenty como fuente de verdad para datos de clientes. Los agentes IA consultan y actualizan via GraphQL API.",
+      "Integracion con agentes: conectar agentes IA a Twenty via API GraphQL para automatizar actualizaciones de contactos, oportunidades y actividades.",
+      "Alternativa a Salesforce: migrar desde Salesforce a Twenty para reducir costos. Twenty tiene estructura similar pero es open-source y auto-hospedable.",
+      "API-first: usar la API GraphQL para construir integraciones personalizadas. Ideal como backend de datos para soluciones ImplementarIA."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Plataforma web con API GraphQL. Funciona con cualquier agente que pueda hacer peticiones HTTP. No tiene dependencia de LLM.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "CRM moderno con API disenada para IA. Buen complemento para implementaciones que necesiten base de datos de clientes.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "ventas",
+      "atencion-cliente"
+    ],
+    "pasos_implementacion": [
+      "Desplegar Twenty via Docker: docker compose up -d",
+      "O crear cuenta en twenty.com para version cloud",
+      "Configurar modelo de datos: contactos, oportunidades, actividades",
+      "Conectar via API GraphQL para integraciones con agentes IA",
+      "Importar datos desde CRM anterior o desde hojas de calculo",
+      "Capacitar al equipo en la interfaz de Twenty"
+    ]
+  },
+  {
+    "id": "excalidraw",
+    "nombre": "Excalidraw",
+    "url": "https://github.com/excalidraw/excalidraw",
+    "tipo": "Visualizacion",
+    "categoria": "desarrollo",
+    "descripcion": "Pizarra virtual para dibujar diagramas con estilo hand-drawn. Colaborativo en tiempo real.",
+    "estrellas": 133084,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "diagrams",
+      "drawing",
+      "collaboration",
+      "canvas",
+      "whiteboard"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Crear diagramas y pizarras visuales con estilo hand-drawn para documentacion y presentaciones",
+    "por_que": "133k estrellas. Estilo hand-drawn unico que hace los diagramas mas accesibles. Colaborativo en tiempo real.",
+    "alternativas": [
+      "drawio",
+      "figma"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Diagramas de arquitectura: usar Excalidraw para dibujar diagramas de soluciones ImplementarIA. El estilo hand-drawn los hace mas claros en presentaciones con clientes.",
+      "Mapas de procesos: crear diagramas de flujo de procesos de negocio durante las sesiones de diagnostico. Colaborar en tiempo real con el cliente.",
+      "Prototipado visual: dibujar wireframes y prototipos de interfaz rapida. Exportar como imagen para incluir en propuestas.",
+      "Documentacion tecnica: adjuntar diagramas de arquitectura en SKILL.md y documentacion de implementacion. El formato hand-drawn es mas accesible que diagramas UML formales."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "App web, no depende de ningun LLM. Funciona en cualquier navegador.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Excelente para crear diagramas para propuestas y documentacion. Se integra bien con el flujo de ImplementarIA.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "diseno",
+      "desarrollo"
+    ]
+  },
+  {
+    "id": "understand-anything",
+    "nombre": "Understand Anything",
+    "url": "https://github.com/Egonex-AI/Understand-Anything",
+    "tipo": "Visualizacion",
+    "categoria": "desarrollo",
+    "descripcion": "Graficos que ensenan > graficos que impresionan. Convierte cualquier codigo o conocimiento en grafos interactivos explorables.",
+    "estrellas": 84328,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "knowledge-graph",
+      "visualization",
+      "code-analysis",
+      "interactive",
+      "claude-skills"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Convertir codigo, documentacion o conocimiento en grafos interactivos navegables para entender su estructura",
+    "por_que": "84k estrellas. Ideal para la fase de mapa interactivo de ImplementarIA. Genera visualizaciones que realmente ensenan.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Mapa de soluciones ImplementarIA: usar Understand Anything para generar el grafo interactivo del paso 4. Convierte la arquitectura de la solucion en un grafo navegable.",
+      "Exploracion de repos: pasar la URL de un repo y obtener un grafo interactivo de su estructura. Ideal para evaluar rapidamente la arquitectura de una solucion.",
+      "Documentacion visual: generar mapas de conocimiento a partir de documentacion tecnica. Los clientes pueden explorar visualmente como funciona la solucion.",
+      "Onboarding de equipo: crear grafos de la arquitectura del proyecto para que nuevos miembros del equipo entiendan la estructura rapidamente."
+    ],
+    "modelos_limitados": [
+      "claude",
+      "codex"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Tiene skills para Claude Code y Codex. La funcionalidad principal (generar grafos) se puede invocar via API. Extraer la logica de generacion de grafos a un script independiente.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Herramienta clave para ImplementarIA. El grafo interactivo generado es exactamente lo que se usa en el paso 4 del mapa.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "desarrollo",
+      "diseno"
+    ],
+    "pasos_implementacion": [
+      "Instalar via npm: npm install -g @egonex/understand-anything",
+      "Ejecutar sobre un repo: understand-anything <ruta-del-repo>",
+      "Explorar el grafo interactivo generado en el navegador",
+      "Usar el grafo como mapa de solucion en el paso 4 de ImplementarIA",
+      "Exportar el grafo para incluirlo en documentacion o propuestas"
+    ]
+  },
+  {
+    "id": "anthropic-cybersecurity-skills",
+    "nombre": "Anthropic Cybersecurity Skills",
+    "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+    "tipo": "Skills",
+    "categoria": "infraestructura",
+    "descripcion": "817 skills estructuradas de ciberseguridad para agentes IA. Mapeadas a 6 frameworks: MITRE ATT&CK, NIST CSF 2.0 y mas.",
+    "estrellas": 33456,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "cybersecurity",
+      "mitre-attack",
+      "nist",
+      "skills",
+      "security-audit"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Skills de ciberseguridad para auditores IA: pentesting, analisis de vulnerabilidades, cumplimiento normativo",
+    "por_que": "33k estrellas. 817 skills mapeadas a frameworks estandar de la industria. Cobertura completa de seguridad.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "MITRE ATT&CK Skills",
+        "descripcion": "Skills alineadas con la matriz MITRE ATT&CK"
+      },
+      {
+        "nombre": "NIST CSF Skills",
+        "descripcion": "Skills para cumplimiento con NIST Cybersecurity Framework"
+      },
+      {
+        "nombre": "Pentesting Skills",
+        "descripcion": "Skills para pruebas de penetracion automatizadas"
+      },
+      {
+        "nombre": "Cloud Security Skills",
+        "descripcion": "Skills para auditoria de seguridad en la nube"
+      }
+    ],
+    "casos_de_uso": [
+      "Auditoria de seguridad automatizada: usar las skills de NIST CSF para auditar el cumplimiento normativo de un cliente. El agente sigue los pasos del framework automaticamente.",
+      "Pentesting con agentes: aplicar las Pentesting Skills para realizar pruebas de penetracion. Incluyen metodologia paso a paso alineada con MITRE ATT&CK.",
+      "Seguridad en implementaciones: antes de lanzar una solucion ImplementarIA, usar las Cloud Security Skills para auditar la infraestructura del cliente.",
+      "Reportes de cumplimiento: generar reportes de seguridad automaticos usando las skills de compliance. Mapear hallazgos a los frameworks correspondientes."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skills en formato Claude. Para hacerlas agnosticas: extraer las metodologias de seguridad a SKILL.md. Los frameworks (MITRE, NIST) son independientes del modelo. Cada skill es un prompt estructurado que se puede usar con cualquier agente.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Coleccion masiva de skills de ciberseguridad. Ideal para implementaciones que requieran auditoria de seguridad. Las metodologias son universales.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "seguridad"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "Identificar skills relevantes por framework (MITRE, NIST, etc.)",
+      "Extraer las metodologias de seguridad a SKILL.md",
+      "Ejecutar auditoria sobre la infraestructura del cliente",
+      "Generar reporte con hallazgos y recomendaciones"
+    ]
+  },
+  {
+    "id": "social-media-research-skills",
+    "nombre": "Social Media Research Skills",
+    "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+    "tipo": "Skills",
+    "categoria": "marketing",
+    "descripcion": "Skills de IA para investigacion en redes sociales: posts outliers, mineria de comentarios, analisis de competidores, ads.",
+    "estrellas": 2849,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "social-media",
+      "research",
+      "marketing",
+      "competitor-analysis",
+      "content-strategy"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Analizar redes sociales con IA: identificar tendencias, analizar competidores, extraer insights de audiencia",
+    "por_que": "2.8k estrellas. Skills especializadas para investigacion de redes sociales. Cubre LinkedIn, Twitter, Instagram.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "Outlier Posts",
+        "descripcion": "Identificacion de posts con rendimiento atipico"
+      },
+      {
+        "nombre": "Comment Mining",
+        "descripcion": "Mineria de comentarios para extraer insights de audiencia"
+      },
+      {
+        "nombre": "Competitor Teardowns",
+        "descripcion": "Analisis detallado de estrategias de competidores"
+      },
+      {
+        "nombre": "Ad Library Analysis",
+        "descripcion": "Analisis de bibliotecas de anuncios"
+      }
+    ],
+    "casos_de_uso": [
+      "Analisis de competidores: usar las Competitor Teardown Skills para analizar la estrategia de redes sociales de un competidor. Extraer patrones de contenido, frecuencia y engagement.",
+      "Investigacion de audiencia: aplicar Comment Mining para extraer insights de los comentarios de la audiencia. Identificar dolores, deseos y objeciones.",
+      "Estrategia de contenido: usar Outlier Posts para identificar que tipo de contenido funciona mejor. Analizar patrones de posts virales en el nicho del cliente.",
+      "LinkedIn para PropulsarIA: aplicar las skills al contenido de LinkedIn de German para identificar que topics generan mas engagement y optimizar la estrategia de contenido."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Skills basadas en prompts de texto plano. Funcionan con cualquier LLM. Los metodos de investigacion son independientes del modelo.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Util para la estrategia de LinkedIn de PropulsarIA. Las skills de investigacion de audiencia son directamente aplicables.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "marketing"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/ScrapeCreators/social-media-research-skills",
+      "Seleccionar la skill segun la red social a analizar (LinkedIn, Twitter, etc.)",
+      "Configurar las API keys necesarias para cada plataforma",
+      "Ejecutar la skill con los parametros del cliente (competidores, keywords)",
+      "Analizar resultados y extraer insights accionables",
+      "Documentar hallazgos para la estrategia de contenido"
+    ]
+  },
+  {
+    "id": "matrixone",
+    "nombre": "MatrixOne",
+    "url": "https://github.com/matrixorigin/matrixone",
+    "tipo": "Base de Datos",
+    "categoria": "infraestructura",
+    "descripcion": "Base de datos HTAP AI-native con Git-for-Data y busqueda vectorial integrada. Backend de datos y memoria para agentes inteligentes.",
+    "estrellas": 2019,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "database",
+      "vector-search",
+      "ai-native",
+      "htap",
+      "distributed"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Base de datos con busqueda vectorial para memoria de agentes, RAG y analitica en tiempo real",
+    "por_que": "2k estrellas, Apache 2.0. Unifica datos transaccionales y analiticos con vector search nativo.",
+    "alternativas": [
+      "pinecone",
+      "weaviate",
+      "qdrant"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Memoria persistente para agentes: usar MatrixOne como backend de memoria vectorial. Los agentes guardan y recuperan embeddings de conversaciones y conocimientos.",
+      "RAG sobre datos del cliente: conectar MatrixOne como vector store para RAG. Los documentos del cliente se embeden y quedan disponibles para consultas semanticas.",
+      "Base de datos unificada: reemplazar multiple bases de datos (SQL + vector) por MatrixOne. Reduce complejidad de infraestructura en implementaciones N3-N4.",
+      "Analitica en tiempo real: usar las capacidades HTAP para hacer consultas analiticas sobre datos operacionales sin replicacion."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Base de datos standalone. Se conecta via SQL y REST API. Funciona con cualquier agente o framework. No depende de ningun LLM.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Alternativa open-source a Pinecone/Weaviate con capacidades HTAP. Ideal como backbone de datos para implementaciones completas.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "datos",
+      "infraestructura"
+    ],
+    "pasos_implementacion": [
+      "Desplegar MatrixOne: docker run -d -p 6001:6001 matrixorigin/matrixone:latest",
+      "Conectar via MySQL compatible client: mysql -h 127.0.0.1 -P 6001 -u root",
+      "Crear tablas con soporte vectorial para embeddings",
+      "Configurar como backend de memoria para agentes o RAG",
+      "Conectar desde la aplicacion del cliente via drivers MySQL o REST API"
+    ]
+  },
+  {
+    "id": "superagi",
+    "nombre": "SuperAGI",
+    "url": "https://github.com/TransformerOptimus/SuperAGI",
+    "tipo": "Framework",
+    "categoria": "infraestructura",
+    "descripcion": "Framework open-source autonomo de agentes IA. Permite construir, gestionar y ejecutar agentes utiles de forma automatica.",
+    "estrellas": 17695,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "ai-agents",
+      "autonomous",
+      "framework",
+      "agent-framework",
+      "dev-first"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Construir y desplegar agentes IA autonomos sin pagar por plataformas propietarias",
+    "por_que": "17.6k estrellas. Framework completo con GUI, herramientas integradas y despliegue facil.",
+    "alternativas": [
+      "autogpt",
+      "crewai"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Agentes autonomos para clientes: desplegar SuperAGI en el servidor del cliente para ejecutar agentes de forma autonoma. Incluye GUI para monitoreo.",
+      "Automatizacion de tareas repetitivas: configurar agentes que ejecuten tareas programadas (reportes, scraping, monitoreo) sin intervencion humana.",
+      "Prototipado rapido: usar SuperAGI para prototipar agentes antes de migrar a soluciones mas escalables. La GUI facilita la configuracion inicial.",
+      "Framework dev-first: los desarrolladores pueden extender SuperAGI con herramientas personalizadas y conectores a APIs externas."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Soporta multiples LLMs via API. Configurable para usar OpenAI, Anthropic, OpenRouter, modelos locales via Ollama, etc.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Framework solido para construir agentes. Buena opcion para clientes que quieren agentes autonomos sin depender de una plataforma paga.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "agentes",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Instalar via pip: pip install superagi",
+      "O desplegar via Docker: docker compose up -d",
+      "Abrir la GUI en http://localhost:3000 y crear un agente",
+      "Configurar el LLM provider (OpenAI, Anthropic, OpenRouter, Ollama)",
+      "Definir herramientas y objetivos del agente",
+      "Ejecutar y monitorear el agente desde la interfaz"
+    ]
+  },
+  {
+    "id": "browser-use",
+    "nombre": "Browser Use",
+    "url": "https://github.com/browser-use/browser-use",
+    "tipo": "Herramienta",
+    "categoria": "integraciones",
+    "descripcion": "Agentes que usan el navegador. Framework para que agentes IA naveguen por la web como un humano.",
+    "estrellas": 116497,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "browser-automation",
+      "web-agents",
+      "playwright",
+      "python"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Agentes que navegan por la web automaticamente: scraping, formularios, interaccion con sitios web",
+    "por_que": "116k estrellas. Framework mas popular para navegacion web autonoma de agentes. Usa Playwright como base.",
+    "alternativas": [
+      "selenium",
+      "playwright"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Scraping agentico: configurar un agente que navegue por sitios web y extraiga datos estructurados. El agente entiende el contexto y se adapta a cambios de layout.",
+      "Automatizacion de formularios: el agente puede llenar formularios web, hacer clic en botones y navegar por flujos de varios pasos. Ideal para automatizar procesos en portales web.",
+      "Monitoreo de precios: crear un agente que visite sitios de competidores periodicamente y reporte cambios de precios o nuevos productos.",
+      "Pruebas de UI: usar Browser Use para pruebas automatizadas de interfaces web. El agente navega como un usuario real y reporta errores."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Framework Python que se conecta a cualquier LLM via API. Soporta OpenAI, Anthropic, Google, y modelos locales.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Herramienta clave para automatizacion web con agentes. El framework mas popular (116k⭐). Ideal para clientes que necesitan interaccion web autonoma.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "desarrollo",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Instalar: pip install browser-use",
+      "Configurar API key del LLM (OpenAI, Anthropic, etc.)",
+      "Escribir un script Python que defina la tarea del agente",
+      "Ejecutar: python agent.py — el agente abre el navegador y realiza la tarea",
+      "Monitorear y ajustar el prompt segun resultados",
+      "Integrar en flujos automatizados con schedules o triggers"
+    ]
+  },
+  {
+    "id": "cognee",
+    "nombre": "Cognee",
+    "url": "https://github.com/topoteretes/cognee",
+    "tipo": "Framework",
+    "categoria": "infraestructura",
+    "descripcion": "Plataforma de memoria IA open-source para agentes. Memoria persistente de largo plazo entre sesiones.",
+    "estrellas": 31041,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "memory",
+      "agents",
+      "vector-database",
+      "knowledge-graph",
+      "persistent-memory"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Dar memoria persistente a agentes IA: recuerdan contexto entre sesiones, aprenden de interacciones pasadas",
+    "por_que": "31k estrellas. Plataforma dedicada de memoria para agentes. Incluye grafos de conocimiento y busqueda vectorial.",
+    "alternativas": [
+      "agentmemory",
+      "mem0"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Memoria para agentes de atencion al cliente: el agente recuerda interacciones previas con cada cliente. Contexto completo sin repetir informacion.",
+      "Agentes que aprenden: configurar memoria persistente para que los agentes mejoren con el uso. Recuerdan preferencias, decisiones previas y lecciones aprendidas.",
+      "Base de conocimiento vivo: los agentes contribuyen al conocimiento compartido. Cada interaccion enriquece la memoria colectiva del sistema multi-agente.",
+      "Integracion con ImplementarIA: usar Cognee como capa de memoria en implementaciones N3-N4. Los agentes recuerdan el contexto del proyecto entre sesiones."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Plataforma independiente con API REST. Se conecta a cualquier LLM. No tiene dependencia de modelos especificos.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Solucion de memoria para agentes mas popular. Ideal para implementaciones que requieren continuidad entre sesiones.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "agentes",
+      "datos"
+    ],
+    "pasos_implementacion": [
+      "Instalar: pip install cognee",
+      "Configurar la base de datos vectorial (por defecto usa SQLite + embeddings)",
+      "Conectar la aplicacion del agente a Cognee via API REST",
+      "Configurar politicas de memoria: que recordar, por cuanto tiempo, como resumir",
+      "Probar: el agente recuerda contexto entre sesiones",
+      "Escalar a PostgreSQL/Qdrant para produccion"
+    ]
+  },
+  {
+    "id": "nanobrowser",
+    "nombre": "Nanobrowser",
+    "url": "https://github.com/nanobrowser/nanobrowser",
+    "tipo": "Herramienta",
+    "categoria": "integraciones",
+    "descripcion": "Extension de Chrome open-source para automatizacion web con IA. Flujos multi-agente usando tu propia API key.",
+    "estrellas": 13832,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "browser-extension",
+      "web-automation",
+      "multi-agent",
+      "chrome-extension"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Automatizar el navegador con agentes IA desde una extension de Chrome",
+    "por_que": "13.8k estrellas. Extension de Chrome lista para usar. Multi-agente con tu propia API key.",
+    "alternativas": [
+      "browser-use"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Automatizacion del navegador: instalar la extension y configurar agentes que naveguen por sitios web. Usa tu propia API key (OpenRouter, OpenAI, etc.).",
+      "Multi-agente en el navegador: ejecutar multiples agentes simultaneamente para diferentes tareas. Cada agente puede tener su propio contexto y objetivo.",
+      "Flujos de trabajo web: crear flujos multi-paso donde los agentes navegan, extraen datos, llenan formularios y toman decisiones basadas en el contenido.",
+      "Alternativa ligera a Browser Use: no requiere instalacion de Python ni Playwright. Solo la extension de Chrome y una API key."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Usa tu propia API key de cualquier proveedor OpenAI-compatible. Soporta OpenAI, Anthropic, Google, OpenRouter, etc.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Alternativa ligera a Browser Use como extension de Chrome. Ideal para usuarios no tecnicos que quieren automatizacion web.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "desarrollo",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Instalar la extension desde Chrome Web Store: Nanobrowser",
+      "Configurar API key en las opciones de la extension",
+      "Crear un agente describiendo la tarea en lenguaje natural",
+      "Ejecutar el agente y observar como navega por el navegador",
+      "Ajustar instrucciones segun resultados"
+    ]
+  },
+  {
+    "id": "duix-avatar",
+    "nombre": "Duix-Avatar",
+    "url": "https://github.com/duixcom/Duix-Avatar",
+    "tipo": "Herramienta",
+    "categoria": "general",
+    "descripcion": "Toolkit de avatar digital (humano digital) open-source para generacion de video offline y humano digital offline.",
+    "estrellas": 15592,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "avatar",
+      "video-generation",
+      "digital-human",
+      "ai-avatar"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Crear y clonar videos con avatares digitales: generacion de video offline con humanos digitales",
+    "por_que": "15.5k estrellas. Toolkit completo para avatares digitales open-source. Generacion de video offline.",
+    "alternativas": [
+      "heygen",
+      "synthesia"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Creacion de videos con avatar: generar videos donde un avatar digital presenta contenido. Ideal para videos corporativos, capacitacion y marketing.",
+      "Clonacion de video: crear un avatar que imite los gestos y voz de una persona real. Usar para videos personalizados sin grabar cada vez.",
+      "Video offline: todo el procesamiento es local, sin depender de servicios cloud. Importante para clientes con requisitos de privacidad de datos.",
+      "Contenido para PropulsarIA: crear videos con avatar para contenido de LinkedIn o material de marketing. El avatar puede ser el presentador recurrente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Toolkit offline que procesa video localmente. No depende de LLMs ni APIs externas para la generacion de video.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Alternativa open-source a HeyGen/Synthesia. Ideal para produccion de video local con avatares.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "video"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/duixcom/Duix-Avatar",
+      "Seguir las instrucciones de instalacion en el README",
+      "Configurar el modelo de avatar deseado",
+      "Generar video de prueba con un texto o audio de entrada",
+      "Exportar el video generado para uso en produccion"
+    ]
+  },
+  {
+    "id": "cloudflare-security-audit",
+    "nombre": "Cloudflare Security Audit Skill",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "tipo": "Skills",
+    "categoria": "infraestructura",
+    "descripcion": "Skill de auditoria de seguridad multi-fase con hallazgos verificables de forma independiente. Creado por Cloudflare.",
+    "estrellas": 22303,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "security",
+      "audit",
+      "cloudflare",
+      "agent-skills"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Auditar la seguridad de infraestructura cloud con un agente especializado, generando hallazgos verificables",
+    "por_que": "22k estrellas, creado por Cloudflare. Auditoria multi-fase con resultados maquina-legibles. Estandar de la industria.",
+    "alternativas": [
+      "anthropic-cybersecurity-skills"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Auditoria de seguridad cloud: ejecutar la skill para auditar la infraestructura del cliente. La auditoria cubre multiples fases y genera hallazgos con evidencia verificable.",
+      "Pre-implementacion: antes de lanzar una solucion ImplementarIA, auditar la infraestructura donde se desplegara. Identificar riesgos de seguridad temprano.",
+      "Post-implementacion: auditar la solucion desplegada para verificar que no introdujo vulnerabilidades. Los hallazgos son maquina-legibles para integracion CI/CD.",
+      "Cumplimiento: usar la skill para generar reportes de seguridad que cumplan con requisitos de compliance. Los resultados son independientemente verificables."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skill en formato agnostic0 segun el README de Cloudflare. Extraer la metodologia de auditoria multi-fase a SKILL.md. Los pasos de auditoria son universales.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Skill oficial de Cloudflare. Estandar para auditoria de seguridad con agentes. Resultados maquina-legibles.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "seguridad"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/cloudflare/security-audit-skill",
+      "Configurar el skill para el entorno del cliente",
+      "Ejecutar auditoria multi-fase siguiendo las instrucciones del README",
+      "Revisar hallazgos verificables generados por el skill",
+      "Implementar remediaciones recomendadas",
+      "Repetir auditoria para verificar cierre de hallazgos"
+    ]
+  },
+  {
+    "id": "alibaba-open-code-review",
+    "nombre": "Alibaba Open Code Review",
+    "url": "https://github.com/alibaba/open-code-review",
+    "tipo": "Herramienta",
+    "categoria": "desarrollo",
+    "descripcion": "Herramienta de code review de Alibaba: pipelines deterministicos + LLM Agent. Precisa, rapida, probada a escala de Alibaba.",
+    "estrellas": 41903,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "code-review",
+      "agent-skills",
+      "harness",
+      "repository-level-context"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Code review automatizado con arquitectura hibrida: pipelines deterministicos + agente LLM",
+    "por_que": "41k estrellas, creado por Alibaba. Arquitectura hibrida que combina reglas deterministicas con IA. Probado a escala masiva.",
+    "alternativas": [
+      "mattpocock-skills"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Code review automatizado: integrar en el pipeline CI/CD del cliente. La herramienta ejecuta revisiones deterministicas y luego aplica el agente LLM para revision contextual.",
+      "Revision de PRs: configurar para que revise automaticamente cada Pull Request. Los hallazgos deterministicos son inmediatos; el agente LLM agrega contexto adicional.",
+      "Estandar de calidad: usar las reglas deterministicas para garantizar estandares minimos de codigo. El agente LLM identifica problemas de diseno y arquitectura.",
+      "Escala empresarial: la herramienta esta probada a escala de Alibaba. Ideal para clientes con equipos de desarrollo grandes y muchos PRs diarios."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Arquitectura hibrida: los pipelines deterministicos son independientes del modelo. El agente LLM se conecta via API estandar y se puede configurar con cualquier proveedor.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Code review hibrido de Alibaba. Combina lo mejor de reglas deterministicas + IA. Probado a escala masiva.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/alibaba/open-code-review",
+      "Instalar dependencias: pip install -r requirements.txt",
+      "Configurar el pipeline deterministico con las reglas del equipo",
+      "Conectar el agente LLM via API (OpenAI-compatible)",
+      "Integrar en el CI/CD del proyecto para revision automatica de PRs",
+      "Ajustar reglas deterministicas segun los estandares del equipo"
+    ]
+  },
+  {
+    "id": "openmotion",
+    "nombre": "OpenMotion",
+    "url": "https://openmotion.design/",
+    "tipo": "Herramienta",
+    "categoria": "general",
+    "descripcion": "Crea videos de lanzamiento desde un prompt. Motion designer AI con control creativo. #11 en Product Hunt.",
+    "estrellas": 0,
+    "licencia": "N/A",
+    "ultimo_commit": "N/A",
+    "tags": [
+      "video",
+      "motion-design",
+      "ai-video",
+      "product-hunt"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Crear videos de lanzamiento y motion graphics desde una descripcion de texto",
+    "por_que": "#11 en Product Hunt. Genera videos de lanzamiento desde un prompt con control creativo.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Videos de lanzamiento: crear videos promocionales para nuevos servicios de PropulsarIA. Describir el mensaje y el estilo, OpenMotion genera el video.",
+      "Contenido para LinkedIn: generar videos cortos de motion graphics para promocionar contenido en LinkedIn. Atrae mas atencion que imagenes estaticas.",
+      "Presentaciones de propuestas: incluir videos de apertura en las propuestas de ImplementarIA. Un video de 15s de motion graphics causa mejor impresion.",
+      "Prototipado visual: antes de producir un video completo, usar OpenMotion para prototipar la idea y mostrarla al cliente para aprobacion."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Servicio web SaaS. No depende de ningun modelo LLM especifico.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Herramienta SaaS para motion design desde prompt. Util para marketing y presentaciones.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "video",
+      "diseno"
+    ]
+  },
+  {
+    "id": "designmd",
+    "nombre": "DESIGN.md",
+    "url": "https://designmd.ai/",
+    "tipo": "Herramienta",
+    "categoria": "desarrollo",
+    "descripcion": "Sistema de diseno de Google en formato markdown. 100s de sistemas de diseno gratuitos para desarrollo con IA.",
+    "estrellas": 0,
+    "licencia": "Open",
+    "ultimo_commit": "N/A",
+    "tags": [
+      "design-systems",
+      "design-md",
+      "google",
+      "ai-coding",
+      "ui"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Sistemas de diseno en formato markdown que las herramientas de IA leen para construir UI consistente",
+    "por_que": "Formato abierto de Google. Un solo archivo markdown que cualquier AI coding tool lee para construir UI consistente.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "UI consistente con IA: crear un DESIGN.md para el proyecto del cliente. La herramienta de IA (Claude, Codex, etc.) lo lee y genera UI consistente con el sistema de diseno.",
+      "Estandarizar diseno: definir colores, tipografia, espaciado y componentes en un solo archivo. Todas las UI generadas por IA seguiran el mismo sistema.",
+      "Onboarding de agentes: incluir DESIGN.md en el contexto del agente para que genere interfaces que coincidan con la marca del cliente.",
+      "PropulsarIA web: crear un DESIGN.md para el sitio de PropulsarIA. Cualquier agente que trabaje en el proyecto generara UI consistente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Formato markdown universal. Cualquier AI coding tool (Claude, Codex, Cursor, Gemini) puede leer DESIGN.md.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Estandar de Google para sistemas de diseno en markdown. Util para mantener consistencia visual en proyectos con IA.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "diseno",
+      "desarrollo"
+    ]
+  },
+  {
+    "id": "minimal-gallery",
+    "nombre": "Minimal Gallery",
+    "url": "https://minimal.gallery/",
+    "tipo": "Recursos",
+    "categoria": "desarrollo",
+    "descripcion": "Galeria curada de inspiracion de diseno web, templates premium, herramientas y mas. Diseno minimalista seleccionado a mano.",
+    "estrellas": 0,
+    "licencia": "N/A",
+    "ultimo_commit": "N/A",
+    "tags": [
+      "design",
+      "inspiration",
+      "templates",
+      "web-design",
+      "gallery"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Inspiracion de diseno web minimalista con templates y herramientas seleccionadas",
+    "por_que": "Coleccion curada de diseno web de alta calidad. Util como referencia visual para proyectos de clientes.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Inspiracion para disenos: buscar referencias visuales en Minimal Gallery antes de disenar sitios web para clientes. El estilo minimalista es tendencia.",
+      "Templates para propuestas: usar templates de la galeria como base para maquetas rapidas en propuestas de ImplementarIA.",
+      "Referencia de UX: estudiar los patrones de navegacion y layout de los sitios destacados. Aplicar principios de diseno minimalista a proyectos.",
+      " moodboard para clientes: crear moodboards con ejemplos de Minimal Gallery para que el cliente elija el estilo visual que prefiere."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Sitio web de referencia. No depende de modelos IA.",
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Fuente de inspiracion de diseno web. Util como referencia visual en proyectos.",
+    "estado": "nuevo",
+    "aplicacion": [
+      "diseno"
+    ]
+  },
+  {
+    "id": "humanizalo",
+    "nombre": "Humanizalo",
+    "url": "https://github.com/Hainrixz/humanizalo",
+    "tipo": "Skills",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "general",
+    "descripcion": "Skill de Claude Code que detecta 40 patrones de escritura AI y reescribe texto para sonar humano. Bucle de auto-auditoria.",
+    "estrellas": 90,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "humanize",
+      "ai-writing",
+      "claude-code-skill",
+      "text"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Humanizar texto generado por IA para que suene natural y detectar patrones roboticos de escritura",
+    "por_que": "90 estrellas. Detecta 40 patrones especificos de escritura AI. Bucle de auto-auditoria para mejora continua.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Contenido para clientes: pasar el texto generado por IA por Humanizalo antes de enviarlo al cliente. Elimina patrones roboticos y suena mas natural.",
+      "Posts de LinkedIn: humanizar el contenido de LinkedIn de PropulsarIA para que suene autentico y no generado por IA.",
+      "Propuestas y documentos: aplicar a propuestas formales para que el lenguaje sea mas natural y persuasivo, manteniendo profesionalismo.",
+      "Auto-auditoria: el bucle de auto-auditoria revisa el texto humanizado y asegura que cumpla con los estandares antes de entregar."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skill en formato Claude Code. Extraer los 40 patrones de deteccion a SKILL.md de Hermes. Las reglas de deteccion son independientes del modelo.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/Hainrixz/humanizalo",
+      "Copiar la skill al directorio de skills de Claude Code",
+      "Probar con texto generado por IA: ejecutar la skill sobre el texto",
+      "Revisar los patrones detectados y las correcciones sugeridas",
+      "Extraer las reglas a SKILL.md de Hermes para uso con otros CLIs"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Util para mejorar la calidad del contenido generado por IA. Los 40 patrones son una referencia valiosa incluso sin la skill.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "nano-banana-pro",
+    "nombre": "Nano Banana Pro (Claude Banana)",
+    "url": "https://github.com/YouMind-OpenLab/nano-banana-pro-prompts-recommend-skill",
+    "tipo": "Skills",
+    "aplicacion": [
+      "video",
+      "diseno"
+    ],
+    "categoria": "general",
+    "descripcion": "Skill de IA que recomienda desde 10,000+ prompts de imagen de Nano Banana Pro (Gemini). Busqueda inteligente por caso de uso y estilo.",
+    "estrellas": 1861,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "ai-image",
+      "prompts",
+      "gemini",
+      "content-creation",
+      "claude-code-skill"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Encontrar prompts optimizados para generacion de imagenes con IA, categorizados por uso y estilo",
+    "por_que": "1.8k estrellas. Acceso a 10,000+ prompts curados. Busqueda inteligente por caso de uso.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Generacion de imagenes para clientes: buscar prompts especificos para el tipo de imagen que necesita el cliente (producto, persona, escenario).",
+      "Contenido visual para PropulsarIA: generar imagenes consistentes para posts de LinkedIn, presentaciones y material de marketing.",
+      "Inspiracion creativa: explorar los 10,000+ prompts organizados por estilo y caso de uso para encontrar nuevas ideas visuales.",
+      "Prototipado rapido: generar opciones visuales rapidas para presentar a clientes sin necesidad de un disenador."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skill en formato Claude Code que recomienda prompts. Los prompts en si mismos son agnosticos y funcionan con Gemini, DALL-E, Midjourney, etc. Extraer la base de prompts a un archivo JSON independiente.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/YouMind-OpenLab/nano-banana-pro-prompts-recommend-skill",
+      "Instalar la skill en Claude Code",
+      "Usar el comando de busqueda para encontrar prompts por caso de uso",
+      "Copiar el prompt recomendado al generador de imagenes deseado (Gemini, DALL-E, etc.)",
+      "Opcional: extraer la base de 10,000+ prompts a JSON para usarla con cualquier herramienta"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Biblioteca masiva de prompts de imagen. Util para generacion visual rapida. Los prompts son agnosticos aunque la skill sea de Claude.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "archon",
+    "nombre": "Archon",
+    "url": "https://github.com/coleam00/Archon",
+    "tipo": "Framework",
+    "aplicacion": [
+      "agentes",
+      "desarrollo"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "El primer harness builder open-source para AI coding. Hace el desarrollo con IA determinista y repetible.",
+    "estrellas": 23568,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "agent-harness",
+      "ai-coding",
+      "deterministic",
+      "open-source",
+      "harness-builder"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Construir harnesses deterministas para agentes de IA que ejecutan tareas de codigo de forma repetible y predecible",
+    "por_que": "23.5k estrellas. Enfoque unico en hacer el desarrollo con IA determinista y repetible. Framework solido y activo.",
+    "alternativas": [
+      "ruflo"
+    ],
+    "casos_de_uso": [
+      "Desarrollo determinista con IA: usar Archon para construir harnesses que ejecuten tareas de codigo de forma predecible. Los resultados son repetibles, no aleatorios.",
+      "Automatizacion de tareas de desarrollo: configurar Archon para tareas especificas (refactoring, testing, documentacion). Cada ejecucion produce resultados consistentes.",
+      "CI/CD con IA: integrar Archon en pipelines de CI/CD para tareas automatizadas de codigo. Los harnesses garantizan comportamiento predecible.",
+      "Alternativa a Ruflo: si Ruflo es demasiado complejo, Archon ofrece un enfoque mas enfocado en desarrollo de software."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Framework agnostico que se conecta a diferentes LLMs via API. Soporta OpenAI, Anthropic y otros proveedores.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/coleam00/Archon",
+      "Instalar dependencias: pip install -r requirements.txt",
+      "Configurar API keys de LLM en el archivo de configuracion",
+      "Definir un harness para la tarea especifica (refactoring, testing, etc.)",
+      "Ejecutar: python run.py --harness <nombre> --task <descripcion>",
+      "Revisar resultados y ajustar el harness segun sea necesario"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Framework prometedor para desarrollo determinista con IA. Enfoque diferente a Ruflo: mas orientado a codigo que a orquestacion general.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "slavingia-skills",
+    "nombre": "Slavingia Skills",
+    "url": "https://github.com/slavingia/skills",
+    "tipo": "Skills",
+    "aplicacion": [
+      "ventas",
+      "consultoria"
+    ],
+    "categoria": "general",
+    "descripcion": "Skills basadas en The Minimalist Entrepreneur de Sahil Lavingia. Metodologia para emprender con recursos minimos.",
+    "estrellas": 10803,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "entrepreneur",
+      "minimalist",
+      "business",
+      "skills",
+      "startup"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Skills de emprendimiento minimalista: validar ideas, construir MVPs, encontrar clientes sin inversion",
+    "por_que": "10.8k estrellas. Basado en el libro bestseller. Metodologia practica y probada para emprendedores.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Validacion de ideas de negocio: usar las skills para aplicar la metodologia Minimalist Entrepreneur. El agente guia el proceso de validacion paso a paso.",
+      "Consultoria para emprendedores: aplicar las skills con clientes que quieren lanzar un negocio con recursos minimos. La metodologia esta estructurada en pasos claros.",
+      "Construccion de MVPs: las skills incluyen guias para construir productos minimos viables sin desarrollar funcionalidades innecesarias.",
+      "Estrategia de crecimiento: aplicar los principios de crecimiento minimalista para clientes con presupuestos limitados."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skills en formato Claude Code. Extraer la metodologia de emprendimiento minimalista a SKILL.md. Los principios de negocio son universales.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/slavingia/skills",
+      "Revisar las skills disponibles en el directorio",
+      "Seleccionar la skill segun la etapa del cliente (validacion, MVP, crecimiento)",
+      "Extraer la metodologia a SKILL.md de Hermes para uso con cualquier agente",
+      "Aplicar la metodologia paso a paso con el cliente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Metodologia de emprendimiento minimalista. Util para clientes que empiezan o que tienen presupuestos limitados.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "agent-kit",
+    "nombre": "Agent Kit (KeyID)",
+    "url": "https://github.com/KeyID-AI/agent-kit",
+    "tipo": "Conexiones",
+    "aplicacion": [
+      "desarrollo",
+      "integraciones"
+    ],
+    "categoria": "integraciones",
+    "descripcion": "Kit de herramientas MCP para agentes IA: email, SMS, contactos. 27 herramientas MCP para Claude/Cursor. Gratis, sin registro.",
+    "estrellas": 661,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "mcp",
+      "email",
+      "sms",
+      "claude",
+      "agent-kit",
+      "tools"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Dar a los agentes IA capacidades de email, SMS y contactos via MCP tools",
+    "por_que": "661 estrellas. 27 herramientas MCP listas para usar. Gratis, sin registro. Conecta agentes con comunicaciones reales.",
+    "alternativas": [
+      "composio"
+    ],
+    "casos_de_uso": [
+      "Email para agentes: los agentes pueden leer, enviar y responder correos electronicos usando las MCP tools. Util para automatizar comunicaciones con clientes.",
+      "SMS desde agentes: enviar mensajes de texto automaticos desde agentes IA. Complementa WhatsApp para notificaciones y alertas.",
+      "Gestion de contactos: los agentes pueden buscar y gestionar contactos. Integrar con CRM para mantener la informacion actualizada.",
+      "Automatizacion de comunicaciones: combinar email + SMS en flujos automatizados. Por ejemplo: enviar email de bienvenida y SMS de recordatorio."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Usa MCP protocolo estandar que funciona con cualquier cliente MCP. Para hacerlo agnostico: los MCP servers se pueden conectar a cualquier agente compatible con MCP (Claude Desktop, Codex, etc.).",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/KeyID-AI/agent-kit",
+      "Seguir las instrucciones de instalacion de MCP tools en el README",
+      "Configurar las herramientas deseadas (email, SMS, contactos)",
+      "Conectar al agente via MCP (Claude Desktop, Codex, etc.)",
+      "Probar: pedir al agente que envie un email o SMS de prueba"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Util para dar capacidades de comunicacion a agentes. Las MCP tools son modulares: usar solo las necesarias.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "aws-agent-plugins",
+    "nombre": "AWS Agent Plugins (The Architect)",
+    "url": "https://github.com/awslabs/agent-plugins",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura",
+      "desarrollo"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Plugins de agentes para AWS que equipan a agentes de IA coding con skills para arquitecturar, desplegar y operar en AWS.",
+    "estrellas": 904,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "aws",
+      "agent-plugins",
+      "cloud",
+      "devops",
+      "infrastructure"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Skills para que agentes IA arquitecturen, desplieguen y operen infraestructura en AWS",
+    "por_que": "904 estrellas, creado por AWS Labs. Skills oficiales para gestion de infraestructura cloud con agentes.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Arquitectura cloud con IA: el agente puede disenar arquitecturas AWS basadas en requisitos del cliente. Incluye mejores practicas de AWS.",
+      "Despliegue automatizado: los plugins permiten al agente desplegar infraestructura directamente desde la conversacion.",
+      "Operaciones y monitoreo: el agente puede verificar el estado de los servicios AWS, revisar logs y diagnosticar problemas.",
+      "Optimizacion de costos: el agente analiza el uso de AWS y sugiere optimizaciones para reducir costos de infraestructura."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Plugins que se conectan a AWS via API. El agente solo necesita acceso a la API de AWS, no depende de un LLM especifico.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/awslabs/agent-plugins",
+      "Configurar credenciales de AWS en el entorno",
+      "Instalar los plugins en el agente de IA coding",
+      "Probar: pedir al agente que describa la arquitectura actual de AWS",
+      "Usar los plugins para tareas de arquitectura, despliegue y operaciones"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Skills oficiales de AWS para agentes. Ideal para clientes con infraestructura en AWS que quieran gestionarla con IA.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "composio",
+    "nombre": "Composio",
+    "url": "https://github.com/ComposioHQ/composio",
+    "tipo": "Conexiones",
+    "aplicacion": [
+      "desarrollo",
+      "integraciones"
+    ],
+    "categoria": "integraciones",
+    "descripcion": "1000+ toolkits pre-autenticados, busqueda de herramientas, gestion de contexto, autenticacion y workbench para construir agentes IA.",
+    "estrellas": 30339,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "agentic-ai",
+      "agents",
+      "mcp",
+      "tools",
+      "authentication",
+      "function-calling"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Conectar agentes IA con 1000+ herramientas y APIs sin escribir codigo de autenticacion",
+    "por_que": "30k estrellas. 1000+ toolkits listos. Autenticacion OAuth integrada. Workbench para pruebas. SDK multi-lenguaje.",
+    "alternativas": [
+      "agent-kit"
+    ],
+    "casos_de_uso": [
+      "Conectar agentes con herramientas empresariales: usar Composio para dar a los agentes acceso a Gmail, Slack, GitHub, Jira, etc. La autenticacion OAuth esta pre-configurada.",
+      "Tool search: el buscador de herramientas de Composio encuentra el toolkit adecuado para cada tarea. El agente descubre automaticamente que herramientas tiene disponibles.",
+      "Context management: Composio maneja el contexto de las herramientas automaticamente. El agente no necesita recordar tokens ni estados de autenticacion.",
+      "Sandbox: probar herramientas en un workbench aislado antes de ponerlas en produccion. Ideal para desarrollo y debugging de agentes."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "SDK disponible en Python, JS, Java y otros. Compatible con cualquier agente via REST API o MCP. No depende de un LLM especifico.",
+    "pasos_implementacion": [
+      "Crear cuenta en composio.dev y obtener API key",
+      "Instalar SDK: pip install composio-core",
+      "Autenticar herramientas: composio add github (o la herramienta deseada)",
+      "Conectar el agente a Composio via SDK o MCP",
+      "Probar: pedir al agente que use una herramienta conectada",
+      "Configurar en produccion con las herramientas del cliente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Plataforma de integracion de herramientas mas completa. Ideal para dar a los agentes acceso a herramientas empresariales sin configurar OAuth manualmente.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "coolify",
+    "nombre": "Coolify",
+    "url": "https://github.com/coollabsio/coolify",
+    "tipo": "Plataforma",
+    "aplicacion": [
+      "infraestructura",
+      "desarrollo"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Plataforma PaaS open-source auto-hospedable. Alternativa a Vercel, Heroku y Netlify. Despliega sitios estaticos, APIs, bases de datos y mas.",
+    "estrellas": 62319,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "paas",
+      "self-hosted",
+      "deployment",
+      "devops",
+      "docker"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Auto-hospedar aplicaciones y servicios con facilidad, similar a Heroku pero en tu propio servidor",
+    "por_que": "62k estrellas. Alternativa madura a Vercel/Heroku. Auto-hospedable. Soporta cualquier tipo de aplicacion.",
+    "alternativas": [
+      "vercel",
+      "heroku"
+    ],
+    "casos_de_uso": [
+      "Hosting de aplicaciones ImplementarIA: desplegar las soluciones de los clientes en Coolify en lugar de depender de Vercel o Heroku. Control total sobre la infraestructura.",
+      "Despliegue de agentes: alojar agentes IA y sus APIs en Coolify. Los agentes se despliegan como servicios Docker con dominio propio.",
+      "Base de datos para agentes: Coolify puede alojar PostgreSQL, MySQL, Redis y MongoDB. Todo en el mismo servidor que los agentes.",
+      "Alternativa economica: un VPS de $6/mes con Coolify reemplaza multiples servicios cloud (Vercel + Heroku + Railway)."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Plataforma de hosting. No depende de ningun LLM o agente. Funciona con cualquier tecnologia.",
+    "pasos_implementacion": [
+      "Tener un VPS (DigitalOcean $12/mes, Hostinger $6/mes, etc.)",
+      "Ejecutar: curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash",
+      "Acceder a la UI en http://<IP>:8000 y configurar el servidor",
+      "Conectar el repositorio git del proyecto (GitHub, GitLab, etc.)",
+      "Configurar dominio SSL automatico con Cloudflare o DNS propio",
+      "Desplegar la aplicacion con un clic desde la UI de Coolify"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Plataforma de hosting esencial para implementaciones. Ideal para clientes que quieren control total sobre su infraestructura sin pagar precios cloud.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "typeless",
+    "nombre": "Typeless",
+    "url": "https://github.com/xueyuanhuang/typeless",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "general",
+    "descripcion": "Prototipo macOS para entrada de voz con IA en chino. Transcribe audio, reescribe el texto, copia y pega automaticamente.",
+    "estrellas": 0,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "voice-input",
+      "macos",
+      "transcription",
+      "ai"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Entrada de voz con IA: habla y el texto se transcribe, reescribe y pega automaticamente en cualquier app",
+    "por_que": "Prototipo innovador para entrada de voz con IA. Flujo completo: voz → transcripcion → reescritura → pegado automatico.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Entrada de voz para agentes: usar Typeless como interfaz de voz para interactuar con agentes IA. Hablar en lugar de escribir prompts.",
+      "Toma de notas rapida: dictar ideas, reuniones o reflexiones. Typeless transcribe, reescribe y pega automaticamente en la app activa.",
+      "Flujo de trabajo manos libres: ideal para momentos donde no se puede escribir (conduciendo, cocinando, etc.).",
+      "Integracion con agentes locales: Typeless Lite expone una API local que agentes como OpenClaw pueden consultar para obtener transcripciones."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Usa OpenAI API para transcripcion y reescritura. Cambiando la base URL se puede usar cualquier provider OpenAI-compatible.",
+    "pasos_implementacion": [
+      "Clonar el repo y compilar: ./scripts/build-app.sh",
+      "O descargar Typeless Lite desde releases",
+      "Configurar API key de OpenAI en el menu de la app",
+      "Conceder permisos de accesibilidad y microfono",
+      "Usar: mantener Option+Space, hablar, soltar — el texto se pega automaticamente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Util como interfaz de voz para agentes. Solo macOS por ahora. La version Lite tiene API local para agentes.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "superpowers",
+    "nombre": "Superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "tipo": "Skills",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Framework de skills agenticas y metodologia de desarrollo de software. 25+ skills: TDD, brainstorming, code review, planning, debugging sistematico.",
+    "estrellas": 292180,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "skills",
+      "tdd",
+      "code-review",
+      "planning",
+      "debugging",
+      "agentic"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Metodologia completa de desarrollo con agentes: escribir planes, test-first, revisar codigo, debugear sistematicamente",
+    "por_que": "292k estrellas. El framework de skills para desarrollo mas usado en el ecosistema. 25+ skills que cubren todo el ciclo de desarrollo.",
+    "alternativas": [],
+    "contiene_sub_recursos": true,
+    "sub_recursos": [
+      {
+        "nombre": "test-driven-development",
+        "descripcion": "Metodologia RED-GREEN-REFACTOR para escribir codigo"
+      },
+      {
+        "nombre": "brainstorming",
+        "descripcion": "Proceso estructurado de lluvia de ideas antes de planificar"
+      },
+      {
+        "nombre": "writing-plans",
+        "descripcion": "Escribir planes de implementacion accionables"
+      },
+      {
+        "nombre": "systematic-debugging",
+        "descripcion": "Depuracion por fases: entender antes de arreglar"
+      },
+      {
+        "nombre": "requesting-code-review",
+        "descripcion": "Revision de codigo pre-commit con checklist"
+      },
+      {
+        "nombre": "subagent-driven-development",
+        "descripcion": "Desarrollo delegado a subagentes con revision en 2 etapas"
+      }
+    ],
+    "casos_de_uso": [
+      "Implementar TDD en proyectos: usar la skill test-driven-development para escribir tests antes del codigo. El agente sigue el ciclo RED-GREEN-REFACTOR automaticamente.",
+      "Planificar implementaciones: usar writing-plans para generar planes accionables antes de codificar. Los planes se escriben en markdown en .hermes/plans/.",
+      "Code review automatizado: usar requesting-code-review antes de cada commit. El agente revisa seguridad, calidad y estilo siguiendo el checklist.",
+      "Debugging sistematico: usar systematic-debugging cuando algo falla. El agente entiende la causa raiz antes de proponer fixes."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Las skills son archivos SKILL.md en formato universal. Funcionan con Claude Code, Codex, OpenCode, Cursor y Hermes Agent sin cambios.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/obra/superpowers",
+      "Copiar las skills a tu directorio de skills (~/.claude/skills/ o el equivalente de tu agente)",
+      "Activar las skills principales: test-driven-development, writing-plans, systematic-debugging",
+      "Probar con un proyecto pequeno: escribir un plan, implementar con TDD, solicitar code review",
+      "Adaptar los prompts a tu stack si es necesario"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "El framework de skills de desarrollo mas completo. Incluye las skills Brainstorming y TDD que aparecian separadas en la lista. Ideal como base metodologica para ImplementarIA nivel desarrollo.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "ui-ux-pro-max-skill",
+    "nombre": "UI/UX Pro Max",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "tipo": "Skills",
+    "aplicacion": [
+      "diseno"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Skill que proporciona inteligencia de diseno para construir UI/UX profesional en multiples plataformas.",
+    "estrellas": 131029,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "ui",
+      "ux",
+      "design",
+      "frontend",
+      "skill"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Generar interfaces profesionales aplicando principios de diseno: jerarquia, espaciado, color, tipografia",
+    "por_que": "131k estrellas. Inteligencia de diseno estructurada para agentes. Cubre UI/UX en multiplataformas.",
+    "alternativas": [
+      "design-md",
+      "claude-design"
+    ],
+    "casos_de_uso": [
+      "Disenar interfaces para clientes: usar la skill para generar UI profesional aplicando principios de diseno. El agente produce pantallas consistentes sin necesidad de un disenador.",
+      "Mejorar UI existente: aplicar la skill sobre un frontend ya construido para corregir jerarquia visual, espaciado y accesibilidad.",
+      "Landing pages y dashboards: la skill guia la creacion de landing pages y dashboards con estetica profesional."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Skill en formato SKILL.md universal. Funciona con cualquier agente compatible con skills.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "Instalar la skill en tu agente (copiar a skills dir o usar el comando del marketplace)",
+      "Pedir al agente disenar una interfaz indicando el tipo (landing, dashboard, mobile)",
+      "Revisar el resultado y ajustar con prompts de refinamiento"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Complementaria a DESIGN.md (especificacion) y Excalidraw (diagramas). Esta da la inteligencia de diseno directamente al agente que genera codigo.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "caveman",
+    "nombre": "Caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "tipo": "Skills",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Skill viral + proxy para agentes de codigo que reduce 65% de los tokens usados. Codigo simple y directo.",
+    "estrellas": 108067,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "tokens",
+      "optimization",
+      "coding",
+      "proxy",
+      "skill"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Reducir tokens y simplificar respuestas de agentes de codigo: codigo directo, sin explicaciones innecesarias",
+    "por_que": "108k estrellas. Viral por reducir 65% del uso de tokens. Ideal para proyectos con limites de API.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Reducir costo de API: activar Caveman en agentes que trabajan con presupuestos limitados. Menos tokens = menos costo.",
+      "Codigo mas directo: el agente produce codigo sin comentarios innecesarios ni sobre-ingenieria. Ideal para prototipos rapidos.",
+      "Procesamiento por lotes: usar en tareas repetitivas de generacion de codigo donde cada token cuenta."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Skill + proxy agnostico. Funciona con cualquier agente que pueda ejecutar shell commands o consumir skills.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/JuliusBrussee/caveman",
+      "Seguir el README para instalar la skill o el proxy",
+      "Activar Caveman en el agente objetivo",
+      "Medir el uso de tokens antes/despues para verificar la reduccion"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Util para reducir costos de API en implementaciones con muchos tokens. Complementario a Superpowers, no lo reemplaza.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "humanizer",
+    "nombre": "Humanizer",
+    "url": "https://github.com/op7418/Humanizer-zh",
+    "tipo": "Skills",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "general",
+    "descripcion": "Skill de Claude Code que elimina las marcas de texto generado por IA. Detecta y corrige patrones roboticos. Version chino-ingles con 18.5k estrellas.",
+    "estrellas": 18588,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "humanize",
+      "ai-writing",
+      "text",
+      "skill"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Humanizar texto generado por IA: eliminar patrones que delatan que fue escrito por un modelo",
+    "por_que": "18.5k estrellas. Diferente de humanizalo (90 star): este es la version mas usada del Humanizer original.",
+    "alternativas": [
+      "humanizalo"
+    ],
+    "casos_de_uso": [
+      "Contenido para clientes: humanizar cualquier texto generado antes de entregarlo al cliente o publicarlo.",
+      "Posts de LinkedIn: eliminar las marcas de IA que hacen que el contenido suene generico y robotic.",
+      "Documentos y propuestas: aplicar para que los documentos de PropulsarIA suenen naturales sin perder profesionalismo."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Extraer las reglas de deteccion de patrones AI a una skill SKILL.md universal. Las reglas son independientes del modelo.",
+    "pasos_implementacion": [
+      "Clonar el repo: git clone https://github.com/op7418/Humanizer-zh",
+      "Instalar como skill en Claude Code",
+      "Pasar texto generado por IA a la skill para que lo humanice",
+      "Verificar manualmente el resultado antes de publicar"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "La version mas conocida del Humanizer. Complementa humanizalo (ya en biblioteca): ambas hacen lo mismo, esta tiene mas adopcion. Evaluar cual conservar tras probar.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "remotion",
+    "nombre": "Remotion",
+    "url": "https://github.com/remotion-dev/remotion",
+    "tipo": "Framework",
+    "aplicacion": [
+      "video"
+    ],
+    "categoria": "general",
+    "descripcion": "Framework para crear videos programaticamente con React. Videos reales con codigo: composiciones, animaciones, TTS sincronizado.",
+    "estrellas": 60760,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "video",
+      "react",
+      "animation",
+      "programmatic-video"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Crear videos con codigo React/TypeScript: videos de producto, explicativos, anuncios, con control total",
+    "por_que": "60k estrellas. Ya usado en PropulsarIA (video de niveles). Framework estandar para video programatico.",
+    "alternativas": [
+      "openmontage"
+    ],
+    "casos_de_uso": [
+      "Videos de producto: crear videos de lanzamiento y demostracion programaticamente. Control total sobre cada frame.",
+      "Videos para clientes: generar videos explicativos y anuncios para clientes de ImplementarIA con datos reales.",
+      "Contenido de marketing: videos para LinkedIn y redes, consistentes con la marca, generados por codigo.",
+      "Video con datos dinamicos: renderizar dashboards o metricas como video animado."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Framework de codigo (React/TS). No depende de LLMs. Se integra con cualquier agente o pipeline.",
+    "pasos_implementacion": [
+      "Instalar: npm init video (o clonar el ejemplo de Remotion)",
+      "Crear composiciones en TypeScript/React",
+      "Renderizar: npx remotion render <comp> <out.mp4>",
+      "Opcional: integrar TTS con la skill remotion-video de Hermes para voz sincronizada",
+      "Publicar el video en la plataforma deseada"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Ya lo usamos en PropulsarIA para el video de niveles. Incluirlo formalmente en la biblioteca como recurso de video.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "herdr",
+    "nombre": "Herdr",
+    "url": "https://github.com/herdrdev/herdr",
+    "tipo": "Framework",
+    "aplicacion": [
+      "agentes",
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "El runtime donde viven tus coding agents. Orquestacion y gestion del ciclo de vida de agentes de codigo.",
+    "estrellas": 41022,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "agent-orchestration",
+      "ai-agents",
+      "claude-code",
+      "runtime"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Gestionar y ejecutar coding agents en un runtime dedicado",
+    "por_que": "41k estrellas. Runtime especializado para coding agents con orquestacion integrada.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Desplegar coding agents: usar Herdr como runtime para ejecutar agentes de codigo de forma confiable. Gestiona ciclo de vida, logs y recursos.",
+      "Orquestacion de agentes: coordinar multiples coding agents en paralelo para tareas de desarrollo grandes.",
+      "Entorno de produccion: ejecutar agentes en un runtime de produccion en lugar de la terminal local."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Runtime agnostico que ejecuta cualquier agente o CLI. No depende de un LLM especifico.",
+    "pasos_implementacion": [
+      "Instalar/clonar: git clone https://github.com/herdrdev/herdr",
+      "Seguir el README para configurar el runtime local",
+      "Conectar un coding agent al runtime",
+      "Ejecutar una tarea de prueba y verificar logs"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Nuevo en la lista. Runtime para coding agents en produccion.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "graphify",
+    "nombre": "Graphify",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "tipo": "Visualizacion",
+    "aplicacion": [
+      "desarrollo",
+      "datos"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Convierte cualquier codebase, con su documentacion, esquemas SQL, configs y PDFs, en un knowledge graph consultable.",
+    "estrellas": 121874,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "knowledge-graph",
+      "code-analysis",
+      "ai-agents",
+      "codebase"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Generar knowledge graphs consultables de codebases completas",
+    "por_que": "121k estrellas. Similar a Understand Anything pero incluye docs, SQL schemas y PDFs.",
+    "alternativas": [
+      "understand-anything"
+    ],
+    "casos_de_uso": [
+      "Explorar codebases: usar Graphify para convertir un repo en knowledge graph y consultarlo semanticamente antes de modificar codigo.",
+      "Onboarding: nuevos desarrolladores consultan el grafo para entender la arquitectura sin leer todo el codigo.",
+      "RAG sobre codigo: el grafo funciona como base de conocimiento para agentes que modifican el codigo.",
+      "Documentacion viva: docs y schemas SQL incluidos en el grafo para consultas cruzadas."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Herramienta de analisis estatico que genera grafos. Los grafos son consumibles por cualquier agente via consultas semanticas.",
+    "pasos_implementacion": [
+      "Instalar: clonar https://github.com/Graphify-Labs/graphify y seguir el README",
+      "Apuntar el grafo a un codebase: graphify --path <repo>",
+      "Consultar: pedir al agente buscar en el grafo por conceptos",
+      "Integrar con agentes de desarrollo como fuente de contexto"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Complementa Understand Anything (ya en biblioteca): este incluye docs y SQL.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "omniroute",
+    "nombre": "OmniRoute",
+    "url": "https://github.com/diegosouzapw/OmniRoute",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura",
+      "agentes"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "AI gateway gratuito MIT: un solo endpoint, 359 proveedores (150+ gratis), 1200+ modelos (Kimi, Claude, GPT, Gemini).",
+    "estrellas": 70779,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "ai-gateway",
+      "llm-routing",
+      "multi-provider",
+      "models"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Unificar acceso a 359 proveedores de LLM desde un solo endpoint",
+    "por_que": "70k estrellas. Gratis, MIT, 150+ proveedores gratis. Simplifica la integracion de modelos.",
+    "alternativas": [
+      "funet",
+      "openrouter"
+    ],
+    "casos_de_uso": [
+      "Acceso unificado a LLMs: usar OmniRoute como gateway unico para Claude, GPT, Gemini, Kimi desde un endpoint. Cambiar de proveedor sin tocar codigo.",
+      "Reduccion de costos: enrutar a modelos gratuitos o de bajo costo automaticamente con fallback.",
+      "Multi-proveedor en una app: exponer un endpoint OpenAI-compatible pero respaldado por 359 providers.",
+      "Coding agents: conectar agentes (Claude Code, Codex) al gateway para usar cualquier modelo."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Gateway agnostico por diseno: expone OpenAI-compatible y enruta a cualquier proveedor.",
+    "pasos_implementacion": [
+      "Clonar y seguir el README de instalacion del gateway",
+      "Configurar API keys de los proveedores deseados",
+      "Ejecutar el gateway local",
+      "Configurar la app/agente para apuntar al endpoint local"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Useful para consolidar proveedores de modelos. Alternativa self-host a OpenRouter.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "gstack",
+    "nombre": "Gstack (Claude Code setup)",
+    "url": "https://github.com/garrytan/gstack",
+    "tipo": "Skills",
+    "aplicacion": [
+      "desarrollo",
+      "agentes"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "El setup exacto de Claude Code de Garry Tan: 23 herramientas opinionadas que actuan como CEO, Designer, Eng Manager, Release Manager.",
+    "estrellas": 134340,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "claude-code",
+      "agents",
+      "setup",
+      "tools"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Setup completo de coding agents con roles organizacionales (CEO, Designer, Eng Manager)",
+    "por_que": "134k estrellas. Un setup probado de 23 herramientas con roles explicitos.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Setup de agente: usar gstack como base para configurar Claude Code/agentes con roles y herramientas definidos.",
+      "Roles organizacionales: el agente actua como CEO/Designer/Eng Manager segun la tarea, mejor estructura de trabajo.",
+      "Estandarizar entorno: replicar el setup en equipos para consistencia."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Los 23 tools son prompts/configuracion. Extraerlos a SKILL.md universales para usar con cualquier agente.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/garrytan/gstack",
+      "Seguir el README para aplicar el setup de Claude Code",
+      "Probar los roles con una tarea de ejemplo",
+      "Extraer los prompts a SKILL.md para portabilidad"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "El item 'Claude code setup' y 'Gstack' de la lista apuntan al mismo repo.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "univer",
+    "nombre": "Univer",
+    "url": "https://github.com/dream-num/univer",
+    "tipo": "Plataforma",
+    "aplicacion": [
+      "datos",
+      "desarrollo"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Office Harness para agentes IA: hojas de calculo, docs, slides, canvas, tablas relacionales y PDF en un solo runtime.",
+    "estrellas": 20154,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "spreadsheet",
+      "docs",
+      "slides",
+      "office",
+      "ai-agents"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Suite office editable por agentes: agentes leen/escriben hojas, docs y slides programaticamente",
+    "por_que": "20k estrellas. Suite office open-source diseñada como runtime para agentes.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Reportes automaticos: un agente genera y actualiza hojas de calculo o slides con resultados de analisis.",
+      "CRM/sheets para clientes: reemplazar Google Sheets embed en soluciones ImplementarIA.",
+      "Docs accionables: crear documentos que los agentes modifican tras cada ejecucion."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Runtime frontend/backend agnostico, se integra via API con cualquier agente.",
+    "pasos_implementacion": [
+      "Seguir el README/aplicaciones de ejemplo (spreadsheet, docs)",
+      "Integrar via API en la solucion del cliente",
+      "Probar lectura/escritura desde un agente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Suite office para agentes. Complementa ToolJet (apps internas) y MatrixOne (datos).",
+    "estado": "nuevo"
+  },
+  {
+    "id": "screenshot-to-code",
+    "nombre": "Screenshot to Code",
+    "url": "https://github.com/abi/screenshot-to-code",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "desarrollo",
+      "diseno"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Ingresa una captura y se convierte en codigo limpio (HTML/Tailwind/React/Vue).",
+    "estrellas": 79784,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "screenshot",
+      "code-generation",
+      "frontend",
+      "tailwind"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Convertir capturas de pantalla en codigo frontend funcional",
+    "por_que": "79k estrellas. La herramienta mas usada para screenshot-to-code.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Prototipos rapido: capturar un diseno de referencia y generar codigo funcional.",
+      "Recrear UI de clientes: convertir mockups o capturas del cliente en HTML/React.",
+      "Inspiracion: convertir disenos de Minimal Gallery/referencias en codigo."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Soporta multiples proveedores (OpenAI, Anthropic, etc.) y modelos locales.",
+    "pasos_implementacion": [
+      "Instalar siguiendo el README (docker compose o local)",
+      "Configurar API key del proveedor",
+      "Subir una captura y generar codigo",
+      "Verificar y ajustar el frontend generado"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Util para prototipado y conversion de disenos.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "higgsfield",
+    "nombre": "Higgsfield Skills",
+    "url": "https://github.com/higgsfield-ai/skills",
+    "tipo": "Skills",
+    "aplicacion": [
+      "video"
+    ],
+    "categoria": "general",
+    "descripcion": "Skills de Higgsfield para generacion de video IA con agentes de codigo.",
+    "estrellas": 1162,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "skills",
+      "video-generation",
+      "ai-video"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Generar video IA desde agents de codigo con skills especializados",
+    "por_que": "1.1k estrellas. Skills oficiales de Higgsfield para agentes.",
+    "alternativas": [
+      "opencreator",
+      "duix-avatar"
+    ],
+    "casos_de_uso": [
+      "Generacion de video: usar las skills para producir videos IA desde prompts de un agente.",
+      "Flujo creative: combinar con Remotion para edicion programatica despues de generar."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Skills en formato markdown universal, portables a cualquier agente.",
+    "pasos_implementacion": [
+      "Clonar el repo de skills",
+      "Instalar en el agente (skills dir o marketplace)",
+      "Probar generacion de un video de ejemplo"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Generacion de video IA via skills. Complementario a Remotion y OpenCreator.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "mirofish",
+    "nombre": "MiroFish",
+    "url": "https://github.com/666ghj/MiroFish",
+    "tipo": "Framework",
+    "aplicacion": [
+      "agentes",
+      "datos"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Motor de inteligencia de enjambre universal y simple. Predice cualquier cosa con multiples agentes simulando escenarios.",
+    "estrellas": 75013,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "swarm-intelligence",
+      "multi-agent",
+      "prediction",
+      "simulation"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Simulacion de escenarios con enjambres de agentes para prediccion y analisis",
+    "por_que": "75k estrellas. Motor de swarm intelligence para simulacion y prediccion.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Simulacion de escenarios de negocio: multiples agentes simulan desenlaces y el enjambre converge en una prediccion.",
+      "Analisis de decisiones: probar decisiones con simulacion antes de implementar.",
+      "Prediccion de mercado/ventas: enjambres simulan comportamientos probabilisticos."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Framework de simulacion agnostico, usa agentes LLM configurable por API.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/666ghj/MiroFish",
+      "Seguir README para desplegar el motor",
+      "Configurar LLM del enjambre (API key)",
+      "Ejecutar una simulacion de escenario"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Swarm intelligence para prediccion. Complementa Ruflo (orquestacion) con logica de simulacion.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "agent-zero",
+    "nombre": "Agent Zero",
+    "url": "https://github.com/agent0ai/agent-zero",
+    "tipo": "Framework",
+    "aplicacion": [
+      "agentes",
+      "automation"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Framework de agente abierto para trabajo que requiere mas que chat: da al agente una computadora Linux completa.",
+    "estrellas": 19313,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "agent",
+      "autonomous",
+      "linux",
+      "computer-use"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Agentes con una computadora Linux completa para tareas autonomas complejas",
+    "por_que": "19k estrellas. Enfoque unico: el agente tiene un entorno completo para operar.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Tareas autonomas largas: agentes que navegan, ejecutan y verifican en un entorno Linux real.",
+      "Automatizacion de infraestructura: el agente puede configurar servidores, instalar software.",
+      "Investigacion web: navega, descarga, parsea y ejecuta con todas las herramientas de Linux."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Framework agnostico, usa cualquier LLM configurable, el entorno es una VM Linux.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/agent0ai/agent-zero",
+      "Seguir README para inicializar (docker recomendado)",
+      "Configurar API key del LLM",
+      "Ejecutar una mision de prueba"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Agente con computadora completa. Nivel 3-4 de ImplementarIA.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "strix",
+    "nombre": "Strix",
+    "url": "https://github.com/usestrix/strix",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "seguridad"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Herramienta open-source de pentesting con IA: encuentra y corrige vulnerabilidades en tu app.",
+    "estrellas": 65221,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "pentesting",
+      "security",
+      "vulnerability",
+      "ai-security"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Automatizar pruebas de penetracion y deteccion de vulnerabilidades con IA",
+    "por_que": "65k estrellas. Herramienta de pentesting IA mas popular. Corre en terminal.",
+    "alternativas": [
+      "anthropic-cybersecurity-skills",
+      "cloudflare-security-audit"
+    ],
+    "casos_de_uso": [
+      "Auditar apps de clientes: ejecutar Strix sobre la aplicacion antes del lanzamiento.",
+      "Seguridad continua: integrar en CI/CD para escaneo automatico de vulnerabilidades.",
+      "Post-implementacion: verificar que las soluciones ImplementarIA no introdujeron CVEs.",
+      "Reportes: hallazgos accionables con recomendacion de fix."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Herramienta CLI agnostica, usa LLM configurable via API.",
+    "pasos_implementacion": [
+      "Instalar: seguir README de usestrix/strix (CLI)",
+      "Apuntar a la app del cliente: strix scan <url>",
+      "Revisar hallazgos y aplicar correcciones",
+      "Re-escanear para verificar cierre"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Pentesting IA. Complementa Cloudflare Security Audit y Anthropic Cybersecurity Skills.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "deepseek-harness",
+    "nombre": "DeepSeek Harness",
+    "url": "https://github.com/deepseek-ai/deepseek-harness",
+    "tipo": "Framework",
+    "aplicacion": [
+      "agentes",
+      "desarrollo"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "DeepSeek Harness: 'Todo es un plugin'. Framework de agentes extensible con plugin ecosystem.",
+    "estrellas": 237673,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "deepseek",
+      "harness",
+      "plugins",
+      "agents"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Harness de agentes con arquitectura de plugins: todo es extensible",
+    "por_que": "237k estrellas. El harness de DeepSeek, con ecosistema masivo de plugins.",
+    "alternativas": [
+      "ruflo",
+      "superpowers"
+    ],
+    "casos_de_uso": [
+      "Agentes extensibles: construir agentes agregando plugins sin tocar el core.",
+      "Ecosistema de plugins: usar los plugins de la comunidad (diseno, video, etc.).",
+      "Integraciones: plugin para cada herramienta, evitando codigo custom."
+    ],
+    "modelos_limitados": [
+      "deepseek"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "El harness soporta cualquier LLM via API OpenAI-compatible (no solo DeepSeek). Los plugins son modulos universales.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/deepseek-ai/deepseek-harness",
+      "Seguir README para init",
+      "Configurar LLM (DeepSeek u OpenAI-compatible)",
+      "Agregar plugins del ecosistema segun necesidad"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Harness con arquitectura de plugins. El ecosistema (open-design, desktop) crece rapido.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "openserp",
+    "nombre": "Openserp (SEO API)",
+    "url": "https://github.com/karust/openserp",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "marketing",
+      "datos"
+    ],
+    "categoria": "integraciones",
+    "descripcion": "SERP API self-hosted para IA, SEO y automatizacion. Google/Bing/Yandex/Baidu renderizados por navegador.",
+    "estrellas": 1425,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "seo",
+      "serp",
+      "api",
+      "scraping",
+      "self-hosted"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Obtener resultados de busqueda (SERP) via API propia para SEO y agentes",
+    "por_que": "1.4k estrellas. API SERP self-hosted, sin limites de proveedores terceros.",
+    "alternativas": [
+      "dataforseo",
+      "serpapi"
+    ],
+    "casos_de_uso": [
+      "SEO para clientes: monitorear rankings propios y de competidores sin pagar SERP API.",
+      "Agentes de marketing: agentes consultan SERP para analisis de posicionamiento.",
+      "Investigacion de keywords: alimentar estrategias SEO con datos reales de busqueda.",
+      "AEO/GEO: verificar visibilidad en AI Overviews."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "API REST agnostica consumible por cualquier agente.",
+    "pasos_implementacion": [
+      "Desplegar: docker (recomendado en README)",
+      "Configurar browser rendering",
+      "Consultar el endpoint SERP",
+      "Integrar con el agente/SEO del cliente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Uno de los 4 repos 'worth bookmarking': SEO API launchpad.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "google-maps-scraper",
+    "nombre": "Google Maps Scraper",
+    "url": "https://github.com/omkarcloud/google-maps-scraper",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "ventas"
+    ],
+    "categoria": "integraciones",
+    "descripcion": "Herramienta de lead generation: extrae 50+ puntos de datos de negocios en Google Maps, incluyendo emails.",
+    "estrellas": 3554,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "lead-generation",
+      "scraping",
+      "google-maps",
+      "sales"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Generar leads de empresas en Google Maps con sus datos de contacto",
+    "por_que": "3.5k estrellas. Herramienta mas usada para lead gen via Google Maps.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Lead gen para clientes de ventas: extraer negocios por ubicacion/niche con emails y telefonos.",
+      "Prospeccion B2B: alimentar pipelines con contactos locales.",
+      "Validacion de mercado: contar competidores en un area para analisis de demanda."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Herramienta Python CLI agnostica.",
+    "pasos_implementacion": [
+      "Instalar: pip install googlemaps-scraper (o seguir README)",
+      "Buscar por keyword y ubicacion: python scraper.py",
+      "Exportar leads a CSV",
+      "Importar al CRM del cliente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Uno de los 4 repos 'worth bookmarking': lead-gen API collection.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "aider",
+    "nombre": "Aider",
+    "url": "https://github.com/Aider-AI/aider",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "AI pair programming en tu terminal. Edita codigo localmente con pares de IA.",
+    "estrellas": 49217,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "pair-programming",
+      "cli",
+      "coding-agent",
+      "terminal"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Pair programming con IA directamente en la terminal: edita el codigo del repo",
+    "por_que": "49k estrellas. El estandar de pair programming en terminal. Agnostico de modelo.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Pair programming: trabajar con IA editando directamente el repo local desde terminal.",
+      "Automatizar cambios: aplicar refactors, tests y fixes pidiendo en lenguaje natural.",
+      "Git integrado: aider hace commits con mensajes generados automaticamente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Agnostico por diseno: soporta OpenAI, Anthropic, Gemini, DeepSeek, locales.",
+    "pasos_implementacion": [
+      "Instalar: pip install aider-chat (o brew)",
+      "Configurar API key del modelo",
+      "Ejecutar: aider en el directorio del proyecto",
+      "Pedir cambios en lenguaje natural, verificar y hacer commit"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Uno de los 4 repos 'worth bookmarking': terminal AI pair programming.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "cognitive-speech-sdk",
+    "nombre": "Cognitive Services Speech SDK",
+    "url": "https://github.com/Azure-Samples/cognitive-services-speech-sdk",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "video",
+      "desarrollo"
+    ],
+    "categoria": "integraciones",
+    "descripcion": "Sample code del SDK oficial de Microsoft Cognitive Services Speech: TTS, STT, traduccion de voz.",
+    "estrellas": 3450,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "speech",
+      "tts",
+      "stt",
+      "microsoft",
+      "sdk"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Texto a voz y voz a texto con el SDK oficial de Microsoft",
+    "por_que": "3.4k estrellas. SDK oficial maduro con voces neurales de alta calidad.",
+    "alternativas": [
+      "whisper",
+      "edge-tts"
+    ],
+    "casos_de_uso": [
+      "TTS para videos/capacitacion: generar voces neurales profesionales para contenido.",
+      "STT para atencion: transcripcion de llamadas y voz de clientes.",
+      "Subtitulos automaticos: transcribir audio/video a texto en tiempo real."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "SDK oficial agnostico disponible en 12+ lenguajes; se integra con cualquier stack.",
+    "pasos_implementacion": [
+      "Activar Azure Speech service y obtener key",
+      "Seguir samples del repo en el lenguaje del proyecto",
+      "Probar TTS/STT con un audio de prueba",
+      "Integrar en la app del cliente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Uno de los 4 repos 'worth bookmarking': official speech AI SDK.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "opensandbox",
+    "nombre": "OpenSandbox",
+    "url": "https://github.com/opensandbox-group/OpenSandbox",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura",
+      "agentes"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Runtime de sandbox seguro, rapido y extensible para agentes IA. Aisla la ejecucion de agentes en entornos contenidos.",
+    "estrellas": 15533,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "sandbox",
+      "runtime",
+      "ai-agents",
+      "security",
+      "isolation"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Ejecutar agentes IA en sandboxes seguros y aislados con control de recursos",
+    "por_que": "15.5k estrellas. Runtime de sandbox especifico para agentes: aislamiento, extensiones, rapido.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Ejecucion segura de agentes: correr agentes IA en sandboxes aislados para no comprometer el host. Ideal cuando agentes ejecutan codigo o navegan.",
+      "Multi-agente aislado: cada agente corre en su propio sandbox con limites de recursos.",
+      "Pruebas de codigo generado: ejecutar el codigo que generan los agentes en sandbox antes de integrarlo.",
+      "Cliente con APIs de terceros: ejecutar scraping/automatizaciones en un ambiente contenido que no afecte la infraestructura."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Runtime agnostico de ejecucion; no depende de un LLM especifico.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/opensandbox-group/OpenSandbox",
+      "Seguir README para iniciar el runtime",
+      "Crear un sandbox para el agente y configurar limites",
+      "Ejecutar el agente dentro del sandbox y verificar aislamiento"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Aislamiento de agentes IA. Complementa Agent Zero y Herdr en el flujo de ejecucion segura.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "voicestudio",
+    "nombre": "VoiceStudio",
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "video"
+    ],
+    "categoria": "general",
+    "descripcion": "Alternativa open-source y 100% local a ElevenLabs: clonacion de voz, diseno de voz, video, dubbing.",
+    "estrellas": 40106,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "voice-cloning",
+      "tts",
+      "dubbing",
+      "local-first",
+      "elevenlabs-alternative"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Clonar voces, generar audio y hacer dubbing completamente local sin pagar ElevenLabs",
+    "por_que": "40k estrellas. Alternativa local a ElevenLabs con clonacion, diseno de voz y dubbing.",
+    "alternativas": [
+      "elevenlabs",
+      "edge-tts"
+    ],
+    "casos_de_uso": [
+      "Clonacion de voz local: clonar la voz de un locutor para generar contenido sin grabaciones nuevas. Todo local, sin costo por voz.",
+      "Audio para videos: generar voiceover para videos Remotion o de capacitacion con voz consistente.",
+      "Dubbing: doblar videos a otro idioma con la voz del original.",
+      "Privacidad: para clientes que no quieren subir audios a servicios cloud, todo queda local."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Toolkit local de audio; usa modelos de voz abiertos (no depende de un LLM).",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/debpalash/VoiceStudio",
+      "Seguir README de instalacion (requiere GPU o MLX en Mac)",
+      "Probar clonacion con una muestra de voz",
+      "Integrar TTS en el pipeline de video del cliente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "ElevenLabs local. Complementa Speach SDK (Microsoft) para TTS en produccion.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "money-printer-turbo",
+    "nombre": "MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "video",
+      "marketing"
+    ],
+    "categoria": "general",
+    "descripcion": "Genera videos cortos HD a partir de un tema o keyword con IA y flujos automatizados. Con subtitulos y voz.",
+    "estrellas": 126310,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "ai-video-generator",
+      "short-video",
+      "content-creation",
+      "ffmpeg",
+      "automation"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Generar videos cortos (Reels/Shorts/TikTok) automaticamente desde un tema",
+    "por_que": "126k estrellas. El generador de videos cortos mas popular: tema -> video completo con voz y subtitulos.",
+    "alternativas": [
+      "opencreator",
+      "remotion"
+    ],
+    "casos_de_uso": [
+      "Contenido para redes: generar videos cortos para LinkedIn/Reels/Shorts desde keywords. Ideal para la estrategia de contenido de PropulsarIA y clientes.",
+      "Marketing de producto: producir videos promocionales cortos rapidos para clientes sin equipo de video.",
+      "Campañas automatizadas: generar lotes de videos desde una lista de temas con el pipeline LLM+FFmpeg.",
+      "Educacion: videos cortos de capacitacion generados desde guiones."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Usa LLM y TTS configurables (OpenAI-compatible y servicios locales). El pipeline de video es agnostico.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/harry0703/MoneyPrinterTurbo",
+      "Configurar API keys (LLM + TTS + material de video) en config",
+      "Ejecutar con un tema: python main.py --topic <tema>",
+      "Verificar el video generado y publicar/adaptar"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Video corto automatizado from tema. Complementa Remotion (control total) para volumen.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "trading-agents",
+    "nombre": "TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "tipo": "Framework",
+    "aplicacion": [
+      "datos",
+      "agentes"
+    ],
+    "categoria": "general",
+    "descripcion": "Framework multi-agente de trading financiero con LLMs. Analistas, investigadores y traders simulados colaboran en decisiones.",
+    "estrellas": 108914,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "trading",
+      "finance",
+      "multiagent",
+      "llm",
+      "investment"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Framework multi-agente para analisis financiero y decisiones de trading asistidas por IA",
+    "por_que": "108k estrellas. El framework de trading multi-agente mas completo: roles de analista, investigador y trader.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Analisis financiero asistido: usar los agentes analistas para evaluar companias. El framework estructura bull/bear debates.",
+      "Educacion en trading: para clientes que quieren aprender trading simulado con agentes IA (relevante al caso legal de BROSS: educar en herramientas legitimas).",
+      "Trading con supervision: los agentes generan recomendaciones; el humano decide. Nunca ejecucion automatica (riesgo legal).",
+      "Backtesting de estrategias con multiples perspectivas de agentes."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Soporta multiples LLMs via API (OpenAI, Anthropic, etc.).",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/TauricResearch/TradingAgents",
+      "Configurar API keys del LLM",
+      "Ejecutar un analisis: python tradingagents.py --query <tick>",
+      "Revisar el informe de los agentes (bull/bear)"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Trading multi-agente. OJO: en Colombia la captacion ilegal de dineros es penal (caso BROSS del usuario); este repo es educativo/analitico, no capta dineros.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "ollama",
+    "nombre": "Ollama",
+    "url": "https://github.com/ollama/ollama",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Descarga y ejecuta modelos LLM en local con una sola linea. Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma y mas.",
+    "estrellas": 181816,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "llm",
+      "local",
+      "inference",
+      "go",
+      "ollama"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Ejecutar modelos LLM en local con un comando simple (ollama run <modelo>)",
+    "por_que": "181k estrellas. El estandar de facto para LLMs locales. Instalacion de un solo comando.",
+    "alternativas": [
+      "llama.cpp"
+    ],
+    "casos_de_uso": [
+      "LLMs locales: usar `ollama run` para ejecutar modelos en el PC del cliente sin servicios cloud.",
+      "Base para agentes: exponer el modelo local via API OpenAI-compatible en http://localhost:11434 y conectar Chatbox, Open WebUI o Hermes.",
+      "Privacidad: datos que no salen de la maquina. Ideal para clientes con requisitos de confidencialidad.",
+      "Pipeline Kaggle: ya usado con Qwen en Kaggle + ngrok para chat remoto."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Sirve una API OpenAI-compatible, cualquier cliente que hable OpenAI funciona (Chatbox, Open WebUI, Hermes).",
+    "pasos_implementacion": [
+      "Instalar: curl -fsSL https://ollama.com/install.sh | sh (o descargar desde ollama.com)",
+      "Descargar modelo: ollama pull qwen3:8b (o el modelo deseado)",
+      "Ejecutar: ollama run qwen3:8b",
+      "Exponer API: ollama serve escucha en http://localhost:11434",
+      "Conectar: configurar Chatbox/Open WebUI/Hermes con base URL localhost:11434"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Ya lo usamos en el pipeline Kaggle+ngrok. Pilar del stack local del usuario (PC A12-9720P limitado a modelos ~3B).",
+    "estado": "nuevo"
+  },
+  {
+    "id": "llama-cpp",
+    "nombre": "llama.cpp",
+    "url": "https://github.com/ggml-org/llama.cpp",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Inferencia de LLMs en C/C++. Eficiente en CPU y GPU. Ideal para modelos cuantizados (GGUF).",
+    "estrellas": 129712,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "llm",
+      "inference",
+      "gguf",
+      "quantization",
+      "cpp"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Inferencia eficiente de LLMs cuantizados en CPU/GPU minima",
+    "por_que": "129k estrellas. Motor de inferencia mas optimizado para hardware modesto (cuantizacion GGUF).",
+    "alternativas": [
+      "ollama"
+    ],
+    "casos_de_uso": [
+      "CPU-only: ejecutar modelos cuantizados en maquinas sin GPU como el PC del usuario (A12-9720P).",
+      "Modelos GGUF: el formato estandar de modelos cuantizados (Q4_K_S, Q5_K_M) para RAM limitada.",
+      "llama.cpp server: exponer la API OpenAI-compatible para Chatbox u Open WebUI sin Ollama.",
+      "Edge: run modelos en Raspberry Pi o servidores tiny."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Motor de inferencia agnostico; sirve API OpenAI-compatible (llama-server).",
+    "pasos_implementacion": [
+      "Clonar y compilar: git clone https://github.com/ggml-org/llama.cpp && cmake -B build",
+      "Descargar un GGUF (ej: HF hub) y cuantizarlo si hace falta",
+      "Servir: ./llama-server -m <modelo.gguf> --port 8080",
+      "Probar: curl http://localhost:8080/v1/chat/completions",
+      "Conectar Chatbox/Open WebUI a http://localhost:8080/v1"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Alternativa a Ollama para hardware minimo. GGUF es la via para modelos <4B en el PC del usuario.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "open-webui",
+    "nombre": "Open WebUI",
+    "url": "https://github.com/open-webui/open-webui",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Tu propio ChatGPT self-hosted. Interfaz simple y potente que soporta Ollama, OpenAI API y mas.",
+    "estrellas": 153374,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "webui",
+      "chatgpt-alternative",
+      "ollama",
+      "self-hosted",
+      "interfaz"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Interfaz chat tipo ChatGPT sobre modelos locales o remotos",
+    "por_que": "153k estrellas. La interfaz self-hosted mas popular para LLMs.",
+    "alternativas": [
+      "chatbox",
+      "opencode"
+    ],
+    "casos_de_uso": [
+      "Chat corporativo privado: interfaz ChatGPT para el equipo del cliente con datos que no salen de la red.",
+      "RAG integrado: Open WebUI soporta subida de documentos y chat sobre ellos.",
+      "Multi-modelo: conectar Ollama + OpenAI + Google en una sola interfaz para comparar respuestas.",
+      "Workflow admin: usuarios, roles y uso por equipo."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Interfaz agnostica; se conecta a cualquier backend OpenAI-compatible u Ollama.",
+    "pasos_implementacion": [
+      "Desplegar: docker run -d -p 3000:8080 ghcr.io/open-webui/open-webui:main",
+      "Abrir http://localhost:3000 y crear el admin",
+      "Conectar a Ollama (localhost:11434) u OpenAI API en settings",
+      "Subir documentos para RAG si aplica",
+      "Abrir a los usuarios del equipo"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Interfaz ChatGPT local. Mejor opcion que Chatbox para equipos (multi-usuario).",
+    "estado": "nuevo"
+  },
+  {
+    "id": "vllm",
+    "nombre": "vLLM",
+    "url": "https://github.com/vllm-project/vllm",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Motor de inferencia y serving de alto rendimiento y alto throughput para LLMs. Listo para produccion.",
+    "estrellas": 92803,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "llm",
+      "serving",
+      "gpu",
+      "high-performance",
+      "production"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Servir LLMs a produccion con alto throughput y uso eficiente de GPU",
+    "por_que": "92k estrellas. El estandar de serving en produccion (usado por OpenAI-compatible providers).",
+    "alternativas": [
+      "llama.cpp"
+    ],
+    "casos_de_uso": [
+      "Produccion con GPU: servir modelos a muchos usuarios con PagedAttention y batching.",
+      "Cloud GPU: en Kaggle/Colab/RunPod, vLLM sirve el modelo para agentes remotos.",
+      "API OpenAI-compatible: vLLM expone /v1/chat/completions para conectar cualquier cliente.",
+      "Benchmarks: throughput optimo en GPUs dedicadas (no en el PC del usuario)."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Motor de serving agnostico con API OpenAI-compatible.",
+    "pasos_implementacion": [
+      "Instalar: pip install vllm",
+      "Servir: vllm serve <modelo> --port 8000",
+      "Probar: curl http://localhost:8000/v1/chat/completions",
+      "Conectar el agente/cliente deseado",
+      "Escalar con GPUs dedicadas o cloud"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Para produccion con GPU (Kaggle/RunPod). No para el PC del usuario (0 GPU util).",
+    "estado": "nuevo"
+  },
+  {
+    "id": "localai",
+    "nombre": "LocalAI",
+    "url": "https://github.com/mudler/LocalAI",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Motor de IA open-source: ejecuta cualquier modelo (LLMs, vision, imagen, voz) con API compatible con OpenAI.",
+    "estrellas": 49299,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "localai",
+      "openai-compatible",
+      "multi-modal",
+      "self-hosted"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Una sola API OpenAI-compatible para LLMs + imagen + voz en local",
+    "por_que": "49k estrellas. Drop-in replacement de OpenAI en local con multimodalidad.",
+    "alternativas": [
+      "ollama",
+      "vllm"
+    ],
+    "casos_de_uso": [
+      "Reemplazo OpenAI local: cambiar la base URL de la app del cliente de api.openai.com a LocalAI sin tocar codigo.",
+      "Multimodal: LLMs + generar imagen + voz desde la misma API. Complementa VoiceStudio.",
+      "Edge: corre en CPU o GPU pequena; via container.",
+      "Compatibilidad: funciona con cualquier cliente OpenAI (LiteLLM, Open WebUI, Chatbox)."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "API OpenAI-compatible agnostica por diseno.",
+    "pasos_implementacion": [
+      "Desplegar: docker run -p 8080:8080 quay.io/go-skynet/local-ai:latest",
+      "Descargar un modelo (ej: from HF via GUI o CLI)",
+      "Probar /v1/chat/completions en http://localhost:8080",
+      "Cambiar la base URL de la app del cliente",
+      "Probar tambien /v1/images y /v1/audio si aplica"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Un solo drop-in para OpenAI en local con multimodalidad.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "comfyui",
+    "nombre": "ComfyUI",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "video",
+      "diseno"
+    ],
+    "categoria": "general",
+    "descripcion": "GUI, API y backend para difusion de imagenes y video con workflows por nodos. El mas potente y modular.",
+    "estrellas": 135218,
+    "licencia": "GPL-3.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "diffusion",
+      "image-generation",
+      "video-generation",
+      "workflow-nodes"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Generar imagen y video con Stable Diffusion y modelos de difusion via workflows visuales por nodos",
+    "por_que": "135k estrellas. El estandar de la generacion por difusion con control fino por nodos.",
+    "alternativas": [
+      "fooocus",
+      "automatic1111"
+    ],
+    "casos_de_uso": [
+      "Generacion controlada: workflows por nodos para imagen/video con precision sobre prompt, seed, modelos.",
+      "Automatizacion: la API REST permite generar desde agentes o pipelines (complemento a MoneyPrinter).",
+      "Video IA: usar con modelos de video para contenido de clientes.",
+      "Produccion: batch de imagenes con variaciones para marketing."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Herramienta local de difusion, no usa LLM para generacion (Ctrl para prompts si se quiere).",
+    "pasos_implementacion": [
+      "Instalar: seguir README (pip install o portable)",
+      "Descargar modelos de difusion (SDXL, SD3, video) a models/",
+      "Abrir http://localhost:8188 y construir un workflow por nodos",
+      "Probar generacion basica",
+      "Usar la API /prompt para automatizar desde un agente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Generacion de imagen/video por nodos. En la skill de Hermes ya existe 'comfyui' para control via TouchDesigner.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "whisper-cpp",
+    "nombre": "whisper.cpp",
+    "url": "https://github.com/ggml-org/whisper.cpp",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "video",
+      "seguridad"
+    ],
+    "categoria": "general",
+    "descripcion": "Port del modelo Whisper de OpenAI en C/C++. Speech-to-text en local, rapido y preciso sin depender de la nube.",
+    "estrellas": 53963,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "whisper",
+      "stt",
+      "speech-to-text",
+      "local",
+      "audio"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Transcripcion de audio/voz en local sin cloud",
+    "por_que": "53k estrellas. El STT local mas optimizado (deriva de llama.cpp).",
+    "alternativas": [
+      "faster-whisper",
+      "openai-whisper"
+    ],
+    "casos_de_uso": [
+      "Transcribir llamadas/reuniones: audio a texto local sin subir nada.",
+      "Subtitulos automaticos: transcribir videos para subtitulos (complemento a videos MoneyPrinter/Remotion).",
+      "Integracion con agentes: voz a texto para dar entrada por voz a agentes IA.",
+      "Comando por voz: activar funciones del negocio hablando."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Motor de STT agnostico local.",
+    "pasos_implementacion": [
+      "Compilar: seguir README de ggml-org/whisper.cpp",
+      "Descargar modelo: ./models/download-ggml-model.sh base",
+      "Transcribir: ./main -m models/ggml-base.bin -f audio.wav",
+      "O usar whisper-server para API HTTP",
+      "Integrar al pipeline de subtitulos o voz"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "STT local. Ya aparece mencionado en OpenCreator (usa Whisper). Pilar del stack local.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "unsloth",
+    "nombre": "Unsloth",
+    "url": "https://github.com/unslothai/unsloth",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Fine-tuning de modelos LLM y diffusion de forma eficiente. Optimizado para GPUs accesibles. Ahora con UI local.",
+    "estrellas": 76879,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "fine-tuning",
+      "llm",
+      "lora",
+      "gpu",
+      "training"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Fine-tuning (LoRA) rapido y con poca VRAM de LLMs y modelos de difusion",
+    "por_que": "76k estrellas. El metodo mas eficiente de fine-tuning en VRAM reducida.",
+    "alternativas": [
+      "axolotl"
+    ],
+    "casos_de_uso": [
+      "Modelos para clientes: fine-tune un modelo de 7-8B sobre los datos del cliente (FAQ, tono, procesos) en una GPU 16GB.",
+      "Ahorro de VRAM: Unsloth reduce consumo hasta 70-80% vs metodos normales.",
+      "Kaggle/Colab: correr fine-tuning en T4/L4 gratis o baratos.",
+      "Exportar GGUF: fine-tune y exportar a GGUF para ejecutar con llama.cpp en el PC del cliente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Herramienta de entrenamiento agnostica; entrena cualquier modelo compatible.",
+    "pasos_implementacion": [
+      "Instalar: pip install unsloth",
+      "Seguir un notebook de ejemplo (colab/kaggle para fine-tune 7-8B)",
+      "Preparar dataset del cliente (preguntas/respuestas JSONL)",
+      "Entrenar LoRA y evaluar respuestas",
+      "Exportar a GGUF (via unsloth) y servir con llama.cpp"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Fine-tuning eficiente. El camino para personalizar modelos del cliente sin GPU cara.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "exo",
+    "nombre": "exo",
+    "url": "https://github.com/exo-explore/exo",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Convierte varios dispositivos en un unico cluster de inferencia. Corre modelos frontier en tu hardware.",
+    "estrellas": 47660,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "cluster",
+      "inference",
+      "distributed",
+      "frontier-models"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Agrupar varios dispositivos (Macs, PCs, GPUs) en un cluster de inferencia distribuida",
+    "por_que": "47k estrellas. Enfoque unico: inferencia de modelos grandes repartida entre dispositivos baratos.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Cluster casero: unir los dispositivos del cliente (PC + portatiles) para correr modelos mas grandes que su RAM individual.",
+      "Modelos frontier en local: correr modelos grandes con menor inversión.",
+      "Reparto por capas: exo distribuye capas del modelo entre dispositivos conectados por red local.",
+      "Privacidad: todo dentro de la red del cliente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Framework de inferencia agnostico.",
+    "pasos_implementacion": [
+      "Instalar exo en cada dispositivo: pip install exo",
+      "Conectar los dispositivos por red local",
+      "Ejecutar: exo serve <modelo>",
+      "Probar el cluster con un prompt",
+      "Integrar con Open WebUI/Chatbox"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Ideo para organizaciones con 2+ maquinas. Alternativa a comprar una GPU cara.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "mlx-lm",
+    "nombre": "MLX-LM",
+    "url": "https://github.com/ml-explore/mlx-lm",
+    "tipo": "Framework",
+    "aplicacion": [
+      "infraestructura"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Ejecuta y ajusta modelos LLM optimizado para Apple Silicon (MLX framework).",
+    "estrellas": 7163,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "mlx",
+      "apple-silicon",
+      "llm",
+      "local"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Correr y fine-tunear LLMs nativos en Apple Silicon (M1/M2/M3/M4) con MLX",
+    "por_que": "7k estrellas. El framework oficial de Apple para ML en el chip M.",
+    "alternativas": [
+      "llama.cpp"
+    ],
+    "casos_de_uso": [
+      "Macs de clientes: aprovechar el Neural Engine y unificated memory para LLMs locales en MacBooks.",
+      "Fine-tuning en Mac: ajustar modelos directamente en Apple Silicon con MLX.",
+      "Exportar/integrar: modelos MLX para apps macOS.",
+      "Complemento: si el cliente es Mac (no Windows como el PC del usuario) es la via optima."
+    ],
+    "modelos_limitados": [
+      "gemini"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Especifico de Apple Silicon (MLX). No aplica a PC Windows. Para otros SO usar llama.cpp.",
+    "pasos_implementacion": [
+      "Instalar: pip install mlx mlx-lm",
+      "Descargar modelo HF en formato MLX (ej: mlx-community)",
+      "Ejecutar: mlx_lm.generate --model <repo> --prompt 'hola'",
+      "Servir: mlx_lm.server --model <repo> --port 8080",
+      "Conectar el cliente OpenAI-compatible"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "linkedin",
+    "notas": "Solo Apple Silicon. No aplica al PC del usuario (Windows/AMD) pero si a clientes con Macs.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "docling",
+    "nombre": "Docling",
+    "url": "https://github.com/docling-project/docling",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "datos",
+      "desarrollo"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Prepara tus documentos para IA generativa. Parsea PDF, Word, PPT, Excel, imagenes y mas a Markdown/JSON listo para LLM.",
+    "estrellas": 68080,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "document-parser",
+      "pdf",
+      "ai",
+      "conversion",
+      "markdown"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Convertir cualquier documento (PDF, Word, imagenes) a formato Markdown/JSON listo para RAG",
+    "por_que": "68k estrellas. El parser de documentos mas completo: PDF, Word, PPT, Excel, imagenes, escaneos. Output Markdown.",
+    "alternativas": [
+      "marker",
+      "pymupdf"
+    ],
+    "casos_de_uso": [
+      "RAG sobre documentos del cliente: convertir PDFs, Word, imagenes escaneadas a Markdown para alimentar la base de conocimiento del agente.",
+      "Pipeline de documentos: Docling -> chunking -> embedding -> vector store. Automatizar con n8n o script.",
+      "OCR avanzado: documentos escaneados y con imagenes, Docling extrae todo el contenido.",
+      "Migracion: convertir lotes de documentos legacy a formato Markdown estructurado."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Herramienta Python CLI, agnostica. El output Markdown lo usa cualquier LLM/agente.",
+    "pasos_implementacion": [
+      "Instalar: pip install docling",
+      "Convertir: docling convert documento.pdf (output Markdown/JSON)",
+      "Revisar la calidad de la conversion",
+      "Alimentar el RAG del agente con el markdown generado",
+      "Automatizar con scripts para lotes de documentos"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Reemplaza a 'Anydoc' — el repo es Docling (antes DS4SD/docling, ahora docling-project/docling). Parser de documentos mas completo.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "mom-pop-skills",
+    "nombre": "Mom-n-Pop-Skills",
+    "url": "https://github.com/hewi333/Mom-n-Pop-Skills",
+    "tipo": "Skills",
+    "aplicacion": [
+      "ventas",
+      "atencion-cliente"
+    ],
+    "categoria": "general",
+    "descripcion": "Coleccion de skills de IA para pequenas empresas: atencion, contabilidad, marketing, inventario, nomina.",
+    "estrellas": 121,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "small-business",
+      "skills",
+      "mom-pop",
+      "ai-agents"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Skills listas para usar en pequenas empresas con agentes IA",
+    "por_que": "Skills disenadas especificamente para el flujo de una pequena empresa (no enterprise).",
+    "alternativas": [
+      "wondelai-skills"
+    ],
+    "casos_de_uso": [
+      "Atencion al cliente PYMES: skills para responder consultas frecuentes, agendar y dar seguimiento.",
+      "Inventario y nomina: skills de gestion basica adaptadas al tamano de una PYME.",
+      "Marketing local: skills para crear contenido para redes y campanas locales.",
+      "Complemento a ImplementarIA: usar como base de skills para clientes pequenos."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Skills en formato texto plano (prompts). Portables a SKILL.md de Hermes.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/hewi333/Mom-n-Pop-Skills",
+      "Revisar las skills disponibles por area (ventas, inventario, etc.)",
+      "Extraer las relevantes a SKILL.md de Hermes",
+      "Adaptar los prompts al contexto del cliente (rubro, ciudad, productos)"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Skills para PYMES. Complementa a Wondelai Skills (negocios) con enfoque mas operativo.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "management-consulting",
+    "nombre": "Management Consulting (Claude)",
+    "url": "https://github.com/gcamilo/management-consulting",
+    "tipo": "Skills",
+    "aplicacion": [
+      "consultoria"
+    ],
+    "categoria": "consultoria",
+    "descripcion": "Skill de management consulting para Claude Code: resolución estructurada de problemas, 40+ frameworks, entregables visuales.",
+    "estrellas": 90,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "consulting",
+      "strategy",
+      "frameworks",
+      "claude-code",
+      "problem-solving"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Aplicar metodologia de consultoría estratégica (framework de solución de problemas, issue trees, hipótesis) con agentes",
+    "por_que": "La skill mas completa de consultoría para Claude: 40+ frameworks y entregables visuales. Equivalente open-source al kit comercial 'Claude Consulting Kit'.",
+    "alternativas": [
+      "management-consulting-plugin"
+    ],
+    "casos_de_uso": [
+      "Diagnóstico estratégico para clientes: aplicar issue trees, hipótesis y frameworks para estructurar problemas de negocio en ImplementarIA.",
+      "Panorama de mercado: usar los frameworks de market sizing, competitive analysis y profit pool para análisis.",
+      "Entregables: generar storyline, materiales y decks con estructura de consultoría.",
+      "Pricing/cost analysis: frameworks de pricing y performance para propuestas."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skill en formato Claude Code. Extraer los 40+ frameworks a SKILL.md universal (son prompts estructurados portables a Codex/Cowork).",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/gcamilo/management-consulting",
+      "Instalar la skill en Claude Code",
+      "Probar un framework (ej: issue tree sobre un caso de negocio)",
+      "Extraer a SKILL.md de Hermes los frameworks mas usados"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "La opción mas completa de consultoría estratégica open-source. Reemplaza gran parte del kit comercial.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "management-consulting-plugin",
+    "nombre": "Management Consulting Plugin",
+    "url": "https://github.com/anotb/management-consulting-plugin",
+    "tipo": "Skills",
+    "aplicacion": [
+      "consultoria"
+    ],
+    "categoria": "consultoria",
+    "descripcion": "Skills de consultoría de management para Claude Code, Cowork, Codex y otros agentes. Estrategia, operaciones.",
+    "estrellas": 56,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "consulting",
+      "strategy",
+      "operations",
+      "multi-agent",
+      "plugin"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Consultoría de estrategia y operaciones con skills multi-agente",
+    "por_que": "Multi-agente (Claude, Cowork, Codex) de serie. Cobertura de estrategia + operaciones.",
+    "alternativas": [
+      "management-consulting"
+    ],
+    "casos_de_uso": [
+      "Estrategia: frameworks de estrategia corporativa para clientes de ImplementarIA.",
+      "Operaciones: optimización de procesos, cost benchmarking y eficiencia operativa.",
+      "Multi-agente: funciona con cualquier agent, no solo Claude Code.",
+      "Complemento: usar con ImplementarIA en la fase de diagnostico y recomendaciones."
+    ],
+    "modelos_limitados": [
+      "claude",
+      "codex"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skills pensadas para varios agentes (Claude, Cowork, Codex). Portables a SKILL.md universal.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/anotb/management-consulting-plugin",
+      "Seguir instalacion (multi-agente: Claude Code, Cowork, Codex)",
+      "Probar skills de estrategia y operaciones",
+      "Adaptar al agente/nivel del cliente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Version multi-agente de la consultoria. Complementa a gcamilo/management-consulting.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "mckinsey-visualization",
+    "nombre": "McKinsey-style Visualization Skill",
+    "url": "https://github.com/kgraph57/mckinsey-style-visualization-skill",
+    "tipo": "Skills",
+    "aplicacion": [
+      "consultoria",
+      "diseno"
+    ],
+    "categoria": "consultoria",
+    "descripcion": "Skill de agente que convierte notas desordenadas en visualizaciones de consultoría estratégica renderizadas (SVG) con ejemplos.",
+    "estrellas": 123,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "consulting",
+      "visualization",
+      "svg",
+      "slides",
+      "business-visualization"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Generar visualizaciones y slides estilo McKinsey (SVG) a partir de notas/analisis",
+    "por_que": "La capa de 'client materials' del stack de consultoría: convierte analisis en graficos presentables.",
+    "alternativas": [
+      "excalidraw",
+      "mermaid"
+    ],
+    "casos_de_uso": [
+      "Materiales para clientes: convertir hallazgos de ImplementarIA en slides y diagramas estilo McKinsey.",
+      "Storyline visual: generar la estructura visual de una presentacion de propuesta.",
+      "Graficos de framework: renderizar framework de consultoria en SVG limpio y profesional.",
+      "Complemento: usar tras la analisis (gcamilo/anotb) para el entregable final."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skill que produce SVG universal. Extraer los patrones de visualizacion a SKILL.md para usar con cualquier agente.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/kgraph57/mckinsey-style-visualization-skill",
+      "Instalar en Claude Code",
+      "Pasar notas de analisis a la skill para generar visualizaciones",
+      "Revisar/ajustar el SVG y exportar a presentacion"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "busqueda-propia",
+    "notas": "Capa de entregables visuales del stack de consultoría.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "openwa",
+    "nombre": "OpenWA",
+    "url": "https://github.com/rmyndharis/OpenWA",
+    "tipo": "Framework",
+    "aplicacion": [
+      "atencion-cliente"
+    ],
+    "categoria": "integraciones",
+    "descripcion": "API Gateway de WhatsApp self-hosted, gratuito y open-source. Alternativa auto-gestionada a WhatsApp Cloud API.",
+    "estrellas": 14699,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "whatsapp",
+      "api",
+      "gateway",
+      "self-hosted",
+      "messaging"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Enviar y recibir mensajes de WhatsApp via API propia sin depender de Meta Business",
+    "por_que": "14.7k estrellas. Gateway WhatsApp auto-gestionado: control total sobre la infraestructura de mensajeria.",
+    "alternativas": [
+      "whatsapp-cloud-api",
+      "deskcommcrm"
+    ],
+    "casos_de_uso": [
+      "WhatsApp propio para clientes: ofrecer canal de WhatsApp sin depender de la aprobacion de Meta ni limites de la API gratuita.",
+      "Integracion con CRM: conectar OpenWA con Chatwoot, DeskcommCRM o cualquier CRM via API.",
+      "Alto volumen: si el cliente supera las 1000 conversaciones/mes gratuitas de Meta, OpenWA puede ser mas economico.",
+      "Privacidad: datos y mensajes en tu propio servidor."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "API REST agnostica. Se integra con cualquier sistema que hable HTTP.",
+    "pasos_implementacion": [
+      "Desplegar: seguir README de rmyndharis/OpenWA (docker recomendado)",
+      "Conectar numero WhatsApp via QR (similar a WhatsApp Web)",
+      "Configurar webhook para recibir mensajes entrantes",
+      "Probar envio/recepcion con curl o Postman",
+      "Integrar con el CRM/sistema del cliente"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Alternativa a WhatsApp Cloud API. OJO: usa metodos no oficiales (riesgo de baneo similar a WAHA). Preferir Cloud API para clientes.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "github-copilot-app",
+    "nombre": "GitHub Copilot App",
+    "url": "https://github.com/github/app",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "App de escritorio de GitHub Copilot: experiencia agente-nativa para encontrar, ejecutar, dirigir y revisar codigo.",
+    "estrellas": 2164,
+    "licencia": "Propietaria",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "copilot",
+      "github",
+      "desktop-app",
+      "agent-native"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Interfaz de escritorio agente-nativa para GitHub Copilot: busca, ejecuta, dirige y revisa codigo",
+    "por_que": "2.1k estrellas (repo del codigo de la app). Experiencia agente-nativa con integracion profunda con GitHub.",
+    "alternativas": [
+      "claude-code",
+      "codex"
+    ],
+    "casos_de_uso": [
+      "Interfaz de escritorio para Copilot: alternativa a la terminal/IDE para interactuar con Copilot agente.",
+      "Revision y PRs: desde la app se pueden revisar PRs, ejecutar cambios y hacer merge.",
+      "Busqueda de codigo: buscar en el codigo del repo y aplicar cambios desde la interfaz agente.",
+      "Onboarding: mas accesible que CLI para usuarios no tecnicos."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "App que usa Copilot (GPT-4). No es configurable para otros modelos.",
+    "pasos_implementacion": [
+      "Descargar desde github.com/app o clonar el repo y compilar",
+      "Autenticar con cuenta de GitHub (requiere suscripcion a Copilot)",
+      "Abrir un repositorio y empezar a interactuar",
+      "Usar las funciones agente-nativas (buscar, ejecutar, PR)"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "App de escritorio de Copilot. Requiere suscripcion paga a GitHub Copilot.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "super-productivity",
+    "nombre": "Super Productivity",
+    "url": "https://github.com/super-productivity/super-productivity",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "general",
+    "descripcion": "App avanzada de lista de tareas con Timeboxing integrado y seguimiento de tiempo. Open-source y multiplataforma.",
+    "estrellas": 22325,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "productivity",
+      "todo",
+      "time-tracking",
+      "timeboxing",
+      "desktop-app"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Gestionar tareas con timeboxing y tracking de tiempo integrado",
+    "por_que": "22k estrellas. App de productividad personal mas completa: tareas + timeboxing + tiempo real.",
+    "alternativas": [
+      "todoist",
+      "ticktick"
+    ],
+    "casos_de_uso": [
+      "Organizar proyectos de ImplementarIA: tareas con timeboxing para cada implementacion de cliente.",
+      "Tracking de horas: registrar tiempo invertido por proyecto/cliente para facturacion.",
+      "Metodo Pomodoro/timeboxing: integrado para mantener enfoque en tareas.",
+      "Sincronizacion: multiplataforma (Windows, Mac, Linux, Android, web)."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "App de escritorio independiente, no usa LLM.",
+    "pasos_implementacion": [
+      "Descargar desde super-productivity.com o compilar desde el repo",
+      "Configurar proyectos (ej: por cliente de ImplementarIA)",
+      "Crear tareas con timeboxing y empezar a trackear",
+      "Revisar reportes de tiempo semanales"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "App de productividad con timeboxing. Util para gestionar el trabajo diario de consultoria.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "omniagents",
+    "nombre": "OmniAgents",
+    "url": "https://github.com/charles-azam/OmniAgents",
+    "tipo": "Framework",
+    "aplicacion": [
+      "agentes"
+    ],
+    "categoria": "infraestructura",
+    "descripcion": "Framework multi-backend de ejecucion para coding agents: escribe tools una vez, ejecutalos en cualquier agente.",
+    "estrellas": 9,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "multi-agent",
+      "framework",
+      "tools",
+      "backends"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Escribir tools una vez y ejecutarlas en cualquier coding agent (Claude, Codex, Cursor, etc.)",
+    "por_que": "Concepto util pero muy temprano (9⭐). La idea de 'write once, run anywhere' para tools de agentes es valiosa.",
+    "alternativas": [
+      "composio"
+    ],
+    "casos_de_uso": [
+      "Portabilidad de tools: escribir una tool y que funcione en Claude Code, Codex, Cursor y OpenCode.",
+      "Estandarizar herramientas del equipo: definir tools una vez y compartirlas entre agentes.",
+      "Prototipado: probar tools en diferentes backends sin reescribir."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Framework disenado para ser agnostico desde el inicio: soporta Claude, Codex, Cursor y mas.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/charles-azam/OmniAgents",
+      "Seguir README para definir una tool",
+      "Ejecutar la tool con diferentes backends (Claude, Codex, etc.)",
+      "Verificar que funcione en cada uno sin cambios"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Proyecto muy temprano (9⭐). Monitorear evolucion. Concepto interesante pero aun inmaduro.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "openmontage",
+    "nombre": "OpenMontage",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "tipo": "Framework",
+    "aplicacion": [
+      "video"
+    ],
+    "categoria": "general",
+    "descripcion": "Primer sistema de produccion de video agente-nativo del mundo. 12 pipelines de produccion, 100+ tools, 700+ agent skills.",
+    "estrellas": 61677,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "video-production",
+      "agentic",
+      "pipelines",
+      "tools",
+      "skills"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Produccion de video automatizada con agentes: pipelines completos desde el prompt hasta el video final",
+    "por_que": "61.6k estrellas. 12 pipelines de produccion + 100 tools + 700 agent skills para video.",
+    "alternativas": [
+      "remotion",
+      "money-printer-turbo"
+    ],
+    "casos_de_uso": [
+      "Produccion completa: desde un prompt genera un video completo con agentes especializados en cada etapa.",
+      "Automatizacion de contenido: pipelines para redes sociales, tutorials, anuncios.",
+      "Skills de video: 700+ skills reutilizables para diferentes tipos de video.",
+      "Complemento a Remotion: OpenMontage para produccion agente-nativa, Remotion para control fino."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Framework que usa LLMs configurables para los agentes de produccion.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/calesthio/OpenMontage",
+      "Seguir README para iniciar un pipeline de produccion",
+      "Configurar API keys de LLMs",
+      "Ejecutar: openmontage produce --prompt <descripcion>",
+      "Revisar el video generado y ajustar parametros"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Produccion de video agente-nativa. Complementa Remotion (edicion programatica) y MoneyPrinterTurbo (videos cortos).",
+    "estado": "nuevo"
+  },
+  {
+    "id": "train-llm-from-scratch",
+    "nombre": "Train LLM from Scratch",
+    "url": "https://github.com/FareedKhan-dev/train-llm-from-scratch",
+    "tipo": "Recursos",
+    "aplicacion": [
+      "desarrollo"
+    ],
+    "categoria": "conocimiento",
+    "descripcion": "Metodo directo para entrenar tu propio LLM: desde descargar datos hasta generar texto. Guia completa y practica.",
+    "estrellas": 11543,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "llm",
+      "training",
+      "tutorial",
+      "scratch",
+      "deep-learning"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Guia practica para entrenar un LLM desde cero: dataset, arquitectura, entrenamiento, generacion",
+    "por_que": "11.5k estrellas. Tutorial completo y practico que va desde los datos hasta el texto generado.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Aprender el pipeline completo: desde recoleccion de datos hasta generacion de texto. Ideal para entender como funcionan los LLMs.",
+      "Entrenar modelos para nichos: si un cliente necesita un modelo especifico para un dominio cerrado.",
+      "Educacion: entender los fundamentos de transformers, tokenizacion y atencion.",
+      "Base para fine-tuning: entender el proceso completo ayuda a hacer fine-tuning informado."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Tutorial agnostico que usa PyTorch. No depende de un LLM externo.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/FareedKhan-dev/train-llm-from-scratch",
+      "Seguir los pasos del README en orden",
+      "Ejecutar los notebooks/jupyter para cada etapa",
+      "Experimentar con datasets propios"
+    ],
+    "fecha_guardado": "2026-09-27",
+    "fuente": "recomendacion",
+    "notas": "Tutorial completo de entrenamiento de LLM desde cero. Util como referencia educativa.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "karpathy-rules",
+    "nombre": "Karpathy Rules",
+    "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+    "tipo": "Skills",
+    "aplicacion": [
+      "desarrollo",
+      "agentes"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Un solo CLAUDE.md con 4 reglas de comportamiento derivadas de observaciones de Andrej Karpathy sobre fallas de los LLMs al escribir codigo: no asumas, cambios quirurgicos, no mejores lo que no esta roto, define criterio de exito.",
+    "estrellas": 215687,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "karpathy",
+      "behavior",
+      "claude-code",
+      "rules",
+      "best-practices"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Mejorar el comportamiento del agente al escribir codigo con 4 reglas simples que evitan errores comunes",
+    "por_que": "215k estrellas. Un archivo de texto que se convirtio en uno de los recursos mas destacados de IA. Cuesta minimo y rinde todo.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Comportamiento base de cualquier agente: instalar las 4 reglas para que el agente no asuma, haga cambios quirurgicos y defina exito antes de empezar.",
+      "Implementaciones de codigo: aplica a cualquier trabajo de implementacion para evitar refactorizaciones innecesarias y mejoras no pedidas.",
+      "Criterio de exito: define 'done' antes de empezar y repite hasta verificar — directamente alineado con la skill ImplementarIA."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Es un archivo markdown sin dependencia de modelo; copiable a SKILL.md de Hermes o cualquier agente.",
+    "pasos_implementacion": [
+      "Descargar el CLAUDE.md del repo (o copiar su contenido)",
+      "Colocarlo en la carpeta de skills de Hermes como SKILL.md",
+      "Probar: pedir al agente una tarea y verificar que aplica las 4 reglas"
+    ],
+    "fecha_guardado": "2026-09-28",
+    "fuente": "youtube",
+    "notas": "Recomendada #1 por el video para instalar primero. Casi no tiene costo de mantenimiento.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "firecrawl",
+    "nombre": "Firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "desarrollo",
+      "datos"
+    ],
+    "categoria": "integraciones",
+    "descripcion": "API de datos web para buscar, scrapear e interactuar a escala. Limpia paginas web y entrega solo el contenido relevante antes de que el agente lo toque.",
+    "estrellas": 185919,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "scraping",
+      "crawler",
+      "web-data",
+      "content-extraction",
+      "ai"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Limpiar paginas web antes de que el agente las lea: elimina menus, cookies, banners y entrega solo lo relevante",
+    "por_que": "185k estrellas. Se paga solo en la primera pagina que el agente lee — ahorra tokens en cada lectura web.",
+    "alternativas": [],
+    "casos_de_uso": [
+      "Reducir costo por lectura web: el agente recibe solo el contenido relevante en vez de la pagina completa (menus, pies, cookies).",
+      "Scraping a escala: buscar y extraer datos de multiples paginas para investigaciones de mercado.",
+      "RAG sobre web: alimentar bases de conocimiento extrayendo contenido limpio de sitios de clientes y competidores."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "API web agnostica, usable desde cualquier agente que haga peticiones HTTP.",
+    "pasos_implementacion": [
+      "Instalar el SDK (Python/Node) o usar la API cloud",
+      "Configurar API key (hay plan gratuito)",
+      "Probar: scrapear una pagina y verificar que solo trae el contenido relevante",
+      "Integrar con el agente para limpiar paginas antes de leerlas"
+    ],
+    "fecha_guardado": "2026-09-28",
+    "fuente": "youtube",
+    "notas": "Recomendada #2 para instalar primero (reduce costos desde la primera pagina).",
+    "estado": "nuevo"
+  },
+  {
+    "id": "codebase-memory-mcp",
+    "nombre": "Codebase Memory MCP",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "tipo": "Conexiones",
+    "aplicacion": [
+      "desarrollo",
+      "agentes"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Servidor MCP de alta performance que indexa codebases en un grafo de conocimiento persistente. Evita releer archivos en cada turno.",
+    "estrellas": 45337,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "mcp",
+      "code-intelligence",
+      "ast",
+      "knowledge-graph",
+      "claude-code"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Indexar el proyecto una sola vez y consultar el mapa en vez de releer archivos — reduce tokens drasticamente en sesiones largas",
+    "por_que": "45k estrellas. Soporta 158 lenguajes; indexa el kernel de Linux (28M lineas) en 3 minutos segun su prueba.",
+    "alternativas": [
+      "graphify"
+    ],
+    "casos_de_uso": [
+      "Sesiones largas de codigo: un archivo de 3000 tokens leido en el turno 4 cuesta 37x en 40 turnos; con el mapa se consulta una vez.",
+      "Entender proyectos grandes: el grafo de conocimiento permite consultar dependencias e imports sin leer archivos.",
+      "Integracion MCP: funciona con Claude Code, Codex, Cursor y Hermes via MCP."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Es un servidor MCP (protocolo estandar) usable por cualquier cliente MCP.",
+    "pasos_implementacion": [
+      "Instalar: npx codebase-memory-mcp (o seguir README)",
+      "Configurar como servidor MCP en el agente",
+      "Indicar el proyecto a indexar",
+      "Consultar el grafo en vez de releer archivos"
+    ],
+    "fecha_guardado": "2026-09-28",
+    "fuente": "youtube",
+    "notas": "Es un servidor MCP, no un archivo de skill.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "agent-reach",
+    "nombre": "Agent Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "tipo": "Herramienta",
+    "aplicacion": [
+      "desarrollo",
+      "marketing"
+    ],
+    "categoria": "integraciones",
+    "descripcion": "Da al agente acceso a todo el internet: lee y busca en X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu. Un CLI, cero API fees.",
+    "estrellas": 85969,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "scraping",
+      "twitter",
+      "reddit",
+      "youtube",
+      "github",
+      "agent-infrastructure"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Acceso de un clic a redes y plataformas que bloquean servidores cloud (X cobra API, Reddit da 403, YouTube bloquea IPs)",
+    "por_que": "86k estrellas. Cuando las plataformas cambian, ya tiene ruta alternativa — el agente no nota los cambios.",
+    "alternativas": [
+      "browser-use",
+      "nanobrowser"
+    ],
+    "casos_de_uso": [
+      "Investigacion de redes: leer X, Reddit, YouTube sin pagar APIs.",
+      "Monitoreo de competidores y clientes en redes sociales.",
+      "Acceso desde VPS: funciona donde los servidores cloud estan bloqueados."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "CLI que funciona con cualquier agente que ejecute comandos.",
+    "pasos_implementacion": [
+      "Instalar: agent-reach install (sigue la doc del repo)",
+      "Ejecutar agent-reach doctor para verificar que plataformas estan listas",
+      "Pedir al agente leer X/Reddit/YouTube",
+      "Usar cuentas burner para plataformas con login"
+    ],
+    "fecha_guardado": "2026-09-28",
+    "fuente": "youtube",
+    "notas": "Recomendada #3 para instalar primero. OJO: cuentas burner recomendadas por el autor para plataformas con login.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "addyosmani-agent-skills",
+    "nombre": "Addy Osmani Agent Skills (Edmuno)",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "tipo": "Skills",
+    "aplicacion": [
+      "desarrollo",
+      "consultoria"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Paquete del ingeniero de Google Chrome (Addy Osmani): skills de nivel produccion organizadas en comandos que cubren especificar, planificar, construir, probar, revisar y publicar. Incluye desarrollo guiado por dudas.",
+    "estrellas": 99676,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "production-skills",
+      "chrome-engineer",
+      "claude-code",
+      "codex",
+      "cursor"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Skills de nivel produccion para el ciclo completo: especificar, planificar, construir, probar, revisar y publicar",
+    "por_que": "99.6k estrellas. De un ingeniero de Google Chrome. La parte mas interesante: el desarrollo guiado por dudas (el agente enumera sus suposiciones y las cuestiona).",
+    "alternativas": [
+      "superpowers"
+    ],
+    "casos_de_uso": [
+      "Codigo de produccion: usar las skills para el ciclo completo especificar->planificar->construir->probar->revisar->publicar.",
+      "Desarrollo guiado por dudas: cuando hay una decision importante, el agente enumera suposiciones, las cuestiona y sigue.",
+      "Implementaciones difíciles de deshacer: ideal para codigo de produccion de clientes."
+    ],
+    "modelos_limitados": [
+      "claude",
+      "codex"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skills en formato markdown portable; la logica (dudas, ciclo completo) se extrae a SKILL.md universal.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/addyosmani/agent-skills",
+      "Seleccionar las skills del ciclo que se requieran",
+      "Instalar en el agente (Claude Code, Codex, Cursor)",
+      "Probar el flujo completo con un proyecto de ejemplo"
+    ],
+    "fecha_guardado": "2026-09-28",
+    "fuente": "youtube",
+    "notas": "Del video era 'Edmuno' — corresponde a Addy Osmani (ingeniero de Google Chrome).",
+    "estado": "nuevo"
+  },
+  {
+    "id": "awesome-design-md",
+    "nombre": "Awesome DESIGN.md Library",
+    "url": "https://github.com/VoltAgent/awesome-design-md",
+    "tipo": "Skills",
+    "aplicacion": [
+      "diseno",
+      "desarrollo"
+    ],
+    "categoria": "desarrollo",
+    "descripcion": "Coleccion de archivos DESIGN.md listos, analizados de sistemas de diseno de marcas conocidas. Se usan como base, se cambian colores y fuentes.",
+    "estrellas": 118560,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "design-md",
+      "design-systems",
+      "brands",
+      "ui",
+      "ai-coding"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Instalar un DESIGN.md de marca conocida y adaptarlo: todo lo que el agente construya sale coherente con la identidad visual",
+    "por_que": "118k estrellas. Resuelve el problema de 'se ve hecho por IA': le das identidad visual explicita al agente.",
+    "alternativas": [
+      "designmd"
+    ],
+    "casos_de_uso": [
+      "Sitios para clientes: tomar un DESIGN.md base de marca similar, cambiar colores/fuentes y que el agente construya coherente.",
+      "Identidad visual para implementaciones: describir tipografia, espaciado, radio, sombra y tono en un formato que el agente entiende.",
+      "Evitar el look 'hecho por IA': definir la identidad en vez de dejar que el agente use el promedio de internet."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Archivos markdown universales; cualquier agente compatible con DESIGN.md los lee.",
+    "pasos_implementacion": [
+      "Explorar la coleccion y elegir una marca/sistema base",
+      "Copiar el DESIGN.md al proyecto",
+      "Cambiar colores, fuentes y tono por los de la marca del cliente",
+      "Pedir al agente construir siguiendo el DESIGN.md"
+    ],
+    "fecha_guardado": "2026-09-28",
+    "fuente": "youtube",
+    "notas": "Complementa designmd (el formato): este es la libreria de sistemas listos.",
+    "estado": "nuevo"
+  },
+  {
+    "id": "marketing-skills",
+    "nombre": "Marketing Skills (Corey Haines)",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "tipo": "Skills",
+    "aplicacion": [
+      "marketing",
+      "ventas"
+    ],
+    "categoria": "marketing",
+    "descripcion": "~50 habilidades de marketing en un paquete: SEO, anuncios pagados, conversion, copy, correo en frio, pricing, analisis de datos. Le da criterio al agente, no solo herramientas.",
+    "estrellas": 51795,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-27",
+    "tags": [
+      "marketing",
+      "seo",
+      "cro",
+      "copywriting",
+      "sales",
+      "growth"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Dar criterio de marketing al agente: que hace una buena pagina de ventas, por que un asunto gana sobre otro, si los anuncios prueban algo",
+    "por_que": "51k estrellas. La unica skill de la lista del video que afecta directamente a la facturacion.",
+    "alternativas": [
+      "wondelai-skills",
+      "social-media-research-skills"
+    ],
+    "casos_de_uso": [
+      "Marketing para PropulsarIA: SEO, conversion, copy para la web y canales.",
+      "Clientes que venden: darle criterio de marketing al agente que trabaja para clientes comerciales.",
+      "Correo en frio y pricing: skills para prospeccion y fijacion de precios de propuestas."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Skills en markdown portable a SKILL.md; el criterio de marketing es agnostico.",
+    "pasos_implementacion": [
+      "Clonar: git clone https://github.com/coreyhaines31/marketingskills",
+      "Seleccionar las skills relevantes (SEO, copy, pricing)",
+      "Instalar en el agente",
+      "Probar: pedir analizar una pagina de ventas o escribir una campaña"
+    ],
+    "fecha_guardado": "2026-09-28",
+    "fuente": "youtube",
+    "notas": "Si vendes algo, esta viene antes que cualquier infraestructura (dice el video).",
+    "estado": "nuevo"
+  }
+]
