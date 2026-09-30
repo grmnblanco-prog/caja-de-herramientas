@@ -270,7 +270,7 @@
       <div class="count" id="count-bar">0 recursos</div>
     </div>
   <button id="lang-btn" onclick="toggleLang()" style="font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid rgba(45,42,36,0.12);background:transparent;cursor:pointer;color:#5C5348;">EN</button>
-  <button id="lang-btn" onclick="toggleLang()" style="font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid rgba(45,42,36,0.12);background:transparent;cursor:pointer;color:#5C5348;">EN</button>
+  
   </div>
 </div>
 
@@ -434,7 +434,20 @@ function __(key) {
 function toggleLang() {
   lang = (lang === "es") ? "en" : "es";
   localStorage.setItem("caja-lang", lang);
+  // Update all UI elements
   document.title = __("title");
+  document.getElementById("tb-t1").textContent = __("titulo");
+  document.getElementById("tb-t2").textContent = __("titulo2");
+  document.getElementById("f-tipo").textContent = __("tipo");
+  document.getElementById("f-estado").textContent = __("estado");
+  document.getElementById("f-nivel").textContent = __("nivel");
+  document.getElementById("f-modelo").textContent = __("modelo");
+  document.getElementById("f-aplicacion").textContent = __("aplicacion");
+  document.getElementById("opt-todos").textContent = __("todos");
+  document.getElementById("opt-todas").textContent = __("todas");
+  document.getElementById("kits-btn-text").textContent = __("kits");
+  document.getElementById("status-label").textContent = __("ultima_act");
+  document.getElementById("search-pl").placeholder = __("buscar");
   var btn = document.getElementById("lang-btn");
   if (btn) btn.textContent = __("idioma");
   render();
