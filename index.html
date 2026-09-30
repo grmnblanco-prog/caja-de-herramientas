@@ -385,13 +385,13 @@ function render() {
   var filtrados = recursos.filter(function(r) {
     if (q && r.nombre.toLowerCase().indexOf(q) === -1 &&
         r.descripcion.toLowerCase().indexOf(q) === -1 &&
-        (r.tags || []).join(" ").toLowerCase().indexOf(q) === -1) return false;
+        (r.tags||[]).join(" ").toLowerCase().indexOf(q) === -1 && (r.aplicaciones||[]).join(" ").toLowerCase().indexOf(q) === -1) return false;
     if (ft && r.tipo !== ft) return false;
     if (fe && r.estado !== fe) return false;
-    if (fn && r.nivel_recomendado !== fn) return false;
+    if (fn && r.nivel !== fn) return false;
     if (fm === "agnostico" && !r.es_agnostico) return false;
     if (fm === "limitado" && r.es_agnostico !== false) return false;
-    if (fa && (!r.aplicacion || r.aplicacion.indexOf(fa) === -1)) return false;
+    if (fa && (!r.aplicaciones || r.aplicaciones.indexOf(fa) === -1)) return false;
     return true;
   });
 
