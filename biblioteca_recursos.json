@@ -4371,5 +4371,137 @@
     "fuente": "youtube",
     "notas": "Si vendes algo, esta viene antes que cualquier infraestructura (dice el video).",
     "estado": "nuevo"
+  },
+  {
+    "id": "ponytail",
+    "nombre": "Ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "descripcion": "Makes your AI agent think like the laziest senior dev in the room. Reduces over-engineering and unnecessary code generation.",
+    "para_que_sirve": "Reducir el exceso de código y optimizaciones prematuras generadas por agentes de IA, haciéndolos pensar como un desarrollador senior perezoso que escribe solo lo necesario.",
+    "por_que_se_recomienda": "149k estrellas. Complementa a Karpathy rules (no mejorar lo que no está roto) con un enfoque práctico de 'perezoso senior'. Reduce significativamente los tokens de salida.",
+    "casos_de_uso": [
+      "Configurar como skill de comportamiento para Claude Code o Codex para reducir código innecesario",
+      "Combinar con Karpathy rules y Caveman para maximizar eficiencia de tokens en agentes de IA",
+      "Establecer estándares de calidad (no escribir código que no se pidió explícitamente)"
+    ],
+    "pasos_implementacion": [
+      "Agregar el CLAUDE.md del repo como referencia en la configuración del agente",
+      "Combinar con Karpathy rules y Caveman para un stack completo de reducción de tokens",
+      "Ajustar el nivel de 'laziness' según el perfil del proyecto"
+    ],
+    "compatibilidad_modelos": "Claude, Codex, Gemini",
+    "modelo_limitado": false,
+    "aplicaciones": [
+      "desarrollo",
+      "agentes"
+    ],
+    "tipo": "Skill",
+    "estrellas": 149120,
+    "licencia": "MIT",
+    "estado": "nuevo",
+    "nivel": "N1",
+    "fuente": "LinkedIn",
+    "notas": "Ideal para complementar el stack de comportamiento de agentes. Se puede usar con Karpathy rules y Caveman.",
+    "sub_recursos": []
+  },
+  {
+    "id": "swe-rex",
+    "nombre": "SWE-ReX",
+    "url": "https://github.com/SWE-agent/SWE-ReX",
+    "descripcion": "Sandboxed code execution framework for AI agents. Massively parallel, easy to extend. Powers SWE-agent.",
+    "para_que_sirve": "Permite que agentes de IA ejecuten comandos shell en entornos aislados (Docker, AWS, Modal) con soporte para ejecución masivamente paralela, sin importar la infraestructura subyacente.",
+    "por_que_se_recomienda": "Framework de ejecución remota que desacopla la lógica del agente de la infraestructura. Permite ejecutar 100 agentes en paralelo. MIT license.",
+    "casos_de_uso": [
+      "Ejecutar agentes de IA en entornos sandboxeados para evaluación de benchmarks (SWE-bench)",
+      "Desplegar agentes de código en infraestructura cloud sin cambiar la lógica del agente",
+      "Ejecución paralela masiva de agentes para pruebas y evaluación"
+    ],
+    "pasos_implementacion": [
+      "Instalar con pip install swe-rex",
+      "Configurar backend (Docker local, AWS Fargate o Modal)",
+      "Integrar con el agente (SWE-agent u otro) para ejecución sandboxeada"
+    ],
+    "compatibilidad_modelos": "Claude, Codex, Gemini (agnóstico al modelo)",
+    "modelo_limitado": false,
+    "aplicaciones": [
+      "desarrollo",
+      "infraestructura",
+      "agentes"
+    ],
+    "tipo": "Framework",
+    "estrellas": 1200,
+    "licencia": "MIT",
+    "estado": "nuevo",
+    "nivel": "N3",
+    "fuente": "LinkedIn",
+    "notas": "Ideal para equipos que necesitan ejecutar agentes en paralelo sobre diferentes entornos. Requiere Docker o acceso cloud.",
+    "sub_recursos": []
+  },
+  {
+    "id": "beads",
+    "nombre": "Beads",
+    "url": "https://github.com/steveyegge/beads",
+    "descripcion": "Distributed graph issue tracker for AI agents. Persistent structured memory for coding agents, powered by Dolt.",
+    "para_que_sirve": "Proporciona memoria estructurada y persistente para agentes de codificación, reemplazando planes en markdown con un grafo con dependencias. Manejo de tareas de largo plazo sin perder contexto.",
+    "por_que_se_recomienda": "Resuelve el problema de pérdida de contexto en agentes al trabajar en proyectos grandes. Usa Dolt (base de datos SQL versionada) como backend, con branching y sync nativos.",
+    "casos_de_uso": [
+      "Seguimiento de tareas de largo plazo para agentes de IA en proyectos complejos",
+      "Reemplazar archivos markdown de planificación con un grafo de dependencias manejable por el agente",
+      "Memoria compartida entre múltiples agentes trabajando en el mismo repositorio"
+    ],
+    "pasos_implementacion": [
+      "Instalar CLI: curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash",
+      "Inicializar en el proyecto: cd tu-proyecto && bd init",
+      "Configurar el agente: echo \"Use 'bd' for task tracking\" >> AGENTS.md",
+      "Opcional: instalar con npm (npm install -g @beads/bd) o brew (brew install beads)"
+    ],
+    "compatibilidad_modelos": "Claude, Codex, Gemini (agnóstico al modelo)",
+    "modelo_limitado": false,
+    "aplicaciones": [
+      "desarrollo",
+      "agentes",
+      "datos"
+    ],
+    "tipo": "Herramienta",
+    "estrellas": 5000,
+    "licencia": "MIT",
+    "estado": "nuevo",
+    "nivel": "N2",
+    "fuente": "LinkedIn",
+    "notas": "Requerimiento: glibc 2.32+ (Ubuntu 22.04+, Debian 11+). El PC local del usuario (AMD A12) no soporta Docker pero sí la CLI nativa.",
+    "sub_recursos": []
+  },
+  {
+    "id": "gitmcp",
+    "nombre": "GitMCP",
+    "url": "https://github.com/idosal/git-mcp",
+    "descripcion": "Free, open-source, remote MCP server for any GitHub project. Transforms repos into documentation hubs for AI tools.",
+    "para_que_sirve": "Convierte cualquier repositorio público de GitHub en un servidor MCP que los asistentes de IA pueden consultar para obtener documentación y código actualizados, eliminando alucinaciones de código.",
+    "por_que_se_recomienda": "Zero setup: solo cambiar github.com por gitmcp.io en la URL del repo. Funciona con Cursor, VSCode, Claude. Acceso a documentación siempre actualizada.",
+    "casos_de_uso": [
+      "Conectar asistentes de IA a la documentación de cualquier repositorio GitHub sin configuración",
+      "Eliminar alucinaciones de código cuando el LLM no conoce una librería específica",
+      "Acceder a documentación de proyectos open-source directamente desde el IDE"
+    ],
+    "pasos_implementacion": [
+      "Para un repo específico: configurar URL gitmcp.io/{owner}/{repo} como MCP server en Cursor o VSCode",
+      "Para acceso genérico: usar gitmcp.io/docs como endpoint dinámico",
+      "Configurar en ~/.cursor/mcp.json: {\"mcpServers\": {\"gitmcp\": {\"url\": \"https://gitmcp.io/{owner}/{repo}\"}}}"
+    ],
+    "compatibilidad_modelos": "Claude, Codex, Gemini (cualquier asistente compatible con MCP)",
+    "modelo_limitado": false,
+    "aplicaciones": [
+      "desarrollo",
+      "agentes",
+      "datos"
+    ],
+    "tipo": "Herramienta",
+    "estrellas": 8000,
+    "licencia": "MIT",
+    "estado": "nuevo",
+    "nivel": "N1",
+    "fuente": "LinkedIn",
+    "notas": "Ideal para el stack de desarrollo de PropulsarIA. Conectar a repos de clientes para que el agente tenga contexto actualizado.",
+    "sub_recursos": []
   }
 ]
