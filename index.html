@@ -277,7 +277,7 @@
 <div class="filters">
   <div class="filter-group">
     <label>Buscar</label>
-    <input class="filter-input" id="search-input" placeholder="nombre, tag, descripcion..." oninput="render()">
+    <input class="filter-input" id="search-input" id="search-pl" placeholder="nombre, tag, descripcion..." oninput="render()">
   </div>
   <div class="filter-sep"></div>
   <div class="filter-group">
@@ -321,7 +321,7 @@
   </div>
   <div class="filter-sep"></div>
   <div class="filter-group">
-    <label>Modelos</label>
+    <label id="f-modelo">Modelos</label>
     <select class="filter-select" id="filter-modelo" onchange="render()">
       <option value="">Todos</option>
       <option value="agnostico">Agnosticos</option>
@@ -348,7 +348,7 @@
     </select>
   </div>
   <div class="filter-sep"></div>
-  <button class="btn-sm btn-sm-primary" onclick="mostrarKits()" style="font-size:12px;padding:5px 14px;">id="kits-btn-text">Kits de implementacion</button>
+  <button class="btn-sm btn-sm-primary" onclick="mostrarKits()" style="font-size:12px;padding:5px 14px;" id="kits-btn-text">Kits de implementacion</button>
 </div>
 
 <div class="grid" id="grid"></div>
@@ -443,8 +443,12 @@ function toggleLang() {
   document.getElementById("f-nivel").textContent = __("nivel");
   document.getElementById("f-modelo").textContent = __("modelo");
   document.getElementById("f-aplicacion").textContent = __("aplicacion");
-  document.getElementById("opt-todos").textContent = __("todos");
-  document.getElementById("opt-todas").textContent = __("todas");
+  // All "Todos" options
+  document.querySelectorAll("select option[value='']").forEach(function(o) {
+    o.textContent = __("todos");
+  });
+  // Aplicacion filter uses feminine "Todas"
+  document.getElementById("filter-aplicacion").querySelector("option[value='']").textContent = __("todas");
   document.getElementById("kits-btn-text").textContent = __("kits");
   document.getElementById("status-label").textContent = __("ultima_act");
   document.getElementById("search-pl").placeholder = __("buscar");
@@ -511,7 +515,7 @@ function render() {
 
   var html = "";
   if (filtrados.length === 0) {
-    html = '<div class="empty"><div class="icon">📦</div><h3>No hay recursos</h3><p>Agrega recursos desde Hermes o carga un archivo JSON con el boton "Cargar JSON".</p></div>';
+    html = '<div class="empty"><div class="icon">📦</div><h3>' + __("no_recursos_tit") + '</h3><p>' + __("no_recursos_desc") + '</p></div>';
   } else {
     filtrados.forEach(function(r) {
       var subHtml = "";
@@ -530,10 +534,10 @@ function render() {
 
       var modelosHtml = "";
       if (r.es_agnostico) {
-        modelosHtml = '<div class="model-info"><span class="agnostic">✓ Agnostic0</span> — ' + (r.como_hacer_agnostico || "Funciona con cualquier modelo.") + '</div>';
+        modelosHtml = '<div class="model-info"><span class="agnostic">✓ ' + __("agnostic0") + '</span> — ' + (r.como_hacer_agnostico || '<span>' + __("es_agnostico") + '</span>') + '</div>';
       } else {
         var models = (r.modelos_limitados || []).join(", ");
-        modelosHtml = '<div class="model-info"><span class="limited">⚠ Limitado a:</span> ' + models + '<span class="how-to">' + (r.como_hacer_agnostico || "") + '</span></div>';
+        modelosHtml = '<div class="model-info"><span class="limited">⚠ ' + __("limitado_a") + ' </span> ' + models + '<span class="how-to">' + (r.como_hacer_agnostico || "") + '</span></div>';
       }
 
       var starsHtml = r.estrellas ? '<span class="card-stars">⭐ ' + (r.estrellas >= 1000 ? (r.estrellas/1000).toFixed(1) + "k" : r.estrellas) + '</span>' : "";
@@ -560,24 +564,24 @@ function render() {
         '<div class="card-body">' +
           '<div style="font-size:12px;color:#5C5348;">' + r.descripcion + '</div>' +
 
-          (r.para_que ? '<div class="section"><div class="section-title">Para que sirve</div><div style="font-size:12px;color:#2D2A24;">' + r.para_que + '</div></div>' : "") +
-          (r.por_que ? '<div class="section"><div class="section-title">Por que se recomienda</div><div style="font-size:12px;color:#2D2A24;">' + r.por_que + '</div></div>' : "") +
+          (r.para_que ? '<div class="section">'<div class="section-title">' + __("para_que") + '</div>'<div style="font-size:12px;color:#2D2A24;">' + r.para_que + '</div></div>' : "") +
+          (r.por_que ? '<div class="section">'<div class="section-title">' + __("por_que") + '</div>'<div style="font-size:12px;color:#2D2A24;">' + r.por_que + '</div></div>' : "") +
 
-          (subHtml ? '<div class="section"><div class="section-title">Sub-recursos</div>' + subHtml + '</div>' : "") +
+          (subHtml ? '<div class="section">'<div class="section-title">' + __("sub_recursos") + '</div>'' + subHtml + '</div>' : "") +
 
-          (casosHtml ? '<div class="section"><div class="section-title">Casos de uso</div>' + casosHtml + '</div>' : "") +
+          (casosHtml ? '<div class="section">'<div class="section-title">' + __("casos_uso") + '</div>'' + casosHtml + '</div>' : "") +
 
-          (r.tags && r.tags.length ? '<div class="section"><div class="section-title">Tags</div>' + r.tags.map(function(t) { return '<span class="tag tag-gray">' + t + '</span>'; }).join("") + '</div>' : "") +
+          (r.tags && r.tags.length ? '<div class="section">'<div class="section-title">' + __("tags") + '</div>'' + r.tags.map(function(t) { return '<span class="tag tag-gray">' + t + '</span>'; }).join("") + '</div>' : "") +
 
           '<div class="section">' + modelosHtml + '</div>' +
 
-          (r.pasos_implementacion && r.pasos_implementacion.length ? '<div class="section"><div class="section-title">Pasos para implementar</div>' + r.pasos_implementacion.map(function(p, i) { return '<div class="use-case"><strong>' + (i+1) + '.</strong> ' + p + '</div>'; }).join("") + '</div>' : "") +
+          (r.pasos_implementacion && r.pasos_implementacion.length ? '<div class="section">'<div class="section-title">' + __("pasos_impl") + '</div>'' + r.pasos_implementacion.map(function(p, i) { return '<div class="use-case"><strong>' + (i+1) + '.</strong> ' + p + '</div>'; }).join("") + '</div>' : "") +
 
-          (r.notas ? '<div class="section"><div class="section-title">Notas</div><div style="font-size:11px;color:#8B8176;">' + r.notas + '</div></div>' : "") +
+          (r.notas ? '<div class="section">'<div class="section-title">' + __("notas") + '</div>'<div style="font-size:11px;color:#8B8176;">' + r.notas + '</div></div>' : "") +
 
           '<div class="card-actions">' +
-            '<button class="btn-sm btn-sm-outline" onclick="mostrarDetalle(\'' + r.id + '\')">Detalle</button>' +
-            '<a class="btn-sm btn-sm-outline" href="' + r.url + '" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;">Abrir repo ↗</a>' +
+            '<button class="btn-sm btn-sm-outline" onclick="mostrarDetalle(\'' + r.id + '\')">' + __("detalle") + '</button>' +
+            '<a class="btn-sm btn-sm-outline" href="' + r.url + '" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;">' + __("abrir_repo") + ' ↗</a>' +
           '</div>' +
         '</div>' +
       '</div>';
@@ -599,24 +603,24 @@ function mostrarDetalle(id) {
   var models = (r.modelos_limitados || []).join(", ") || "Ninguno";
   var sub = "";
   if (r.sub_recursos && r.sub_recursos.length) {
-    sub = '<div class="field"><div class="lbl">Sub-recursos</div><div class="val">' + r.sub_recursos.map(function(s) { return s.nombre + ' (' + s.descripcion + ')'; }).join("<br>") + '</div></div>';
+    sub = '<div class="field"><div class="lbl">' + __("sub_recursos") + '</div><div class="val">' + r.sub_recursos.map(function(s) { return s.nombre + ' (' + s.descripcion + ')'; }).join("<br>") + '</div></div>';
   }
 
   document.getElementById("modal-body").innerHTML =
     '<h3>' + r.nombre + '</h3>' +
-    '<div class="field"><div class="lbl">URL</div><div class="val"><a href="' + r.url + '" target="_blank">' + r.url + '</a></div></div>' +
-    '<div class="field"><div class="lbl" id="f-tipo">Tipo</div><div class="val">' + r.tipo + ' · ' + (r.categoria || "general") + '</div></div>' +
-    '<div class="field"><div class="lbl">Estrellas</div><div class="val">' + (r.estrellas || 0).toLocaleString() + '</div></div>' +
-    '<div class="field"><div class="lbl">Licencia</div><div class="val">' + (r.licencia || "N/A") + '</div></div>' +
-    '<div class="field"><div class="lbl">Ultimo commit</div><div class="val">' + (r.ultimo_commit || "N/A") + '</div></div>' +
-    '<div class="field"><div class="lbl" id="f-nivel">Nivel</div><div class="val">' + (r.nivel_recomendado || "N/A") + '</div></div>' +
-    '<div class="field"><div class="lbl" id="f-estado">Estado</div><div class="val">' + statusLabel(r.estado) + '</div></div>' +
-    '<div class="field"><div class="lbl">Fuente</div><div class="val">' + (r.fuente || "N/A") + '</div></div>' +
-    '<div class="field"><div class="lbl">Modelos limitados</div><div class="val">' + models + '</div></div>' +
-    '<div class="field"><div class="lbl">Es agnostic0</div><div class="val">' + (r.es_agnostico ? __("si") : __("no")) + '</div></div>' +
-    (r.como_hacer_agnostico ? '<div class="field"><div class="lbl">Como hacerlo agnostic0</div><div class="val">' + r.como_hacer_agnostico + '</div></div>' : "") +
+    '<div class="field"><div class="lbl">' + __("url") + '</div><div class="val"><a href="' + r.url + '" target="_blank">' + r.url + '</a></div></div>' +
+    '<div class="field"><div class="lbl" id="f-tipo">' + __("tipo") + '</div><div class="val">' + r.tipo + ' · ' + (r.categoria || "general") + '</div></div>' +
+    '<div class="field"><div class="lbl">' + __("estrellas") + '</div><div class="val">' + (r.estrellas || 0).toLocaleString() + '</div></div>' +
+    '<div class="field"><div class="lbl">' + __("licencia") + '</div><div class="val">' + (r.licencia || "N/A") + '</div></div>' +
+    '<div class="field"><div class="lbl">' + __("ultimo_commit") + '</div><div class="val">' + (r.ultimo_commit || "N/A") + '</div></div>' +
+    '<div class="field"><div class="lbl" id="f-nivel">' + __("nivel") + '</div><div class="val">' + (r.nivel_recomendado || "N/A") + '</div></div>' +
+    '<div class="field"><div class="lbl" id="f-estado">' + __("estado") + '</div><div class="val">' + statusLabel(r.estado) + '</div></div>' +
+    '<div class="field"><div class="lbl">' + __("fuente") + '</div><div class="val">' + (r.fuente || "N/A") + '</div></div>' +
+    '<div class="field"><div class="lbl">' + __("modelos_lim") + '</div><div class="val">' + models + '</div></div>' +
+    '<div class="field"><div class="lbl">' + __("es_agnostico") + '</div><div class="val">' + (r.es_agnostico ? __("si") : __("no")) + '</div></div>' +
+    (r.como_hacer_agnostico ? '<div class="field"><div class="lbl">' + __("como_agnostico") + '</div><div class="val">' + r.como_hacer_agnostico + '</div></div>' : "") +
     sub +
-    (r.notas ? '<div class="field"><div class="lbl">Notas</div><div class="val">' + r.notas + '</div></div>' : "") +
+    (r.notas ? '<div class="field"><div class="lbl">' + __("notas") + '</div><div class="val">' + r.notas + '</div></div>' : "") +
     '<div class="field"><div class="lbl">Fecha guardado</div><div class="val">' + (r.fecha_guardado || "N/A") + '</div></div>';
 
   document.getElementById("modal").classList.add("open");
@@ -740,8 +744,8 @@ function cerrarKits() {
 </script>
 
 <div class="status-bar">
-  <span>id="status-label">Ultima actualizacion: <strong id="fecha-actualizacion">—</strong></span>
-  <span id="total-recursos-status">0 recursos</span>
+  <span id="status-label">Ultima actualizacion: <strong id="fecha-actualizacion">—</strong></span>
+  <span id="total-recursos-status">0</span>
 </div>
 
 <style>
