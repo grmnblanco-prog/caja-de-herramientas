@@ -564,20 +564,20 @@ function render() {
         '<div class="card-body">' +
           '<div style="font-size:12px;color:#5C5348;">' + r.descripcion + '</div>' +
 
-          (r.para_que ? '<div class="section">'<div class="section-title">' + __("para_que") + '</div>'<div style="font-size:12px;color:#2D2A24;">' + r.para_que + '</div></div>' : "") +
-          (r.por_que ? '<div class="section">'<div class="section-title">' + __("por_que") + '</div>'<div style="font-size:12px;color:#2D2A24;">' + r.por_que + '</div></div>' : "") +
+          (r.para_que ? '<div class="section"><div class="section-title">' + __("para_que") + '</div><div style="font-size:12px;color:#2D2A24;">' + r.para_que + '</div></div>' : "") +
+          (r.por_que ? '<div class="section"><div class="section-title">' + __("por_que") + '</div><div style="font-size:12px;color:#2D2A24;">' + r.por_que + '</div></div>' : "") +
 
-          (subHtml ? '<div class="section">'<div class="section-title">' + __("sub_recursos") + '</div>'' + subHtml + '</div>' : "") +
+          (subHtml ? '<div class="section"><div class="section-title">' + __("sub_recursos") + '</div>' + subHtml + '</div>' : "") +
 
-          (casosHtml ? '<div class="section">'<div class="section-title">' + __("casos_uso") + '</div>'' + casosHtml + '</div>' : "") +
+          (casosHtml ? '<div class="section"><div class="section-title">' + __("casos_uso") + '</div>' + casosHtml + '</div>' : "") +
 
-          (r.tags && r.tags.length ? '<div class="section">'<div class="section-title">' + __("tags") + '</div>'' + r.tags.map(function(t) { return '<span class="tag tag-gray">' + t + '</span>'; }).join("") + '</div>' : "") +
+          (r.tags && r.tags.length ? '<div class="section"><div class="section-title">' + __("tags") + '</div>' + r.tags.map(function(t) { return '<span class="tag tag-gray">' + t + '</span>'; }).join("") + '</div>' : "") +
 
           '<div class="section">' + modelosHtml + '</div>' +
 
-          (r.pasos_implementacion && r.pasos_implementacion.length ? '<div class="section">'<div class="section-title">' + __("pasos_impl") + '</div>'' + r.pasos_implementacion.map(function(p, i) { return '<div class="use-case"><strong>' + (i+1) + '.</strong> ' + p + '</div>'; }).join("") + '</div>' : "") +
+          (r.pasos_implementacion && r.pasos_implementacion.length ? '<div class="section"><div class="section-title">' + __("pasos_impl") + '</div>' + r.pasos_implementacion.map(function(p, i) { return '<div class="use-case"><strong>' + (i+1) + '.</strong> ' + p + '</div>'; }).join("") + '</div>' : "") +
 
-          (r.notas ? '<div class="section">'<div class="section-title">' + __("notas") + '</div>'<div style="font-size:11px;color:#8B8176;">' + r.notas + '</div></div>' : "") +
+          (r.notas ? '<div class="section"><div class="section-title">' + __("notas") + '</div><div style="font-size:11px;color:#8B8176;">' + r.notas + '</div></div>' : "") +
 
           '<div class="card-actions">' +
             '<button class="btn-sm btn-sm-outline" onclick="mostrarDetalle(\'' + r.id + '\')">' + __("detalle") + '</button>' +
