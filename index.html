@@ -276,8 +276,8 @@
 
 <div class="filters">
   <div class="filter-group">
-    <label>Buscar</label>
-    <input class="filter-input" id="search-input" id="search-pl" placeholder="nombre, tag, descripcion..." oninput="render()">
+    <label id="f-buscar">Buscar</label>
+    <input class="filter-input" id="search-input" placeholder="nombre, tag, descripcion..." oninput="render()">
   </div>
   <div class="filter-sep"></div>
   <div class="filter-group">
@@ -427,6 +427,37 @@ var __t = {
   }
 };
 
+var __opt = {
+  es: {
+    "Agente IA": "Agente IA", "Base de Datos": "Base de Datos", "CRM": "CRM",
+    "Conexiones": "Conexiones", "Framework": "Framework", "Herramienta": "Herramienta",
+    "Metodologia": "Metodologia", "Plataforma": "Plataforma", "Recursos": "Recursos",
+    "Skill": "Skill", "Skills": "Skills", "Visualizacion": "Visualizacion",
+    "Nuevo": "Nuevo", "Pendiente": "Pendiente", "Probado": "Probado",
+    "Recomendado": "Recomendado", "Descartado": "Descartado",
+    "N1": "N1", "N2": "N2", "N3": "N3", "N4": "N4",
+    "Agnosticos": "Agnosticos", "Limitados": "Limitados",
+    "Video": "Video", "Seguridad": "Seguridad", "Diseno": "Diseno",
+    "Desarrollo": "Desarrollo", "Ventas": "Ventas", "Atencion cliente": "Atencion cliente",
+    "Marketing": "Marketing", "Datos": "Datos", "Infraestructura": "Infraestructura",
+    "Agentes": "Agentes", "Automation": "Automation", "Consultoria": "Consultoria"
+  },
+  en: {
+    "Agente IA": "AI Agent", "Base de Datos": "Database", "CRM": "CRM",
+    "Conexiones": "Connections", "Framework": "Framework", "Herramienta": "Tool",
+    "Metodologia": "Methodology", "Plataforma": "Platform", "Recursos": "Resources",
+    "Skill": "Skill", "Skills": "Skills", "Visualizacion": "Visualization",
+    "Nuevo": "New", "Pendiente": "Pending", "Probado": "Tested",
+    "Recomendado": "Recommended", "Descartado": "Discarded",
+    "N1": "N1", "N2": "N2", "N3": "N3", "N4": "N4",
+    "Agnosticos": "Model agnostic", "Limitados": "Limited",
+    "Video": "Video", "Seguridad": "Security", "Diseno": "Design",
+    "Desarrollo": "Development", "Ventas": "Sales", "Atencion cliente": "Customer care",
+    "Marketing": "Marketing", "Datos": "Data", "Infraestructura": "Infrastructure",
+    "Agentes": "Agents", "Automation": "Automation", "Consultoria": "Consulting"
+  }
+};
+
 function __(key) {
   return __t[lang][key] || key;
 }
@@ -434,10 +465,11 @@ function __(key) {
 function toggleLang() {
   lang = (lang === "es") ? "en" : "es";
   localStorage.setItem("caja-lang", lang);
-  // Update all UI elements
   document.title = __("title");
   document.getElementById("tb-t1").textContent = __("titulo");
   document.getElementById("tb-t2").textContent = __("titulo2");
+  document.getElementById("f-buscar").textContent = __("buscar");
+  document.getElementById("search-input").placeholder = __("buscar");
   document.getElementById("f-tipo").textContent = __("tipo");
   document.getElementById("f-estado").textContent = __("estado");
   document.getElementById("f-nivel").textContent = __("nivel");
@@ -449,9 +481,13 @@ function toggleLang() {
   });
   // Aplicacion filter uses feminine "Todas"
   document.getElementById("filter-aplicacion").querySelector("option[value='']").textContent = __("todas");
+  // Translate option texts inside selects
+  document.querySelectorAll("select option:not([value=''])").forEach(function(o) {
+    var t = __opt[lang][o.textContent];
+    if (t) o.textContent = t;
+  });
   document.getElementById("kits-btn-text").textContent = __("kits");
   document.getElementById("status-label").textContent = __("ultima_act");
-  document.getElementById("search-pl").placeholder = __("buscar");
   var btn = document.getElementById("lang-btn");
   if (btn) btn.textContent = __("idioma");
   render();
@@ -484,7 +520,7 @@ function statusClass(estado) {
 }
 
 function statusLabel(estado) {
-  var m = { "nuevo": "Nuevo", "pendiente-probar": "Pendiente", "probado": "Probado", "recomendado": "Recomendado", "descartado": "Descartado" };
+  var m = { "nuevo": __("nuevo"), "pendiente-probar": __("pendiente"), "probado": __("probado"), "recomendado": __("recomendado"), "descartado": __("descartado") };
   return m[estado] || estado;
 }
 
