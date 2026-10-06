@@ -31,7 +31,7 @@
     display: flex; flex-direction: column; align-items: center;
     gap: 8px;
   }
-  .topbar-head { display: flex; align-items: center; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .topbar-head { display: flex; align-items: center; gap: clamp(14px, 2vw, 32px); justify-content: center; flex-wrap: wrap; }
   .topbar-logo-img { height: clamp(64px, 6vw, 110px); width: auto; }
   .topbar h1 { font-size: clamp(20px, 3vw, 44px); font-weight: 700; color: #2D2A24; margin: 0; text-align: center;
     text-shadow:
