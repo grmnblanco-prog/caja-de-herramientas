@@ -5114,5 +5114,108 @@
     "pasos_implementacion": [],
     "notas": "",
     "fuente": "github"
+  },
+  {
+    "id": "tesseract-ocr",
+    "nombre": "Tesseract OCR",
+    "url": "https://github.com/tesseract-ocr/tesseract",
+    "tipo": "Herramienta",
+    "categoria": "desarrollo",
+    "descripcion": "OCR (reconocimiento optico de caracteres) para extraer texto de imagenes y PDFs escaneados. Soporta 100+ idiomas, incluido espanol. Motor de OCR mas usado del mundo.",
+    "estrellas": 66000,
+    "licencia": "Apache-2.0",
+    "tags": [
+      "ocr",
+      "vision",
+      "pdf",
+      "text-extraction",
+      "scanned-documents"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Extraer texto de imagenes, capturas de pantalla, PDFs escaneados y fotos de documentos",
+    "por_que": "Estandar de facto para OCR. Corre en CPU, rapido, idioma espanol disponible. Usado por Chatbox y Open WebUI como motor OCR local.",
+    "alternativas": [
+      "EasyOCR",
+      "PaddleOCR",
+      "RapidOCR"
+    ]
+  },
+  {
+    "id": "pandoc",
+    "nombre": "Pandoc",
+    "url": "https://github.com/jgm/pandoc",
+    "tipo": "Herramienta",
+    "categoria": "desarrollo",
+    "descripcion": "Conversor universal de documentos. Convierte entre Word, Markdown, PDF, HTML, LaTeX, EPUB, y muchos mas formatos. Ideal para preparar documentos para IA local.",
+    "estrellas": 36000,
+    "licencia": "GPL-2.0",
+    "tags": [
+      "conversion",
+      "documents",
+      "markdown",
+      "word",
+      "pdf",
+      "pipeline"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Convertir documentos entre formatos (Word a texto, Excel a Markdown, etc.) para alimentar modelos de IA local",
+    "por_que": "El conversor de documentos mas completo. Un solo comando convierte practicamente cualquier formato a texto plano para enviar a Ollama.",
+    "alternativas": [
+      "python-docx",
+      "openpyxl",
+      "pypandoc"
+    ]
+  },
+  {
+    "id": "chatbox",
+    "nombre": "Chatbox",
+    "url": "https://chatboxai.app/",
+    "tipo": "Aplicacion",
+    "categoria": "general",
+    "descripcion": "Cliente de escritorio para IA local y en nube. Conecta con Ollama, OpenAI, Claude, Gemini. Interfaz limpia, arrastrar archivos, conversaciones con contexto. La mejor interfaz para Ollama local.",
+    "estrellas": 10000,
+    "licencia": "MIT",
+    "tags": [
+      "chat",
+      "ollama",
+      "desktop",
+      "interface",
+      "local-ai",
+      "documents"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Interfaz grafica para chatear con modelos locales (Ollama), arrastrar documentos y mantener historial de conversaciones",
+    "por_que": "La interfaz mas rapida y limpia para Ollama. Arrastras un PDF y pegas texto sin complicaciones. Compatible con Windows, Mac y Linux.",
+    "alternativas": [
+      "Bionic",
+      "LM Studio",
+      "Open WebUI",
+      "AnythingLLM"
+    ]
+  },
+  {
+    "id": "chatwoot",
+    "nombre": "Chatwoot",
+    "url": "https://github.com/chatwoot/chatwoot",
+    "tipo": "Herramienta",
+    "categoria": "general",
+    "descripcion": "CRM de conversaciones open-source. Gestiona WhatsApp, Messenger, Instagram, correo y chat web en un solo lugar. Ideal para PYMES que quieren centralizar atencion al cliente con IA.",
+    "estrellas": 22000,
+    "licencia": "MIT",
+    "tags": [
+      "crm",
+      "whatsapp",
+      "chat",
+      "customer-support",
+      "automation"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "CRM multicanal para gestionar conversaciones de WhatsApp, redes sociales y chat web con agentes IA",
+    "por_que": "Alternativa open-source a Zendesk e Intercom. Se integra con WhatsApp Cloud API y permite automatizar respuestas con IA local.",
+    "alternativas": [
+      "RocketChat",
+      "Mattermost",
+      "Zammad"
+    ]
   }
 ]
