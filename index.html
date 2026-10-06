@@ -31,8 +31,12 @@
     display: flex; flex-direction: column; align-items: center;
     gap: 8px;
   }
-  .topbar-head { display: flex; align-items: center; gap: clamp(14px, 3vw, 60px); justify-content: center; flex-wrap: wrap; }
-  .topbar-logo-img { height: clamp(64px, 6vw, 110px); width: auto; }
+    .topbar-head { display: flex; align-items: center; gap: clamp(14px, 3vw, 60px); justify-content: center; flex-wrap: wrap; width: 100%; }
+    @media (min-width: 769px) {
+      .topbar-head { gap: 0; justify-content: flex-start; position: relative; }
+      .topbar-head h1 { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+    }
+    .topbar-logo-img { height: clamp(64px, 6vw, 110px); width: auto; }
   .topbar h1 { font-size: clamp(20px, 3vw, 44px); font-weight: 700; color: #2D2A24; margin: 0; text-align: center;
     text-shadow:
       0 1px 0 rgba(0,0,0,0.12),
