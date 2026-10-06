@@ -32,11 +32,16 @@
     flex-wrap: wrap; gap: 12px;
   }
   .topbar-left { display: flex; align-items: center; gap: 14px; }
-  .topbar-logo-img { height: 64px; width: auto; }
-  .topbar h1 { font-size: clamp(15px, 2.2vw, 28px); font-weight: 600; color: #2D2A24;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.03); }
-  .topbar h1 span { color: #E8633A; }
-  .topbar .count { font-size: clamp(12px, 1.2vw, 16px); color: #8B8176; }
+  .topbar-logo-img { height: clamp(64px, 5vw, 96px); width: auto; }
+    .topbar h1 { font-size: clamp(18px, 2.5vw, 36px); font-weight: 700; color: #2D2A24;
+      text-shadow:
+        0 1px 0 rgba(0,0,0,0.12),
+        0 2px 1px rgba(0,0,0,0.10),
+        0 4px 2px rgba(0,0,0,0.08),
+        0 6px 4px rgba(232,99,58,0.3),
+        0 8px 6px rgba(232,99,58,0.2); }
+    .topbar h1 span { color: #E8633A; }
+    .topbar .count { font-size: clamp(12px, 1.4vw, 18px); color: #8B8176; }
 
   .filters {
     display: flex; gap: 8px; padding: 12px 32px;
@@ -64,10 +69,10 @@
   .filter-input:focus { border-color: #E8633A; }
   .filter-sep { width: 1px; height: clamp(24px, 2.5vw, 36px); background: rgba(45,42,36,0.08); margin: 0 4px; }
   .btn-sm {
-    padding: clamp(5px, 0.6vw, 10px) clamp(12px, 1.2vw, 20px); border-radius: 6px;
-    font-size: clamp(11px, 1vw, 15px); font-weight: 500; border: none; cursor: pointer;
-    transition: all 0.15s;
-  }
+      padding: clamp(5px, 0.6vw, 12px) clamp(12px, 1.2vw, 24px); border-radius: 6px;
+      font-size: clamp(11px, 1.2vw, 17px); font-weight: 500; border: none; cursor: pointer;
+      transition: all 0.15s;
+    }
   .btn-sm-primary { background: #E8633A; color: #fff; }
   .btn-sm-primary:hover { background: #D4522B; }
   .btn-sm-outline { background: transparent; color: #8B8176; border: 1px solid rgba(45,42,36,0.12); }
@@ -270,11 +275,11 @@
 <script>document.getElementById("tb-t1").textContent=__("titulo");document.getElementById("tb-t2").textContent=__("titulo2")</script>
       <div class="count" id="count-bar">0 recursos</div>
     </div>
-  <button id="lang-btn" onclick="toggleLang()" style="font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid rgba(45,42,36,0.12);background:transparent;cursor:pointer;color:#5C5348;">EN</button>
+  <button id="lang-btn" onclick="toggleLang()" style="font-size:clamp(13px,1.2vw,18px);padding:clamp(6px,0.6vw,12px) clamp(12px,1.2vw,20px);border-radius:8px;border:1px solid rgba(45,42,36,0.12);background:transparent;cursor:pointer;color:#5C5348;">EN</button>
   
   
-  <button onclick="abrirContrib()" style="font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid rgba(45,42,36,0.12);background:transparent;cursor:pointer;color:#5C5348;" title="Contribuir">&#x1F91D;</button>
-  <button onclick="abrirIntro()" style="font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid rgba(45,42,36,0.12);background:transparent;cursor:pointer;color:#5C5348;" title="Acerca de">?</button>
+  <button onclick="abrirContrib()" style="font-size:clamp(13px,1.2vw,18px);padding:clamp(6px,0.6vw,12px) clamp(12px,1.2vw,20px);border-radius:8px;border:1px solid rgba(45,42,36,0.12);background:transparent;cursor:pointer;color:#5C5348;" title="Contribuir">&#x1F91D;</button>
+    <button onclick="abrirIntro()" style="font-size:clamp(13px,1.2vw,18px);padding:clamp(6px,0.6vw,12px) clamp(12px,1.2vw,20px);border-radius:8px;border:1px solid rgba(45,42,36,0.12);background:transparent;cursor:pointer;color:#5C5348;" title="Acerca de">?</button>
 </div>
 </div>
 
@@ -330,7 +335,7 @@
     </select>
   </div>
   <div class="filter-sep"></div>
-  <button class="btn-sm btn-sm-primary" onclick="mostrarKits()" style="font-size:12px;padding:5px 14px;" id="kits-btn-text">Kits de implementacion</button>
+  <button class="btn-sm btn-sm-primary" onclick="mostrarKits()" style="font-size:clamp(14px,1.3vw,19px);padding:clamp(8px,0.7vw,14px) clamp(16px,1.4vw,28px);" id="kits-btn-text">Kits de implementacion</button>
 </div>
 
 <div class="grid" id="grid"></div>
