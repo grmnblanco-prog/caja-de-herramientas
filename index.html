@@ -272,6 +272,26 @@
     .card-body { padding: 0 14px 12px; }
     .filter-input { width: 120px; }
   }
+  .kit-items { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .kit-item {
+    font-size: 11px; color: #2D2A24; background: #F7F3EC;
+    border: 1px solid rgba(45,42,36,0.12); border-radius: 999px;
+    padding: 5px 11px; cursor: pointer; font-family: inherit;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .kit-item:hover { background: #E8633A; color: #FFFFFF; border-color: #E8633A; }
+  .kit-count {
+    font-size: 10px; font-weight: 600; color: #8B8176;
+    background: rgba(45,42,36,0.06); border-radius: 999px;
+    padding: 2px 8px; margin-left: 8px; vertical-align: middle;
+  }
+  .kit-combo {
+    font-size: 11px; color: #52525B; background: #FBF8F3;
+    border-left: 3px solid #E8633A; border-radius: 4px;
+    padding: 8px 10px; margin-bottom: 8px; line-height: 1.5;
+  }
+  .kit-combo strong { color: #2D2A24; }
+  .modal-overlay.stack { z-index: 1100; }
 </style>
 </head>
 <body>
@@ -652,7 +672,9 @@ function mostrarDetalle(id) {
 }
 
 function cerrarModal() {
-  document.getElementById("modal").classList.remove("open");
+  var m = document.getElementById("modal");
+  m.classList.remove("open");
+  m.classList.remove("stack");
 }
 
 function cargarJSON() {
@@ -732,33 +754,144 @@ render();
 </div>
 
 <script>
+// ==== Kits de implementacion (derivados del JSON) ====
+// Cada kit declara palabras clave. Un recurso entra al kit si alguna de sus
+// tags, aplicaciones, categoria o tipo coincide. Un recurso puede estar en
+// varios kits. Los kits se recalculan en cada apertura, asi que un recurso
+// nuevo aparece solo, sin tocar este archivo.
+// Los emoji van como \uXXXX para que el archivo no dependa de la codificacion.
+
+var KITS_CATALOGO = [
+  {nombre: "Configuracion de Agentes", icono: "\uD83D\uDD27",
+   desc: "Cuando quieres que el agente trabaje mejor, mas barato y con mas alcance.",
+   combo: "Empieza por las reglas de comportamiento (karpathy-rules) y el modo austero (caveman) para bajar el costo de tokens. Suma firecrawl cuando el agente deba leer la web, y browser-use solo si necesita interactuar con sitios. Deja codebase-memory-mcp para cuando el proyecto crezca y el agente tenga que recordar la arquitectura.",
+   match: ["agent","agents","ai-agents","multi-agent","multiagent","agentic","agentic-ai","agentic-workflows","claude-code","codex-cli","mcp","mcp-server","agent-skills","claude-skills","claude-code-skill","claude-code-skills","agent-framework","agent-harness","agent-kit","agent-orchestration","orchestration","autonomous","swarm","swarm-intelligence","rules","behavior","harness","karpathy","hermes-skill"]},
+
+  {nombre: "Gestion de Clientes y CRM", icono: "\uD83D\uDCCB",
+   desc: "Cuando la necesidad es organizar clientes, citas, seguimiento y comunicacion.",
+   combo: "Monta Chatwoot como bandeja multicanal y conectalo a WhatsApp; suma un CRM (Twenty o Deskcomm) para el historial. Si el equipo es pequeno, empieza solo con Chatwoot + WhatsApp: agregar el CRM antes de tener volumen de conversaciones suele ser trabajo perdido.",
+   match: ["crm","whatsapp","chat","chatbot","customer-support","sales","ventas","atencion-cliente","appointment","email","sms","messaging","lead-generation","salesforce-alternative","small-business","mom-pop"]},
+
+  {nombre: "Automatizacion de Procesos", icono: "\uD83E\uDD16",
+   desc: "Cuando hay procesos manuales repetitivos que consumen horas.",
+   combo: "Empieza con n8n para los flujos que ya tienes claros, y reserva los agentes autonomas (agent-zero) para los que exigen decidir. Regla practica: si el proceso se puede dibujar como un diagrama de cajas, es n8n; si necesita criterio, es un agente.",
+   match: ["automation","workflow","workflow-automation","workflow-nodes","n8n","integration","integrations","low-code","internal-tools","process-mapping","operations","browser-automation","web-automation","browser-extension","chrome-extension","playwright","dashboard","todo","time-tracking"]},
+
+  {nombre: "Marketing y Contenido", icono: "\uD83D\uDCC8",
+   desc: "Cuando la necesidad es contenido, presencia digital y crecimiento.",
+   combo: "Usa las skills de marketing para dar criterio (SEO, copy, precios) y OpenSERP para investigar a la competencia antes de escribir. Para produccion, Remotion u OpenMotion cubren el video programatico. No publiques sin pasar el texto por humanizer.",
+   match: ["marketing","seo","cro","copywriting","growth","ads","content-strategy","content-creation","social-media","brands","competitor-analysis","analytics","youtube","tiktok","faceless","short-video","serp","twitter","reddit","links","url-shortener","tracking","qr","product-hunt","inspiration","templates","business-visualization","visualization"]},
+
+  {nombre: "Diseno y UI", icono: "\uD83C\uDFA8",
+   desc: "Cuando la necesidad es interfaz, identidad visual y experiencia.",
+   combo: "Empieza por el DESIGN.md de tu marca (design-md) y aplicalo con las skills de diseno. Excalidraw para bocetar en la llamada, screenshot-to-code para convertir referencias en codigo. Evita mezclar dos sistemas de diseno en el mismo producto.",
+   match: ["design","design-systems","design-md","ui","ux","frontend","figma","excalidraw","diagrams","drawing","svg","tailwind","react","canvas","whiteboard","web-design","webui","gallery","slides","screenshot","image","image-generation","ai-image","video","video-generation","video-production","ai-video","ai-video-generator","programmatic-video","higgsfield","ai-studio","dubbing","video-translation","avatar","digital-human","ai-avatar","motion-design","animation","minimalist","interfaz","interactive"]},
+
+  {nombre: "Datos y Conocimiento", icono: "\uD83D\uDDC4",
+   desc: "Cuando la necesidad es base de datos, memoria, RAG o documentos.",
+   combo: "Docling convierte tus PDFs a Markdown; cognee o graphify construyen el grafo de conocimiento encima. Si el volumen es bajo, un RAG simple basta: no montes un grafo de conocimiento antes de tener mas de 100 documentos.",
+   match: ["data","database","vector-database","vector-search","rag","knowledge-graph","documents","document-parser","pdf","ocr","text-extraction","scanned-documents","conversion","spreadsheet","docs","markdown","codebase","code-intelligence","ast","htap","graphql","text","scraping","crawler","web-data","content-extraction","google-maps","persistent-memory","memory","graphify","cognee","univer","docling","matrixone"]},
+
+  {nombre: "Seguridad y Cumplimiento", icono: "\uD83D\uDD12",
+   desc: "Cuando la necesidad es auditar, proteger o cumplir normativa.",
+   combo: "Audita primero (cloudflare-security-audit) y luego endurece con las skills de ciberseguridad. Strix para pruebas ofensivas una vez el sistema este en produccion, no antes. Documenta los hallazgos: sin registro, la auditoria no sirve para cumplir normativa.",
+   match: ["security","cybersecurity","security-audit","audit","pentesting","pentest","vulnerability","ai-security","mitre-attack","nist","compliance","authentication","sandbox","isolation","privacy","signature","e-signature"]},
+
+  {nombre: "Infraestructura y Hosting", icono: "\u2601",
+   desc: "Cuando hay que desplegar, alojar o servir modelos.",
+   combo: "Ollama para probar local, llama-cpp cuando necesites rendimiento en CPU, vLLM si tienes GPU. Coolify para desplegar sin pelear con el servidor. Escala solo cuando el uso lo justifique: el costo de infraestructura crece mas rapido que el valor.",
+   match: ["infrastructure","infraestructura","hosting","self-hosted","docker","deployment","cloud","server","serving","inference","gpu","ollama","localai","vllm","llama-cpp","gguf","quantization","local-ai","local-first","devops","gateway","ai-gateway","llm-routing","multi-provider","proxy","paas","cluster","computer-use","tunnel","wireguard","ssh","p2p","openai-compatible","high-performance","frontier-models","mlx","apple-silicon"]},
+
+  {nombre: "Consulting y Estrategia", icono: "\uD83E\uDDE0",
+   desc: "Cuando la necesidad es diagnosticar, estructurar o proponer.",
+   combo: "Empieza por el mapeo de procesos (process-mapping) antes de proponer cualquier herramienta. Las skills de consultoria dan el marco; mckinsey-visualization convierte el analisis en una lamina presentable. La propuesta se escribe despues del mapa, nunca antes.",
+   match: ["consulting","consultoria","business-analysis","strategy","product-strategy","management","analysis","process-mapping","pilot-scoping","entrepreneur","startup","methodology","problem-solving","agency","code-review","code-analysis","planning","best-practices","spec"]},
+
+  {nombre: "Aprendizaje y Capacitacion", icono: "\uD83C\uDF93",
+   desc: "Cuando la necesidad es formar al equipo o aprender.",
+   combo: "Si el equipo no sabe usar IA, capacitar primero y despues implementar. Humanizer y humanizalo mejoran la escritura del equipo, no la del agente. Para fundamentos, train-llm-from-scratch solo si hay perfil tecnico.",
+   match: ["learning","training","education","tutorial","course","fine-tuning","lora","train","scratch","deep-learning","karpathy","humanize","humanizer","ai-writing","writing","programming","coding","ai-coding","pair-programming","coding-agent","tdd","debugging","optimization","tokens"]}
+];
+
+function kitSignals(r) {
+  var s = [];
+  (r.tags || []).forEach(function(t) { s.push(String(t).toLowerCase()); });
+  (r.aplicaciones || []).forEach(function(a) { s.push(String(a).toLowerCase()); });
+  if (r.categoria) s.push(String(r.categoria).toLowerCase());
+  if (r.tipo) s.push(String(r.tipo).toLowerCase());
+  return s;
+}
+
+function coincideKit(r, kws) {
+  var s = kitSignals(r);
+  for (var i = 0; i < s.length; i++) {
+    if (kws.indexOf(s[i]) !== -1) return true;
+  }
+  return false;
+}
+
+function construirKits() {
+  var kits = [];
+  var vistos = {};
+
+  KITS_CATALOGO.forEach(function(def) {
+    var items = recursos.filter(function(r) { return coincideKit(r, def.match); });
+    if (!items.length) return;
+    items.forEach(function(r) { vistos[r.id] = true; });
+    kits.push({ nombre: def.nombre, icono: def.icono, desc: def.desc, combo: def.combo, items: items });
+  });
+
+  // Auto-kits: valores de categoria o aplicaciones que ningun kit del catalogo
+  // cubre. Si el cron agrega un recurso con una categoria nueva, su kit se crea solo.
+  var etiquetas = {};
+  recursos.forEach(function(r) {
+    if (vistos[r.id]) return;
+    var vals = [];
+    if (r.categoria && r.categoria !== "general") vals.push(r.categoria);
+    (r.aplicaciones || []).forEach(function(a) { vals.push(a); });
+    vals.forEach(function(v) { (etiquetas[v] = etiquetas[v] || []).push(r); });
+  });
+  Object.keys(etiquetas).forEach(function(v) {
+    if (etiquetas[v].length < 3) return;
+    etiquetas[v].forEach(function(r) { vistos[r.id] = true; });
+    kits.push({ nombre: v.charAt(0).toUpperCase() + v.slice(1), icono: "\uD83D\uDCE6", desc: "Categoria detectada automaticamente en la biblioteca.", combo: "", items: etiquetas[v], auto: true });
+  });
+
+  // Red de seguridad: ningun recurso queda invisible
+  var resto = recursos.filter(function(r) { return !vistos[r.id]; });
+  if (resto.length) kits.push({ nombre: "Otros recursos", icono: "\uD83D\uDCE6", desc: "Recursos que aun no tienen una categoria tematica asignada.", combo: "", items: resto, auto: true });
+
+  return kits;
+}
+
 function mostrarKits() {
-  var kits = [
-    {nombre: "Configuracion de Agentes", icono: "🔧", items: ["karpathy-rules","superpowers","firecrawl","caveman","codebase-memory-mcp","agent-reach","browser-use","composio","addyosmani-agent-skills","awesome-design-md","marketing-skills"], desc: "Cuando quieres que el agente trabaje mejor, mas barato y con mas alcance."},
-    {nombre: "Gestion de Clientes y CRM", icono: "📋", items: ["chatwoot","twenty-crm","deskcommcrm","openwa","super-productivity"], desc: "Cuando la necesidad es organizar clientes, citas, seguimiento y comunicacion."},
-    {nombre: "Automatizacion de Procesos", icono: "🤖", items: ["agent-zero","superagi","omniagents","awesome-llm-apps"], desc: "Cuando hay procesos manuales repetitivos que consumen horas."},
-    {nombre: "Marketing y Contenido", icono: "📈", items: ["marketing-skills","social-media-research-skills","money-printer-turbo","openmotion","remotion","openserp","higgsfield","nano-banana-pro"], desc: "Cuando la necesidad es contenido, presencia digital y crecimiento."},
-    {nombre: "Diseno y UI", icono: "🎨", items: ["awesome-design-md","designmd","ui-ux-pro-max-skill","screenshot-to-code","excalidraw","minimal-gallery","understand-anything"], desc: "Cuando la necesidad es interfaz, identidad visual y experiencia."},
-    {nombre: "Datos y Conocimiento", icono: "🗄️", items: ["matrixone","cognee","docling","graphify","codebase-memory-mcp","univer"], desc: "Cuando la necesidad es base de datos, memoria, RAG o documentos."},
-    {nombre: "Seguridad y Cumplimiento", icono: "🔒", items: ["strix","anthropic-cybersecurity-skills","cloudflare-security-audit"], desc: "Cuando la necesidad es auditar, proteger o cumplir normativa."},
-    {nombre: "Infraestructura y Hosting", icono: "☁️", items: ["coolify","ollama","llama-cpp","localai","open-webui","vllm","omniroute","exo","opensandbox"], desc: "Cuando hay que desplegar, alojar o servir modelos."},
-    {nombre: "Consulting y Estrategia", icono: "🧠", items: ["management-consulting","management-consulting-plugin","mckinsey-visualization","agentic-biz-analysis","wondelai-skills","slavingia-skills"], desc: "Cuando la necesidad es diagnosticar, estructurar o proponer."},
-    {nombre: "Aprendizaje y Capacitacion", icono: "🎓", items: ["train-llm-from-scratch","scientific-agent-skills","mattpocock-skills","humanizer","humanizalo"], desc: "Cuando la necesidad es formar al equipo o aprender."}
-  ];
-  
+  var kits = construirKits();
+
   var html = "";
   kits.forEach(function(t) {
-    var itemsHtml = t.items.map(function(id) {
-      var r = recursos.find(function(x) { return x.id === id; });
-      if (r) return "<span class=\"sub-resource\"><strong>" + r.nombre + "</strong></span>";
-      return "";
+    var itemsHtml = t.items.map(function(r) {
+      var titulo = (r.tipo || "") + (r.para_que ? " - " + r.para_que : "");
+      return "<button class=\"kit-item\" onclick=\"mostrarDetalleDesdeKit('" + r.id + "')\" title=\"" + titulo.replace(/"/g, "&quot;") + "\">" + r.nombre + "</button>";
     }).join("");
-    
-    html += "<div class=\"step-card\" style=\"margin-bottom:8px;\"><div class=\"step-header\"><div class=\"step-num\">" + t.icono + "</div><h2>" + t.nombre + "</h2></div><div class=\"step-body\"><p style=\"font-size:11px;color:#52525B;margin-bottom:6px;\">" + t.desc + "</p>" + itemsHtml + "</div></div>";
+
+    var comboHtml = t.combo ? "<div class=\"kit-combo\"><strong>Combinacion sugerida:</strong> " + t.combo + "</div>" : "";
+    var descHtml = t.desc ? "<p style=\"font-size:11px;color:#52525B;margin-bottom:6px;\">" + t.desc + "</p>" : "";
+
+    html += "<div class=\"step-card\" style=\"margin-bottom:8px;\">" +
+              "<div class=\"step-header\"><div class=\"step-num\">" + t.icono + "</div><h2>" + t.nombre +
+              "<span class=\"kit-count\">" + t.items.length + "</span></h2></div>" +
+              "<div class=\"step-body\">" + descHtml + comboHtml +
+              "<div class=\"kit-items\">" + itemsHtml + "</div></div></div>";
   });
-  
+
   document.getElementById("kits-body").innerHTML = html;
   document.getElementById("kits-modal").classList.add("open");
+}
+
+// Abre la ficha del recurso por encima del modal de kits, para no perder el hilo.
+function mostrarDetalleDesdeKit(id) {
+  document.getElementById("modal").classList.add("stack");
+  mostrarDetalle(id);
 }
 
 function cerrarKits() {
