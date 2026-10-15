@@ -65,9 +65,9 @@
       "Exportar Skills a SKILL.md para usar con otros CLIs"
     ],
     "aplicaciones": [
-      "agentes",
+      "video",
       "diseno",
-      "video"
+      "agentes"
     ]
   },
   {
@@ -220,7 +220,8 @@
     ],
     "aplicaciones": [
       "agentes",
-      "datos"
+      "datos",
+      "desarrollo"
     ]
   },
   {
@@ -293,8 +294,8 @@
       "Probar las skills adaptadas con el CLI/agente que uses"
     ],
     "aplicaciones": [
-      "agentes",
-      "desarrollo"
+      "desarrollo",
+      "agentes"
     ]
   },
   {
@@ -369,7 +370,8 @@
     ],
     "aplicaciones": [
       "agentes",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -522,9 +524,9 @@
       "Aplicar el framework paso a paso con el cliente usando el agente"
     ],
     "aplicaciones": [
-      "agentes",
       "marketing",
-      "diseno"
+      "diseno",
+      "consultoria"
     ]
   },
   {
@@ -582,7 +584,8 @@
     ],
     "aplicaciones": [
       "automation",
-      "infraestructura"
+      "infraestructura",
+      "diseno"
     ]
   },
   {
@@ -634,7 +637,8 @@
     ],
     "aplicaciones": [
       "agentes",
-      "automation"
+      "automation",
+      "desarrollo"
     ]
   },
   {
@@ -686,9 +690,9 @@
       "Presentar resultados al cliente como insumo para ImplementarIA"
     ],
     "aplicaciones": [
+      "consultoria",
       "agentes",
-      "automation",
-      "consultoria"
+      "automation"
     ]
   },
   {
@@ -756,8 +760,8 @@
       "Capacitar al equipo en uso del CRM y agentes"
     ],
     "aplicaciones": [
-      "agentes",
-      "atencion-cliente"
+      "atencion-cliente",
+      "agentes"
     ]
   },
   {
@@ -813,6 +817,7 @@
     ],
     "aplicaciones": [
       "atencion-cliente",
+      "diseno",
       "datos"
     ]
   },
@@ -914,9 +919,9 @@
       "Exportar el grafo para incluirlo en documentacion o propuestas"
     ],
     "aplicaciones": [
+      "datos",
       "agentes",
-      "marketing",
-      "datos"
+      "marketing"
     ]
   },
   {
@@ -1168,7 +1173,8 @@
     ],
     "aplicaciones": [
       "agentes",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -1222,7 +1228,8 @@
       "Integrar en flujos automatizados con schedules o triggers"
     ],
     "aplicaciones": [
-      "automation"
+      "automation",
+      "desarrollo"
     ]
   },
   {
@@ -1277,8 +1284,8 @@
       "Escalar a PostgreSQL/Qdrant para produccion"
     ],
     "aplicaciones": [
-      "agentes",
       "datos",
+      "agentes",
       "infraestructura"
     ]
   },
@@ -1438,9 +1445,9 @@
       "Repetir auditoria para verificar cierre de hallazgos"
     ],
     "aplicaciones": [
-      "agentes",
       "seguridad",
-      "infraestructura"
+      "infraestructura",
+      "agentes"
     ]
   },
   {
@@ -1493,6 +1500,7 @@
     ],
     "aplicaciones": [
       "agentes",
+      "desarrollo",
       "consultoria"
     ]
   },
@@ -1536,9 +1544,9 @@
       "diseno"
     ],
     "aplicaciones": [
+      "video",
       "marketing",
-      "diseno",
-      "video"
+      "diseno"
     ]
   },
   {
@@ -1626,8 +1634,8 @@
       "diseno"
     ],
     "aplicaciones": [
-      "marketing",
-      "diseno"
+      "diseno",
+      "marketing"
     ]
   },
   {
@@ -1676,9 +1684,8 @@
     "notas": "Util para mejorar la calidad del contenido generado por IA. Los 40 patrones son una referencia valiosa incluso sin la skill.",
     "estado": "nuevo",
     "aplicaciones": [
-      "agentes",
-      "datos",
-      "desarrollo"
+      "desarrollo",
+      "agentes"
     ]
   },
   {
@@ -1729,9 +1736,9 @@
     "notas": "Biblioteca masiva de prompts de imagen. Util para generacion visual rapida. Los prompts son agnosticos aunque la skill sea de Claude.",
     "estado": "nuevo",
     "aplicaciones": [
+      "diseno",
       "agentes",
-      "marketing",
-      "diseno"
+      "marketing"
     ]
   },
   {
@@ -1784,8 +1791,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "infraestructura",
-      "desarrollo"
+      "desarrollo",
+      "infraestructura"
     ]
   },
   {
@@ -1837,6 +1844,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "consultoria",
+      "diseno",
       "desarrollo"
     ]
   },
@@ -1892,7 +1900,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "atencion-cliente"
+      "atencion-cliente",
+      "marketing"
     ]
   },
   {
@@ -1941,7 +1950,8 @@
     "notas": "Skills oficiales de AWS para agentes. Ideal para clientes con infraestructura en AWS que quieran gestionarla con IA.",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -2095,7 +2105,9 @@
     "notas": "Util como interfaz de voz para agentes. Solo macOS por ahora. La version Lite tiene API local para agentes.",
     "estado": "nuevo",
     "aplicaciones": [
-      "video"
+      "video",
+      "agentes",
+      "infraestructura"
     ]
   },
   {
@@ -2171,9 +2183,9 @@
     "notas": "El framework de skills de desarrollo mas completo. Incluye las skills Brainstorming y TDD que aparecian separadas en la lista. Ideal como base metodologica para ImplementarIA nivel desarrollo.",
     "estado": "nuevo",
     "aplicaciones": [
+      "desarrollo",
       "agentes",
-      "consultoria",
-      "desarrollo"
+      "consultoria"
     ]
   },
   {
@@ -2269,8 +2281,8 @@
     "notas": "Util para reducir costos de API en implementaciones con muchos tokens. Complementario a Superpowers, no lo reemplaza.",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura",
-      "desarrollo"
+      "desarrollo",
+      "infraestructura"
     ]
   },
   {
@@ -2319,7 +2331,6 @@
     "notas": "La version mas conocida del Humanizer. Complementa humanizalo (ya en biblioteca): ambas hacen lo mismo, esta tiene mas adopcion. Evaluar cual conservar tras probar.",
     "estado": "nuevo",
     "aplicaciones": [
-      "datos",
       "desarrollo"
     ]
   },
@@ -2369,8 +2380,9 @@
     "notas": "Ya lo usamos en PropulsarIA para el video de niveles. Incluirlo formalmente en la biblioteca como recurso de video.",
     "estado": "nuevo",
     "aplicaciones": [
+      "video",
       "diseno",
-      "video"
+      "desarrollo"
     ]
   },
   {
@@ -2417,7 +2429,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -2466,9 +2479,9 @@
     "notas": "Complementa Understand Anything (ya en biblioteca): este incluye docs y SQL.",
     "estado": "nuevo",
     "aplicaciones": [
-      "agentes",
       "datos",
-      "consultoria"
+      "agentes",
+      "desarrollo"
     ]
   },
   {
@@ -2518,7 +2531,8 @@
     "notas": "Useful para consolidar proveedores de modelos. Alternativa self-host a OpenRouter.",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -2613,9 +2627,9 @@
     "notas": "Suite office para agentes. Complementa ToolJet (apps internas) y MatrixOne (datos).",
     "estado": "nuevo",
     "aplicaciones": [
+      "datos",
       "agentes",
-      "diseno",
-      "datos"
+      "diseno"
     ]
   },
   {
@@ -2754,7 +2768,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -2801,7 +2816,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -2903,7 +2919,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -3097,7 +3114,8 @@
     "notas": "Uno de los 4 repos 'worth bookmarking': official speech AI SDK.",
     "estado": "nuevo",
     "aplicaciones": [
-      "video"
+      "video",
+      "desarrollo"
     ]
   },
   {
@@ -3249,9 +3267,9 @@
     "notas": "Video corto automatizado from tema. Complementa Remotion (control total) para volumen.",
     "estado": "nuevo",
     "aplicaciones": [
+      "video",
       "automation",
-      "marketing",
-      "video"
+      "marketing"
     ]
   },
   {
@@ -3299,7 +3317,8 @@
     "notas": "Trading multi-agente. OJO: en Colombia la captacion ilegal de dineros es penal (un caso real del usuario); este repo es educativo/analitico, no capta dineros.",
     "estado": "nuevo",
     "aplicaciones": [
-      "agentes"
+      "agentes",
+      "desarrollo"
     ]
   },
   {
@@ -3349,7 +3368,9 @@
     "notas": "Ya lo usamos en el pipeline Kaggle+ngrok. Pilar del stack local del usuario (PC modesto limitado a modelos ~3B).",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura"
+      "infraestructura",
+      "agentes",
+      "desarrollo"
     ]
   },
   {
@@ -3399,7 +3420,9 @@
     "notas": "Alternativa a Ollama para hardware minimo. GGUF es la via para modelos <4B en el PC del usuario.",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura"
+      "infraestructura",
+      "agentes",
+      "desarrollo"
     ]
   },
   {
@@ -3450,8 +3473,8 @@
     "notas": "Interfaz ChatGPT local. Mejor opcion que Chatbox para equipos (multi-usuario).",
     "estado": "nuevo",
     "aplicaciones": [
-      "diseno",
-      "infraestructura"
+      "infraestructura",
+      "diseno"
     ]
   },
   {
@@ -3501,7 +3524,9 @@
     "notas": "Para produccion con GPU (Kaggle/RunPod). No para el PC del usuario (0 GPU util).",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura"
+      "infraestructura",
+      "agentes",
+      "desarrollo"
     ]
   },
   {
@@ -3551,7 +3576,8 @@
     "notas": "Un solo drop-in para OpenAI en local con multimodalidad.",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -3602,9 +3628,9 @@
     "notas": "Generacion de imagen/video por nodos. En la skill de Hermes ya existe 'comfyui' para control via TouchDesigner.",
     "estado": "nuevo",
     "aplicaciones": [
-      "automation",
+      "video",
       "diseno",
-      "video"
+      "automation"
     ]
   },
   {
@@ -3656,7 +3682,8 @@
     "notas": "STT local. Ya aparece mencionado en OpenCreator (usa Whisper). Pilar del stack local.",
     "estado": "nuevo",
     "aplicaciones": [
-      "video"
+      "video",
+      "infraestructura"
     ]
   },
   {
@@ -3706,8 +3733,9 @@
     "notas": "Fine-tuning eficiente. El camino para personalizar modelos del cliente sin GPU cara.",
     "estado": "nuevo",
     "aplicaciones": [
+      "desarrollo",
       "infraestructura",
-      "desarrollo"
+      "agentes"
     ]
   },
   {
@@ -3754,7 +3782,8 @@
     "notas": "Ideo para organizaciones con 2+ maquinas. Alternativa a comprar una GPU cara.",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -3805,7 +3834,9 @@
     "notas": "Solo Apple Silicon. No aplica al PC del usuario (Windows/AMD) pero si a clientes con Macs.",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura"
+      "infraestructura",
+      "agentes",
+      "desarrollo"
     ]
   },
   {
@@ -3857,7 +3888,8 @@
     "notas": "Reemplaza a 'Anydoc' — el repo es Docling (antes DS4SD/docling, ahora docling-project/docling). Parser de documentos mas completo.",
     "estado": "nuevo",
     "aplicaciones": [
-      "datos"
+      "datos",
+      "agentes"
     ]
   },
   {
@@ -3959,8 +3991,8 @@
     "notas": "La opción mas completa de consultoría estratégica open-source. Reemplaza gran parte del kit comercial.",
     "estado": "nuevo",
     "aplicaciones": [
-      "agentes",
       "consultoria",
+      "agentes",
       "desarrollo"
     ]
   },
@@ -4013,9 +4045,9 @@
     "notas": "Version multi-agente de la consultoria. Complementa a gcamilo/management-consulting.",
     "estado": "nuevo",
     "aplicaciones": [
+      "consultoria",
       "agentes",
-      "automation",
-      "consultoria"
+      "automation"
     ]
   },
   {
@@ -4068,9 +4100,9 @@
     "notas": "Capa de entregables visuales del stack de consultoría.",
     "estado": "nuevo",
     "aplicaciones": [
-      "marketing",
       "diseno",
-      "consultoria"
+      "consultoria",
+      "marketing"
     ]
   },
   {
@@ -4122,7 +4154,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "atencion-cliente",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -4270,7 +4303,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -4370,8 +4404,8 @@
     "notas": "Tutorial completo de entrenamiento de LLM desde cero. Util como referencia educativa.",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura",
-      "desarrollo"
+      "desarrollo",
+      "agentes"
     ]
   },
   {
@@ -4418,8 +4452,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "consultoria",
-      "desarrollo"
+      "desarrollo",
+      "consultoria"
     ]
   },
   {
@@ -4466,7 +4500,8 @@
     "notas": "Recomendada #2 para instalar primero (reduce costos desde la primera pagina).",
     "estado": "nuevo",
     "aplicaciones": [
-      "datos"
+      "datos",
+      "agentes"
     ]
   },
   {
@@ -4515,8 +4550,8 @@
     "notas": "Es un servidor MCP, no un archivo de skill.",
     "estado": "nuevo",
     "aplicaciones": [
-      "agentes",
-      "datos"
+      "datos",
+      "agentes"
     ]
   },
   {
@@ -4567,8 +4602,9 @@
     "notas": "Recomendada #3 para instalar primero. OJO: cuentas burner recomendadas por el autor para plataformas con login.",
     "estado": "nuevo",
     "aplicaciones": [
+      "datos",
       "marketing",
-      "datos"
+      "desarrollo"
     ]
   },
   {
@@ -4670,8 +4706,8 @@
     "notas": "Complementa designmd (el formato): este es la libreria de sistemas listos.",
     "estado": "nuevo",
     "aplicaciones": [
-      "marketing",
       "diseno",
+      "marketing",
       "desarrollo"
     ]
   },
@@ -4725,8 +4761,8 @@
     "notas": "Si vendes algo, esta viene antes que cualquier infraestructura (dice el video).",
     "estado": "nuevo",
     "aplicaciones": [
-      "atencion-cliente",
       "marketing",
+      "atencion-cliente",
       "desarrollo"
     ]
   },
@@ -4750,8 +4786,7 @@
     "compatibilidad_modelos": "Claude, Codex, Gemini",
     "modelo_limitado": false,
     "aplicaciones": [
-      "desarrollo",
-      "agentes"
+      "desarrollo"
     ],
     "tipo": "Skills",
     "estrellas": 149120,
@@ -4782,9 +4817,7 @@
     "compatibilidad_modelos": "Claude, Codex, Gemini (agnóstico al modelo)",
     "modelo_limitado": false,
     "aplicaciones": [
-      "desarrollo",
-      "infraestructura",
-      "agentes"
+      "desarrollo"
     ],
     "tipo": "Framework",
     "estrellas": 1200,
@@ -4890,8 +4923,9 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "ventas",
-      "consultoria"
+      "seguridad",
+      "datos",
+      "automation"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -4925,8 +4959,6 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "ventas",
-      "consultoria",
       "datos"
     ],
     "pasos_implementacion": [],
@@ -4962,8 +4994,7 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "productividad",
-      "atencion-cliente"
+      "video"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -4999,7 +5030,6 @@
     "estado": "nuevo",
     "aplicaciones": [
       "infraestructura",
-      "desarrollo",
       "seguridad"
     ],
     "pasos_implementacion": [],
@@ -5035,9 +5065,7 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "marketing",
-      "ventas",
-      "analytics"
+      "marketing"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5072,8 +5100,8 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "productividad",
-      "atencion-cliente"
+      "video",
+      "seguridad"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5108,8 +5136,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "video",
-      "marketing",
-      "creacion-contenido"
+      "diseno"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5145,8 +5172,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "video",
-      "marketing",
-      "creacion-contenido"
+      "automation",
+      "marketing"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5181,8 +5208,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "infraestructura",
-      "automation"
+      "automation",
+      "infraestructura"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5217,8 +5244,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "desarrollo",
-      "automation"
+      "datos",
+      "desarrollo"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5253,7 +5280,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "automation"
+      "desarrollo"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5287,9 +5314,7 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "automation",
-      "infraestructura",
-      "desarrollo"
+      "automation"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5324,8 +5349,9 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "desarrollo",
-      "seguridad"
+      "agentes",
+      "seguridad",
+      "datos"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5359,9 +5385,9 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "desarrollo",
       "agentes",
-      "datos"
+      "datos",
+      "desarrollo"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5395,8 +5421,9 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "desarrollo",
-      "agentes"
+      "agentes",
+      "datos",
+      "automation"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5431,9 +5458,9 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "desarrollo",
       "agentes",
-      "datos"
+      "datos",
+      "automation"
     ],
     "pasos_implementacion": [],
     "notas": "",
@@ -5467,6 +5494,8 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
+      "agentes",
+      "consultoria",
       "desarrollo"
     ],
     "pasos_implementacion": [],
@@ -5557,9 +5586,9 @@
       "AnythingLLM"
     ],
     "aplicaciones": [
+      "infraestructura",
       "atencion-cliente",
-      "datos",
-      "infraestructura"
+      "datos"
     ]
   },
   {
@@ -5626,9 +5655,8 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "consultoria",
-      "datos",
-      "marketing"
+      "marketing",
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Instalar la skill en el agente segun el README del repositorio",
@@ -5678,8 +5706,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "diseno",
-      "desarrollo",
-      "marketing"
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Instalar la skill en el agente segun el README",
@@ -5728,7 +5755,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "marketing",
-      "consultoria"
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Instalar la skill en el agente segun el README",
@@ -5776,8 +5803,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "diseno",
-      "ventas",
-      "consultoria"
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Instalar la skill en el agente segun el README",
@@ -5823,7 +5849,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "video",
-      "marketing"
+      "marketing",
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Instalar la skill segun el README del repositorio",
@@ -5871,6 +5898,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "consultoria",
+      "datos",
       "desarrollo"
     ],
     "pasos_implementacion": [
@@ -5920,8 +5948,7 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "datos",
-      "desarrollo"
+      "datos"
     ],
     "pasos_implementacion": [
       "Instalar: pip install markitdown",
@@ -5971,7 +5998,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "datos",
-      "desarrollo"
+      "infraestructura",
+      "agentes"
     ],
     "pasos_implementacion": [
       "Instalar: pip install crawl4ai",
@@ -6021,6 +6049,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "datos",
+      "automation",
       "desarrollo"
     ],
     "pasos_implementacion": [
@@ -6166,7 +6195,6 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "infraestructura",
       "automation"
     ],
     "pasos_implementacion": [
@@ -6216,8 +6244,7 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "desarrollo",
-      "datos"
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Instalar: pip install curl_cffi",
@@ -6412,7 +6439,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
-      "infraestructura"
+      "infraestructura",
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Revisar el README y los requisitos del sistema",
@@ -6457,8 +6485,9 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "desarrollo",
-      "agentes"
+      "infraestructura",
+      "agentes",
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Clonar el repositorio: git clone https://github.com/vercel-labs/agent-skills",
@@ -6508,7 +6537,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "diseno",
-      "consultoria"
+      "desarrollo"
     ],
     "pasos_implementacion": [
       "Instalar la skill en el agente segun el README",
@@ -6555,7 +6584,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "atencion-cliente",
-      "automation"
+      "video"
     ],
     "pasos_implementacion": [
       "Desplegar el servicio en Azure segun el README",
@@ -6652,8 +6681,7 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "automation",
-      "consultoria"
+      "infraestructura"
     ],
     "pasos_implementacion": [
       "Revisar los requisitos del README",
@@ -6703,7 +6731,8 @@
     "estado": "nuevo",
     "aplicaciones": [
       "atencion-cliente",
-      "automation"
+      "automation",
+      "infraestructura"
     ],
     "pasos_implementacion": [
       "Desplegar WAHA con Docker segun el README",
@@ -6752,6 +6781,7 @@
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
+      "automation",
       "desarrollo"
     ],
     "pasos_implementacion": [
@@ -6849,8 +6879,9 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
+      "desarrollo",
       "infraestructura",
-      "datos"
+      "agentes"
     ],
     "pasos_implementacion": [
       "Instalar segun el README del repositorio",
@@ -6898,8 +6929,7 @@
     "como_hacer_agnostico": "",
     "estado": "nuevo",
     "aplicaciones": [
-      "diseno",
-      "video"
+      "diseno"
     ],
     "pasos_implementacion": [
       "Descargar el binario desde el repositorio",
