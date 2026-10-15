@@ -1428,7 +1428,7 @@
       "claude"
     ],
     "es_agnostico": false,
-    "como_hacer_agnostico": "Skill en formato agnostic0 segun el README de Cloudflare. Extraer la metodologia de auditoria multi-fase a SKILL.md. Los pasos de auditoria son universales.",
+    "como_hacer_agnostico": "Skill en formato agnostico segun el README de Cloudflare. Extraer la metodologia de auditoria multi-fase a SKILL.md. Los pasos de auditoria son universales.",
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Skill oficial de Cloudflare. Estandar para auditoria de seguridad con agentes. Resultados maquina-legibles.",
