@@ -344,20 +344,9 @@
   <div class="filter-sep"></div>
   <div class="filter-group">
     <label id="f-aplicacion">Aplicacion</label>
+    <!-- Las opciones se generan en actualizarFiltros() a partir del JSON -->
     <select class="filter-select" id="filter-aplicacion" onchange="render()">
       <option value="">Todas</option>
-      <option value="video">Video</option>
-      <option value="seguridad">Seguridad</option>
-      <option value="diseno">Diseno</option>
-      <option value="desarrollo">Desarrollo</option>
-      <option value="ventas">Ventas</option>
-      <option value="atencion-cliente">Atencion cliente</option>
-      <option value="marketing">Marketing</option>
-      <option value="datos">Datos</option>
-      <option value="infraestructura">Infraestructura</option>
-      <option value="agentes">Agentes</option>
-      <option value="automation">Automation</option>
-      <option value="consultoria">Consultoria</option>
     </select>
   </div>
   <div class="filter-sep"></div>
@@ -595,7 +584,9 @@ var __opt = {
     "Video": "Video", "Seguridad": "Seguridad", "Diseno": "Diseno",
     "Desarrollo": "Desarrollo", "Ventas": "Ventas", "Atencion cliente": "Atencion cliente",
     "Marketing": "Marketing", "Datos": "Datos", "Infraestructura": "Infraestructura",
-    "Agentes": "Agentes", "Automation": "Automation", "Consultoria": "Consultoria"
+    "Agentes": "Agentes", "Automation": "Automation", "Consultoria": "Consultoria",
+    "Creacion de contenido": "Creacion de contenido", "Productividad": "Productividad",
+    "Analitica": "Analitica"
   },
   en: {
     "Agente IA": "AI Agent", "Base de Datos": "Database", "CRM": "CRM",
@@ -609,7 +600,9 @@ var __opt = {
     "Video": "Video", "Seguridad": "Security", "Diseno": "Design",
     "Desarrollo": "Development", "Ventas": "Sales", "Atencion cliente": "Customer care",
     "Marketing": "Marketing", "Datos": "Data", "Infraestructura": "Infrastructure",
-    "Agentes": "Agents", "Automation": "Automation", "Consultoria": "Consulting"
+    "Agentes": "Agents", "Automation": "Automation", "Consultoria": "Consulting",
+    "Creacion de contenido": "Content creation", "Productividad": "Productivity",
+    "Analitica": "Analytics"
   }
 };
 
@@ -871,6 +864,17 @@ function exportarHTML() {
   a.click();
 }
 
+// Etiquetas de las areas de aplicacion. Las claves deben coincidir con __opt
+// para que el cambio de idioma siga traduciendo las opciones del filtro.
+var APPS_ETQ = {
+  video: "Video", seguridad: "Seguridad", diseno: "Diseno", desarrollo: "Desarrollo",
+  ventas: "Ventas", "atencion-cliente": "Atencion cliente", marketing: "Marketing",
+  datos: "Datos", infraestructura: "Infraestructura", agentes: "Agentes",
+  automation: "Automation", consultoria: "Consultoria",
+  "creacion-contenido": "Creacion de contenido", productividad: "Productividad",
+  analytics: "Analitica"
+};
+
 function actualizarFiltros() {
   var tipos = {};
   recursos.forEach(function(r) { if (r.tipo) tipos[r.tipo] = true; });
@@ -879,8 +883,23 @@ function actualizarFiltros() {
   Object.keys(tipos).sort().forEach(function(t) {
     sel.innerHTML += '<option value="' + t + '">' + t + '</option>';
   });
+
+  // El filtro de aplicacion se deriva de los datos: un area nueva aparece sola,
+  // sin tocar el HTML. Antes era una lista fija de 12 opciones que se desincronizaba.
+  var apps = {};
+  recursos.forEach(function(r) {
+    (r.aplicaciones || []).forEach(function(a) { apps[a] = (apps[a] || 0) + 1; });
+  });
+  var selA = document.getElementById("filter-aplicacion");
+  var previo = selA.value;
+  selA.innerHTML = '<option value="">Todas</option>';
+  Object.keys(apps).sort(function(x, y) { return apps[y] - apps[x]; }).forEach(function(a) {
+    selA.innerHTML += '<option value="' + a + '">' + (APPS_ETQ[a] || a) + '</option>';
+  });
+  selA.value = previo;
 }
 
+actualizarFiltros();
 render();
 </script>
 
