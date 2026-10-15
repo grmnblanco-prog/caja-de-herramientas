@@ -1,7 +1,7 @@
 # Caja de Herramientas — PropulsarIA
 
 [![Live Demo](https://img.shields.io/badge/demo-grmnblanco--prog.github.io%2Fcaja--de--herramientas-E8633A?style=flat-square&logo=githubpages)](https://grmnblanco-prog.github.io/caja-de-herramientas/)
-[![Recursos](https://img.shields.io/badge/recursos-92-blue?style=flat-square)](#)
+[![Recursos](https://img.shields.io/badge/recursos-141-blue?style=flat-square)](#)
 [![Licencia](https://img.shields.io/badge/licencia-MIT-green?style=flat-square)](#)
 [![Obsidian](https://img.shields.io/badge/Obsidian-vault-7C3AED?style=flat-square&logo=obsidian)](#)
 
@@ -29,25 +29,28 @@ Filtra por tipo, estado, nivel, aplicación. Explora por Kits de implementación
 | Sin contexto de implementación | Agrupado en **Kits** (Configuración de Agentes, CRM, Marketing, Infraestructura...) |
 | Estáticas | Se actualiza desde GitHub — los datos viajan con el repo |
 | Solo para developers | Clasificado para consultores, implementadores y tomadores de decisión |
+| Enlaces abandonados | Se verifica que cada repositorio siga vivo antes de incluirlo |
 
 ---
 
 ## Kits de implementación
 
-Los 92 recursos están agrupados en 10 kits según la necesidad de implementación:
+Los **141 recursos** se agrupan en **10 kits temáticos**. La asignación no se mantiene a mano: cada kit se calcula cruzando las etiquetas, aplicaciones y categoría de cada recurso, así que un recurso nuevo entra solo al kit que le corresponde.
 
-| Kit | Recursos |
-|:----|:---------|
-| 🔧 Configuración de Agentes | Karpathy Rules, Super Powers, Firecrawl, Caveman, Agent Reach, Browser Use, Composio... |
-| 📋 Gestión de Clientes y CRM | Chatwoot, Twenty CRM, DeskcommCRM, OpenWA |
-| 🤖 Automatización de Procesos | n8n, ToolJet, Agent Zero, SuperAGI, OmniAgents |
-| 📈 Marketing y Contenido | Marketing Skills, Remotion, MoneyPrinterTurbo, OpenSerp |
-| 🎨 Diseño y UI | DESIGN.md, Screenshot to Code, Excalidraw, Understand Anything |
-| 🗄️ Datos y Conocimiento | Matrixone, Docling, Graphify, Codebase Memory MCP |
-| 🔒 Seguridad | Strix, Anthropic Cybersecurity, Cloudflare Auditor |
-| ☁️ Infraestructura | Coolify, Ollama, Open WebUI, vLLM, Exo |
-| 🧠 Consulting y Estrategia | Management Consulting, McKinsey Visualization, Wondelai Skills |
-| 🎓 Aprendizaje | Train LLM from Scratch, Scientific Agent Skills, Humanizer |
+| Kit | Recursos | Ejemplos |
+|:----|:---------|:---------|
+| 🔧 Configuración de Agentes | 57 | Superpowers, Karpathy Rules, Caveman, Browser Use, Composio |
+| 📋 Gestión de Clientes y CRM | 17 | Chatwoot, Twenty CRM, DeskcommCRM, OpenWA, WAHA |
+| 🤖 Automatización de Procesos | 26 | n8n, ToolJet, Agent Zero, SuperAGI, Crawlee |
+| 📈 Marketing y Contenido | 20 | Marketing Skills, MoneyPrinterTurbo, OpenSERP, Remotion, Social Media Research Skills |
+| 🎨 Diseño y UI | 36 | UI/UX Pro Max, Excalidraw, DESIGN.md, Screenshot to Code, taste-skill |
+| 🗄️ Datos y Conocimiento | 33 | Docling, MarkItDown, Firecrawl, Crawl4AI, Graphify |
+| 🔒 Seguridad y Cumplimiento | 9 | Strix, Anthropic Cybersecurity Skills, Cloudflare Security Audit |
+| ☁️ Infraestructura y Hosting | 46 | Ollama, llama.cpp, Open WebUI, vLLM, Coolify |
+| 🧠 Consulting y Estrategia | 22 | Management Consulting, McKinsey-style Visualization, Wondelai Skills, Agentic Business Analysis |
+| 🎓 Aprendizaje y Capacitación | 14 | Train LLM from Scratch, Scientific Agent Skills, Humanizer, Matt Pocock Skills |
+
+Un recurso puede pertenecer a más de un kit: muchas herramientas sirven para varias necesidades a la vez.
 
 ---
 
@@ -57,6 +60,7 @@ Los 92 recursos están agrupados en 10 kits según la necesidad de implementaci�
 - **Datos:** JSON plano (única fuente de verdad)
 - **Infraestructura:** GitHub Pages (hosting gratuito, CDN global)
 - **Integración:** compatible con Obsidian (notas .md generadas desde el JSON)
+- **Idiomas:** español (por defecto) / inglés (conmutador)
 - **Licencia:** MIT
 
 ---
@@ -76,7 +80,7 @@ biblioteca_recursos.json   ← FUENTE ÚNICA
         └──► Obsidian vault          (notas .md + índices + kits)
 ```
 
-Los cambios se hacen en el JSON y se propagan. Nunca al revés.
+Los cambios se hacen en el JSON y se propagan. Nunca al revés. Las vistas que dependen de los datos —kits, filtro de aplicación, índices— se generan a partir del JSON en tiempo de ejecución, de modo que no hay listas que se desincronicen.
 
 ---
 

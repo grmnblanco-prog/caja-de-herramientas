@@ -1,7 +1,7 @@
 # Toolbox — PropulsarIA
 
 [![Live Demo](https://img.shields.io/badge/demo-grmnblanco--prog.github.io%2Ftoolbox-E8633A?style=flat-square&logo=githubpages)](https://grmnblanco-prog.github.io/caja-de-herramientas/)
-[![Resources](https://img.shields.io/badge/resources-92-blue?style=flat-square)](#)
+[![Resources](https://img.shields.io/badge/resources-141-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](#)
 [![Obsidian](https://img.shields.io/badge/Obsidian-vault-7C3AED?style=flat-square&logo=obsidian)](#)
 
@@ -29,25 +29,28 @@ Filter by type, status, level, category. Explore by Implementation Kits. No regi
 | No implementation context | Grouped into **Kits** (Agent Setup, CRM, Marketing, Infrastructure...) |
 | Static | Updated from GitHub — data travels with the repo |
 | Dev-only | Classified for consultants, implementers, and decision-makers |
+| Dead links | Every repository is checked to be still maintained before inclusion |
 
 ---
 
 ## Implementation Kits
 
-The 92 resources are grouped into 10 kits by implementation need:
+The **141 resources** are grouped into **10 thematic kits**. The assignment is not maintained by hand: each kit is computed by matching every resource's tags, applications, and category, so a new resource joins its kit on its own.
 
-| Kit | Resources |
-|:----|:----------|
-| 🔧 Agent Configuration | Karpathy Rules, Super Powers, Firecrawl, Caveman, Agent Reach, Browser Use, Composio... |
-| 📋 CRM & Client Management | Chatwoot, Twenty CRM, DeskcommCRM, OpenWA |
-| 🤖 Process Automation | n8n, ToolJet, Agent Zero, SuperAGI, OmniAgents |
-| 📈 Marketing & Content | Marketing Skills, Remotion, MoneyPrinterTurbo, OpenSerp |
-| 🎨 Design & UI | DESIGN.md, Screenshot to Code, Excalidraw, Understand Anything |
-| 🗄️ Data & Knowledge | Matrixone, Docling, Graphify, Codebase Memory MCP |
-| 🔒 Security | Strix, Anthropic Cybersecurity, Cloudflare Auditor |
-| ☁️ Infrastructure | Coolify, Ollama, Open WebUI, vLLM, Exo |
-| 🧠 Consulting & Strategy | Management Consulting, McKinsey Visualization, Wondelai Skills |
-| 🎓 Learning | Train LLM from Scratch, Scientific Agent Skills, Humanizer |
+| Kit | Resources | Examples |
+|:----|:----------|:---------|
+| 🔧 Agent Configuration | 57 | Superpowers, Karpathy Rules, Caveman, Browser Use, Composio |
+| 📋 CRM & Client Management | 17 | Chatwoot, Twenty CRM, DeskcommCRM, OpenWA, WAHA |
+| 🤖 Process Automation | 26 | n8n, ToolJet, Agent Zero, SuperAGI, Crawlee |
+| 📈 Marketing & Content | 20 | Marketing Skills, MoneyPrinterTurbo, OpenSERP, Remotion, Social Media Research Skills |
+| 🎨 Design & UI | 36 | UI/UX Pro Max, Excalidraw, DESIGN.md, Screenshot to Code, taste-skill |
+| 🗄️ Data & Knowledge | 33 | Docling, MarkItDown, Firecrawl, Crawl4AI, Graphify |
+| 🔒 Security & Compliance | 9 | Strix, Anthropic Cybersecurity Skills, Cloudflare Security Audit |
+| ☁️ Infrastructure & Hosting | 46 | Ollama, llama.cpp, Open WebUI, vLLM, Coolify |
+| 🧠 Consulting & Strategy | 22 | Management Consulting, McKinsey-style Visualization, Wondelai Skills, Agentic Business Analysis |
+| 🎓 Learning & Training | 14 | Train LLM from Scratch, Scientific Agent Skills, Humanizer, Matt Pocock Skills |
+
+A resource may belong to more than one kit: many tools serve several needs at once.
 
 ---
 
@@ -71,7 +74,7 @@ biblioteca_recursos.json   ← SINGLE SOURCE OF TRUTH
         └──► Obsidian vault          (.md notes + indexes + kits)
 ```
 
-Changes are made in the JSON and propagated. Never the other way around.
+Changes are made in the JSON and propagated. Never the other way around. Views that depend on the data — kits, application filter, indexes — are generated from the JSON at runtime, so there are no lists that can drift out of sync.
 
 ---
 
