@@ -6985,5 +6985,161 @@
     "notas": "ADVERTENCIA: los repositorios propios de la organizacion tienen muy pocas estrellas (0-3). No es un repo estrella; entro por peticion explicita. Candidato a salir si prima el criterio de traccion.",
     "fuente": "linkedin",
     "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "gitdiagram",
+    "nombre": "GitDiagram",
+    "url": "https://github.com/ahmedkhaleel2004/gitdiagram",
+    "tipo": "Herramienta",
+    "categoria": "desarrollo",
+    "descripcion": "Convierte cualquier repositorio de GitHub en un diagrama de arquitectura interactivo, o en un video explicativo de un minuto, a partir del codigo real.",
+    "estrellas": 18232,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "diagram",
+      "architecture",
+      "code-visualization",
+      "codebase-visualization",
+      "developer-tools",
+      "ai"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Entender la arquitectura de un repositorio de un vistazo, sin clonarlo ni leer el codigo",
+    "por_que": "18,2k estrellas, licencia MIT y desarrollo diario. Convierte un repositorio desconocido en un diagrama antes de decidir si vale la pena invertir tiempo en el.",
+    "alternativas": [
+      "understand-anything",
+      "graphify",
+      "deepwiki"
+    ],
+    "casos_de_uso": [
+      "Sustitucion de URL (el truco): cambia 'hub' por 'diagram' en cualquier URL de GitHub. github.com/owner/repo pasa a ser gitdiagram.com/owner/repo. No hay nada que instalar.",
+      "Evaluar un recurso antes de recomendarlo: ver la arquitectura del repositorio en un diagrama en lugar de leer el README entero.",
+      "Onboarding tecnico: entregar al cliente el diagrama de arquitectura del sistema que se va a implementar.",
+      "Material de propuesta: exportar el diagrama a PNG o copiar el Mermaid para incluirlo en un documento."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "pasos_implementacion": [
+      "Cambiar 'hub' por 'diagram' en la URL del repositorio, o entrar a gitdiagram.com y pegar el repositorio",
+      "Revisar el diagrama generado y ajustar el nivel de detalle",
+      "Exportar a PNG o copiar el codigo Mermaid para reutilizarlo",
+      "Para repositorios privados, desplegar el proyecto propio (es open source)"
+    ],
+    "notas": "Verificado el 2026-10-15. La version gratuita trabaja con repositorios publicos; para privados hay que desplegarlo. Tambien genera un video explicativo de un minuto.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-15",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "desarrollo",
+      "datos",
+      "consultoria"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": []
+  },
+  {
+    "id": "gitingest",
+    "nombre": "Gitingest",
+    "url": "https://github.com/coderamp-labs/gitingest",
+    "tipo": "Herramienta",
+    "categoria": "datos",
+    "descripcion": "Convierte un repositorio de GitHub en un extracto de texto plano listo para pegar en un modelo, con el conteo de tokens y la estructura de archivos.",
+    "estrellas": 15928,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-15",
+    "tags": [
+      "ingestion",
+      "code",
+      "llm",
+      "prompt",
+      "token-count",
+      "developer-tools"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Alimentar un modelo o un agente con el contenido de un repositorio sin clonarlo ni copiar archivos a mano",
+    "por_que": "15,9k estrellas, MIT y actualizacion del mismo dia. Resuelve el paso previo a pedirle a un modelo que trabaje sobre un repositorio, y te dice de antemano si cabe en el contexto.",
+    "alternativas": [
+      "markitdown",
+      "docling"
+    ],
+    "casos_de_uso": [
+      "Sustitucion de URL (el truco): cambia 'hub' por 'ingest' en cualquier URL de GitHub. github.com/owner/repo pasa a ser gitingest.com/owner/repo.",
+      "Analizar un recurso de la Caja con un modelo: extraer el repositorio a texto y pasarselo al agente.",
+      "Estimar el costo: el conteo de tokens dice si el repositorio cabe en la ventana de contexto antes de intentarlo.",
+      "Auditar un proyecto de cliente: entregar el codigo como texto a un revisor automatizado."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "pasos_implementacion": [
+      "Cambiar 'hub' por 'ingest' en la URL del repositorio, o entrar a gitingest.com",
+      "Revisar el resumen: archivos incluidos, excluidos y conteo de tokens",
+      "Copiar el texto y pegarlo en el modelo o en el agente",
+      "Para repositorios privados o uso repetido, instalar la version open source"
+    ],
+    "notas": "Verificado el 2026-10-15. El repositorio paso de cyclotruc a la organizacion coderamp-labs; usar esa URL. Permite excluir carpetas y filtrar por extension o tamano antes de generar el texto.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-15",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo",
+      "agentes"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": []
+  },
+  {
+    "id": "deepwiki",
+    "nombre": "DeepWiki",
+    "url": "https://deepwiki.com",
+    "tipo": "Herramienta",
+    "categoria": "conocimiento",
+    "descripcion": "Genera una wiki navegable y con buscador para cualquier repositorio publico: resumen, arquitectura, componentes y diagramas, construida a partir del codigo real.",
+    "estrellas": 0,
+    "licencia": "Servicio (no es repositorio)",
+    "ultimo_commit": "",
+    "tags": [
+      "wiki",
+      "documentation",
+      "architecture",
+      "diagram",
+      "codebase",
+      "knowledge"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Entender un repositorio desconocido sin clonarlo, y poder preguntarle cosas sobre su codigo",
+    "por_que": "Cubre lo que ningun README da: arquitectura, componentes y diagramas generados del codigo, con buscador. La alternativa open source tiene 18,2k estrellas y licencia MIT.",
+    "alternativas": [
+      "deepwiki-open",
+      "gitdiagram",
+      "docling"
+    ],
+    "casos_de_uso": [
+      "Sustitucion de URL (el truco): cambia 'github.com' por 'deepwiki.com'. github.com/owner/repo pasa a ser deepwiki.com/owner/repo.",
+      "Evaluacion rapida de un recurso: leer su arquitectura antes de decidir si entra en una implementacion.",
+      "Autohospedaje: desplegar la version open source para repositorios privados o datos sensibles de un cliente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "pasos_implementacion": [
+      "Cambiar 'github.com' por 'deepwiki.com' en la URL del repositorio, o entrar a deepwiki.com y pegar el repositorio",
+      "Usar el buscador interno para preguntar por una parte concreta del codigo",
+      "Si el repositorio es privado, desplegar la version open source (AsyncFuncAI/deepwiki-open)"
+    ],
+    "notas": "Verificado el 2026-10-15. Es un SERVICIO alojado de Cognition (los de Devin), no un repositorio: por eso la ficha muestra 0 estrellas, que es el dato honesto. Version auto-hospedable: github.com/AsyncFuncAI/deepwiki-open (18.204 estrellas, MIT, ultimo push 2026-09-03). El servicio aplica limites de uso y responde 429 si se consulta de forma automatizada.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-15",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo",
+      "consultoria"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": []
   }
 ]

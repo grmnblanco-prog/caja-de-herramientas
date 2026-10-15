@@ -1,7 +1,7 @@
 # Caja de Herramientas — PropulsarIA
 
 [![Live Demo](https://img.shields.io/badge/demo-grmnblanco--prog.github.io%2Fcaja--de--herramientas-E8633A?style=flat-square&logo=githubpages)](https://grmnblanco-prog.github.io/caja-de-herramientas/)
-[![Recursos](https://img.shields.io/badge/recursos-141-blue?style=flat-square)](#)
+[![Recursos](https://img.shields.io/badge/recursos-144-blue?style=flat-square)](#)
 [![Licencia](https://img.shields.io/badge/licencia-MIT-green?style=flat-square)](#)
 [![Obsidian](https://img.shields.io/badge/Obsidian-vault-7C3AED?style=flat-square&logo=obsidian)](#)
 
@@ -30,25 +30,26 @@ Filtra por tipo, estado, nivel, aplicación. Explora por Kits de implementación
 | Estáticas | Se actualiza desde GitHub — los datos viajan con el repo |
 | Solo para developers | Clasificado para consultores, implementadores y tomadores de decisión |
 | Enlaces abandonados | Se verifica que cada repositorio siga vivo antes de incluirlo |
+| Trucos sin comprobar | Los trucos que se documentan se prueban antes de publicarse |
 
 ---
 
 ## Kits de implementación
 
-Los **141 recursos** se agrupan en **10 kits temáticos**. La asignación no se mantiene a mano: cada kit se calcula cruzando las etiquetas, aplicaciones y categoría de cada recurso, así que un recurso nuevo entra solo al kit que le corresponde.
+Los **144 recursos** se agrupan en **10 kits temáticos**. La asignación no se mantiene a mano: cada kit se calcula cruzando las etiquetas, aplicaciones y categoría de cada recurso, así que un recurso nuevo entra solo al kit que le corresponde.
 
 | Kit | Recursos | Ejemplos |
 |:----|:---------|:---------|
-| 🔧 Configuración de Agentes | 57 | Superpowers, Karpathy Rules, Caveman, Browser Use, Composio |
-| 📋 Gestión de Clientes y CRM | 17 | Chatwoot, Twenty CRM, DeskcommCRM, OpenWA, WAHA |
-| 🤖 Automatización de Procesos | 26 | n8n, ToolJet, Agent Zero, SuperAGI, Crawlee |
-| 📈 Marketing y Contenido | 20 | Marketing Skills, MoneyPrinterTurbo, OpenSERP, Remotion, Social Media Research Skills |
-| 🎨 Diseño y UI | 36 | UI/UX Pro Max, Excalidraw, DESIGN.md, Screenshot to Code, taste-skill |
-| 🗄️ Datos y Conocimiento | 33 | Docling, MarkItDown, Firecrawl, Crawl4AI, Graphify |
-| 🔒 Seguridad y Cumplimiento | 9 | Strix, Anthropic Cybersecurity Skills, Cloudflare Security Audit |
-| ☁️ Infraestructura y Hosting | 46 | Ollama, llama.cpp, Open WebUI, vLLM, Coolify |
-| 🧠 Consulting y Estrategia | 22 | Management Consulting, McKinsey-style Visualization, Wondelai Skills, Agentic Business Analysis |
-| 🎓 Aprendizaje y Capacitación | 14 | Train LLM from Scratch, Scientific Agent Skills, Humanizer, Matt Pocock Skills |
+| 🔧 Configuración de Agentes | 67 | Karpathy Rules, Superpowers, Hermes Agent, OpenClaw, Composio |
+| 📋 Gestión de Clientes y CRM | 11 | Chatwoot, Twenty CRM, DeskcommCRM, OpenWA, WAHA |
+| 🤖 Automatización de Procesos | 22 | n8n, ToolJet, Browser Use, Super Productivity, scrcpy |
+| 📈 Marketing y Contenido | 19 | Marketing Skills, MoneyPrinterTurbo, OpenSERP, Social Media Research Skills, no-ai-slop |
+| 🎨 Diseño y UI | 39 | UI/UX Pro Max, Excalidraw, DESIGN.md, Screenshot to Code, taste-skill |
+| 🗄️ Datos y Conocimiento | 41 | Docling, MarkItDown, Firecrawl, Crawl4AI, Graphify |
+| 🔒 Seguridad y Cumplimiento | 9 | Strix, Anthropic Cybersecurity Skills, Cloudflare Security Audit, OpenSign |
+| ☁️ Infraestructura y Hosting | 44 | Ollama, llama.cpp, Open WebUI, vLLM, Coolify |
+| 🧠 Consulting y Estrategia | 17 | Management Consulting, McKinsey-style Visualization, Wondelai Skills, Agentic Business Analysis, Slavingia Skills |
+| 🎓 Aprendizaje y Capacitación | 14 | Train LLM from Scratch, Humanizer, Matt Pocock Skills, Unsloth, Aider |
 
 Un recurso puede pertenecer a más de un kit: muchas herramientas sirven para varias necesidades a la vez.
 
