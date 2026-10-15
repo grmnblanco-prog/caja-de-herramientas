@@ -63,6 +63,11 @@
       "Usar las Creator Tools del Dashboard para crear contenido multimedia",
       "Opcional: ejecutar pnpm desktop:build para empaquetar como app de escritorio",
       "Exportar Skills a SKILL.md para usar con otros CLIs"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "diseno",
+      "video"
     ]
   },
   {
@@ -135,6 +140,11 @@
       "Configurar cada agente con el contexto y conocimiento del negocio del cliente",
       "Probar agentes individualmente antes de integrarlos en un flujo coordinado",
       "Desplegar los agentes en el entorno del cliente (local o cloud)"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "automation",
+      "consultoria"
     ]
   },
   {
@@ -207,6 +217,10 @@
       "Configurar API keys (OpenRouter, OpenAI, etc.) segun el ejemplo elegido",
       "Ejecutar y adaptar el ejemplo al caso de uso del cliente",
       "Usar como referencia para implementaciones personalizadas"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "datos"
     ]
   },
   {
@@ -277,6 +291,10 @@
       "Extraer las skills relevantes a SKILL.md de Hermes (formato universal)",
       "Adaptar referencias de Claude a 'el agente' en los prompts extraidos",
       "Probar las skills adaptadas con el CLI/agente que uses"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "desarrollo"
     ]
   },
   {
@@ -348,6 +366,10 @@
       "Ejecutar: npx ruflo run para iniciar el flujo multi-agente",
       "Monitorear ejecucion y ajustar prompts segun resultados",
       "Extraer configuracion a SKILL.md para portabilidad entre CLIs"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
     ]
   },
   {
@@ -421,6 +443,10 @@
       "Extraer los prompts cientificos a SKILL.md de Hermes",
       "Adaptar el formato Claude Code a formato universal",
       "Probar cada skill con datos de prueba del dominio correspondiente"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "desarrollo"
     ]
   },
   {
@@ -494,6 +520,11 @@
       "Seleccionar skills segun la necesidad del cliente (marketing, UX, estrategia)",
       "Extraer las metodologias de negocio a SKILL.md",
       "Aplicar el framework paso a paso con el cliente usando el agente"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "marketing",
+      "diseno"
     ]
   },
   {
@@ -548,6 +579,10 @@
       "Crear dashboards y apps internas usando el builder visual drag-and-drop",
       "Configurar workflows de automatizacion y permisos de usuarios",
       "Desplegar y capacitar al equipo en el uso de las apps creadas"
+    ],
+    "aplicaciones": [
+      "automation",
+      "infraestructura"
     ]
   },
   {
@@ -596,6 +631,10 @@
       "Configurar los agentes segun los procesos de negocio del cliente",
       "Definir flujos de decision y reglas de escalamiento",
       "Probar con datos de prueba antes de poner en produccion"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "automation"
     ]
   },
   {
@@ -645,6 +684,11 @@
       "Identificar candidatos a automatizar usando los criterios del framework",
       "Disenar pilotos con alcance definido y metricas de exito",
       "Presentar resultados al cliente como insumo para ImplementarIA"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "automation",
+      "consultoria"
     ]
   },
   {
@@ -710,6 +754,10 @@
       "Configurar agentes IA nativos para ventas y soporte",
       "Importar datos de clientes existentes al CRM",
       "Capacitar al equipo en uso del CRM y agentes"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "atencion-cliente"
     ]
   },
   {
@@ -762,6 +810,10 @@
       "Conectar via API GraphQL para integraciones con agentes IA",
       "Importar datos desde CRM anterior o desde hojas de calculo",
       "Capacitar al equipo en la interfaz de Twenty"
+    ],
+    "aplicaciones": [
+      "atencion-cliente",
+      "datos"
     ]
   },
   {
@@ -806,6 +858,9 @@
     "aplicacion": [
       "diseno",
       "desarrollo"
+    ],
+    "aplicaciones": [
+      "diseno"
     ]
   },
   {
@@ -857,6 +912,11 @@
       "Explorar el grafo interactivo generado en el navegador",
       "Usar el grafo como mapa de solucion en el paso 4 de ImplementarIA",
       "Exportar el grafo para incluirlo en documentacion o propuestas"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "marketing",
+      "datos"
     ]
   },
   {
@@ -923,6 +983,11 @@
       "Extraer las metodologias de seguridad a SKILL.md",
       "Ejecutar auditoria sobre la infraestructura del cliente",
       "Generar reporte con hallazgos y recomendaciones"
+    ],
+    "aplicaciones": [
+      "seguridad",
+      "infraestructura",
+      "desarrollo"
     ]
   },
   {
@@ -988,6 +1053,10 @@
       "Ejecutar la skill con los parametros del cliente (competidores, keywords)",
       "Analizar resultados y extraer insights accionables",
       "Documentar hallazgos para la estrategia de contenido"
+    ],
+    "aplicaciones": [
+      "marketing",
+      "desarrollo"
     ]
   },
   {
@@ -1040,6 +1109,10 @@
       "Crear tablas con soporte vectorial para embeddings",
       "Configurar como backend de memoria para agentes o RAG",
       "Conectar desde la aplicacion del cliente via drivers MySQL o REST API"
+    ],
+    "aplicaciones": [
+      "datos",
+      "infraestructura"
     ]
   },
   {
@@ -1092,6 +1165,10 @@
       "Configurar el LLM provider (OpenAI, Anthropic, OpenRouter, Ollama)",
       "Definir herramientas y objetivos del agente",
       "Ejecutar y monitorear el agente desde la interfaz"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
     ]
   },
   {
@@ -1143,6 +1220,9 @@
       "Ejecutar: python agent.py — el agente abre el navegador y realiza la tarea",
       "Monitorear y ajustar el prompt segun resultados",
       "Integrar en flujos automatizados con schedules o triggers"
+    ],
+    "aplicaciones": [
+      "automation"
     ]
   },
   {
@@ -1195,6 +1275,11 @@
       "Configurar politicas de memoria: que recordar, por cuanto tiempo, como resumir",
       "Probar: el agente recuerda contexto entre sesiones",
       "Escalar a PostgreSQL/Qdrant para produccion"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "datos",
+      "infraestructura"
     ]
   },
   {
@@ -1244,6 +1329,10 @@
       "Crear un agente describiendo la tarea en lenguaje natural",
       "Ejecutar el agente y observar como navega por el navegador",
       "Ajustar instrucciones segun resultados"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "automation"
     ]
   },
   {
@@ -1293,6 +1382,9 @@
       "Configurar el modelo de avatar deseado",
       "Generar video de prueba con un texto o audio de entrada",
       "Exportar el video generado para uso en produccion"
+    ],
+    "aplicaciones": [
+      "video"
     ]
   },
   {
@@ -1344,6 +1436,11 @@
       "Revisar hallazgos verificables generados por el skill",
       "Implementar remediaciones recomendadas",
       "Repetir auditoria para verificar cierre de hallazgos"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "seguridad",
+      "infraestructura"
     ]
   },
   {
@@ -1393,6 +1490,10 @@
       "Conectar el agente LLM via API (OpenAI-compatible)",
       "Integrar en el CI/CD del proyecto para revision automatica de PRs",
       "Ajustar reglas deterministicas segun los estandares del equipo"
+    ],
+    "aplicaciones": [
+      "agentes",
+      "consultoria"
     ]
   },
   {
@@ -1433,6 +1534,11 @@
     "aplicacion": [
       "video",
       "diseno"
+    ],
+    "aplicaciones": [
+      "marketing",
+      "diseno",
+      "video"
     ]
   },
   {
@@ -1474,6 +1580,10 @@
     "aplicacion": [
       "diseno",
       "desarrollo"
+    ],
+    "aplicaciones": [
+      "diseno",
+      "desarrollo"
     ]
   },
   {
@@ -1513,6 +1623,10 @@
     "notas": "Fuente de inspiracion de diseno web. Util como referencia visual en proyectos.",
     "estado": "nuevo",
     "aplicacion": [
+      "diseno"
+    ],
+    "aplicaciones": [
+      "marketing",
       "diseno"
     ]
   },
@@ -1560,7 +1674,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Util para mejorar la calidad del contenido generado por IA. Los 40 patrones son una referencia valiosa incluso sin la skill.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "datos",
+      "desarrollo"
+    ]
   },
   {
     "id": "nano-banana-pro",
@@ -1608,7 +1727,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Biblioteca masiva de prompts de imagen. Util para generacion visual rapida. Los prompts son agnosticos aunque la skill sea de Claude.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "marketing",
+      "diseno"
+    ]
   },
   {
     "id": "archon",
@@ -1657,7 +1781,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Framework prometedor para desarrollo determinista con IA. Enfoque diferente a Ruflo: mas orientado a codigo que a orquestacion general.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura",
+      "desarrollo"
+    ]
   },
   {
     "id": "slavingia-skills",
@@ -1705,7 +1834,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Metodologia de emprendimiento minimalista. Util para clientes que empiezan o que tienen presupuestos limitados.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "consultoria",
+      "desarrollo"
+    ]
   },
   {
     "id": "agent-kit",
@@ -1756,7 +1889,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Util para dar capacidades de comunicacion a agentes. Las MCP tools son modulares: usar solo las necesarias.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "atencion-cliente"
+    ]
   },
   {
     "id": "aws-agent-plugins",
@@ -1802,7 +1939,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Skills oficiales de AWS para agentes. Ideal para clientes con infraestructura en AWS que quieran gestionarla con IA.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "composio",
@@ -1852,7 +1992,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "busqueda-propia",
     "notas": "Plataforma de integracion de herramientas mas completa. Ideal para dar a los agentes acceso a herramientas empresariales sin configurar OAuth manualmente.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "seguridad"
+    ]
   },
   {
     "id": "coolify",
@@ -1902,7 +2046,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "busqueda-propia",
     "notas": "Plataforma de hosting esencial para implementaciones. Ideal para clientes que quieren control total sobre su infraestructura sin pagar precios cloud.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "typeless",
@@ -1946,7 +2093,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Util como interfaz de voz para agentes. Solo macOS por ahora. La version Lite tiene API local para agentes.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "video"
+    ]
   },
   {
     "id": "superpowers",
@@ -2019,7 +2169,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "El framework de skills de desarrollo mas completo. Incluye las skills Brainstorming y TDD que aparecian separadas en la lista. Ideal como base metodologica para ImplementarIA nivel desarrollo.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "consultoria",
+      "desarrollo"
+    ]
   },
   {
     "id": "ui-ux-pro-max-skill",
@@ -2065,7 +2220,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Complementaria a DESIGN.md (especificacion) y Excalidraw (diagramas). Esta da la inteligencia de diseno directamente al agente que genera codigo.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno",
+      "desarrollo"
+    ]
   },
   {
     "id": "caveman",
@@ -2108,7 +2267,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Util para reducir costos de API en implementaciones con muchos tokens. Complementario a Superpowers, no lo reemplaza.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura",
+      "desarrollo"
+    ]
   },
   {
     "id": "humanizer",
@@ -2154,7 +2317,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "La version mas conocida del Humanizer. Complementa humanizalo (ya en biblioteca): ambas hacen lo mismo, esta tiene mas adopcion. Evaluar cual conservar tras probar.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo"
+    ]
   },
   {
     "id": "remotion",
@@ -2200,7 +2367,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Ya lo usamos en PropulsarIA para el video de niveles. Incluirlo formalmente en la biblioteca como recurso de video.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno",
+      "video"
+    ]
   },
   {
     "id": "herdr",
@@ -2243,7 +2414,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Nuevo en la lista. Runtime para coding agents en produccion.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
+    ]
   },
   {
     "id": "graphify",
@@ -2289,7 +2464,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Complementa Understand Anything (ya en biblioteca): este incluye docs y SQL.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "datos",
+      "consultoria"
+    ]
   },
   {
     "id": "omniroute",
@@ -2336,7 +2516,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Useful para consolidar proveedores de modelos. Alternativa self-host a OpenRouter.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "gstack",
@@ -2381,7 +2564,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "El item 'Claude code setup' y 'Gstack' de la lista apuntan al mismo repo.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "desarrollo"
+    ]
   },
   {
     "id": "univer",
@@ -2424,7 +2611,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Suite office para agentes. Complementa ToolJet (apps internas) y MatrixOne (datos).",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "diseno",
+      "datos"
+    ]
   },
   {
     "id": "screenshot-to-code",
@@ -2467,7 +2659,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Util para prototipado y conversion de disenos.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno"
+    ]
   },
   {
     "id": "higgsfield",
@@ -2509,7 +2704,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Generacion de video IA via skills. Complementario a Remotion y OpenCreator.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "video",
+      "desarrollo"
+    ]
   },
   {
     "id": "mirofish",
@@ -2552,7 +2751,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Swarm intelligence para prediccion. Complementa Ruflo (orquestacion) con logica de simulacion.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
+    ]
   },
   {
     "id": "agent-zero",
@@ -2595,7 +2798,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Agente con computadora completa. Nivel 3-4 de ImplementarIA.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
+    ]
   },
   {
     "id": "strix",
@@ -2641,7 +2848,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Pentesting IA. Complementa Cloudflare Security Audit y Anthropic Cybersecurity Skills.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "seguridad",
+      "infraestructura"
+    ]
   },
   {
     "id": "deepseek-harness",
@@ -2689,7 +2900,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Harness con arquitectura de plugins. El ecosistema (open-design, desktop) crece rapido.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
+    ]
   },
   {
     "id": "openserp",
@@ -2737,7 +2952,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Uno de los 4 repos 'worth bookmarking': SEO API launchpad.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "marketing",
+      "datos",
+      "infraestructura"
+    ]
   },
   {
     "id": "google-maps-scraper",
@@ -2779,7 +2999,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Uno de los 4 repos 'worth bookmarking': lead-gen API collection.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "atencion-cliente",
+      "datos"
+    ]
   },
   {
     "id": "aider",
@@ -2821,7 +3045,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Uno de los 4 repos 'worth bookmarking': terminal AI pair programming.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "desarrollo"
+    ]
   },
   {
     "id": "cognitive-speech-sdk",
@@ -2868,7 +3095,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Uno de los 4 repos 'worth bookmarking': official speech AI SDK.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "video"
+    ]
   },
   {
     "id": "opensandbox",
@@ -2913,7 +3143,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Aislamiento de agentes IA. Complementa Agent Zero y Herdr en el flujo de ejecucion segura.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "seguridad",
+      "infraestructura"
+    ]
   },
   {
     "id": "voicestudio",
@@ -2960,7 +3195,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "ElevenLabs local. Complementa Speach SDK (Microsoft) para TTS en produccion.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "video",
+      "infraestructura"
+    ]
   },
   {
     "id": "money-printer-turbo",
@@ -3008,7 +3247,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Video corto automatizado from tema. Complementa Remotion (control total) para volumen.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "automation",
+      "marketing",
+      "video"
+    ]
   },
   {
     "id": "trading-agents",
@@ -3053,7 +3297,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Trading multi-agente. OJO: en Colombia la captacion ilegal de dineros es penal (un caso real del usuario); este repo es educativo/analitico, no capta dineros.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes"
+    ]
   },
   {
     "id": "ollama",
@@ -3100,7 +3347,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Ya lo usamos en el pipeline Kaggle+ngrok. Pilar del stack local del usuario (PC modesto limitado a modelos ~3B).",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "llama-cpp",
@@ -3147,7 +3397,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Alternativa a Ollama para hardware minimo. GGUF es la via para modelos <4B en el PC del usuario.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "open-webui",
@@ -3195,7 +3448,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Interfaz ChatGPT local. Mejor opcion que Chatbox para equipos (multi-usuario).",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno",
+      "infraestructura"
+    ]
   },
   {
     "id": "vllm",
@@ -3242,7 +3499,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Para produccion con GPU (Kaggle/RunPod). No para el PC del usuario (0 GPU util).",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "localai",
@@ -3289,7 +3549,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Un solo drop-in para OpenAI en local con multimodalidad.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "comfyui",
@@ -3337,7 +3600,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Generacion de imagen/video por nodos. En la skill de Hermes ya existe 'comfyui' para control via TouchDesigner.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "automation",
+      "diseno",
+      "video"
+    ]
   },
   {
     "id": "whisper-cpp",
@@ -3386,7 +3654,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "STT local. Ya aparece mencionado en OpenCreator (usa Whisper). Pilar del stack local.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "video"
+    ]
   },
   {
     "id": "unsloth",
@@ -3433,7 +3704,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Fine-tuning eficiente. El camino para personalizar modelos del cliente sin GPU cara.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura",
+      "desarrollo"
+    ]
   },
   {
     "id": "exo",
@@ -3477,7 +3752,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Ideo para organizaciones con 2+ maquinas. Alternativa a comprar una GPU cara.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "mlx-lm",
@@ -3525,7 +3803,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
     "notas": "Solo Apple Silicon. No aplica al PC del usuario (Windows/AMD) pero si a clientes con Macs.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ]
   },
   {
     "id": "docling",
@@ -3574,7 +3855,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Reemplaza a 'Anydoc' — el repo es Docling (antes DS4SD/docling, ahora docling-project/docling). Parser de documentos mas completo.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos"
+    ]
   },
   {
     "id": "mom-pop-skills",
@@ -3620,7 +3904,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Skills para PYMES. Complementa a Wondelai Skills (negocios) con enfoque mas operativo.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "atencion-cliente",
+      "desarrollo"
+    ]
   },
   {
     "id": "management-consulting",
@@ -3668,7 +3957,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "busqueda-propia",
     "notas": "La opción mas completa de consultoría estratégica open-source. Reemplaza gran parte del kit comercial.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "consultoria",
+      "desarrollo"
+    ]
   },
   {
     "id": "management-consulting-plugin",
@@ -3717,7 +4011,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "busqueda-propia",
     "notas": "Version multi-agente de la consultoria. Complementa a gcamilo/management-consulting.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "automation",
+      "consultoria"
+    ]
   },
   {
     "id": "mckinsey-visualization",
@@ -3767,7 +4066,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "busqueda-propia",
     "notas": "Capa de entregables visuales del stack de consultoría.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "marketing",
+      "diseno",
+      "consultoria"
+    ]
   },
   {
     "id": "openwa",
@@ -3815,7 +4119,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Alternativa a WhatsApp Cloud API. OJO: usa metodos no oficiales (riesgo de baneo similar a WAHA). Preferir Cloud API para clientes.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "atencion-cliente",
+      "infraestructura"
+    ]
   },
   {
     "id": "github-copilot-app",
@@ -3861,7 +4169,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "App de escritorio de Copilot. Requiere suscripcion paga a GitHub Copilot.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "desarrollo"
+    ]
   },
   {
     "id": "super-productivity",
@@ -3908,7 +4220,10 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "App de productividad con timeboxing. Util para gestionar el trabajo diario de consultoria.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "automation"
+    ]
   },
   {
     "id": "omniagents",
@@ -3952,7 +4267,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Proyecto muy temprano (9⭐). Monitorear evolucion. Concepto interesante pero aun inmaduro.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
+    ]
   },
   {
     "id": "openmontage",
@@ -4000,7 +4319,12 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Produccion de video agente-nativa. Complementa Remotion (edicion programatica) y MoneyPrinterTurbo (videos cortos).",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "video",
+      "desarrollo"
+    ]
   },
   {
     "id": "train-llm-from-scratch",
@@ -4044,7 +4368,11 @@
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
     "notas": "Tutorial completo de entrenamiento de LLM desde cero. Util como referencia educativa.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura",
+      "desarrollo"
+    ]
   },
   {
     "id": "karpathy-rules",
@@ -4087,7 +4415,12 @@
     "fecha_guardado": "2026-09-28",
     "fuente": "youtube",
     "notas": "Recomendada #1 por el video para instalar primero. Casi no tiene costo de mantenimiento.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "consultoria",
+      "desarrollo"
+    ]
   },
   {
     "id": "firecrawl",
@@ -4131,7 +4464,10 @@
     "fecha_guardado": "2026-09-28",
     "fuente": "youtube",
     "notas": "Recomendada #2 para instalar primero (reduce costos desde la primera pagina).",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos"
+    ]
   },
   {
     "id": "codebase-memory-mcp",
@@ -4177,7 +4513,11 @@
     "fecha_guardado": "2026-09-28",
     "fuente": "youtube",
     "notas": "Es un servidor MCP, no un archivo de skill.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "datos"
+    ]
   },
   {
     "id": "agent-reach",
@@ -4225,7 +4565,11 @@
     "fecha_guardado": "2026-09-28",
     "fuente": "youtube",
     "notas": "Recomendada #3 para instalar primero. OJO: cuentas burner recomendadas por el autor para plataformas con login.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "marketing",
+      "datos"
+    ]
   },
   {
     "id": "addyosmani-agent-skills",
@@ -4274,7 +4618,11 @@
     "fecha_guardado": "2026-09-28",
     "fuente": "youtube",
     "notas": "Del video era 'Edmuno' — corresponde a Addy Osmani (ingeniero de Google Chrome).",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "desarrollo"
+    ]
   },
   {
     "id": "awesome-design-md",
@@ -4320,7 +4668,12 @@
     "fecha_guardado": "2026-09-28",
     "fuente": "youtube",
     "notas": "Complementa designmd (el formato): este es la libreria de sistemas listos.",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "marketing",
+      "diseno",
+      "desarrollo"
+    ]
   },
   {
     "id": "marketing-skills",
@@ -4370,7 +4723,12 @@
     "fecha_guardado": "2026-09-28",
     "fuente": "youtube",
     "notas": "Si vendes algo, esta viene antes que cualquier infraestructura (dice el video).",
-    "estado": "nuevo"
+    "estado": "nuevo",
+    "aplicaciones": [
+      "atencion-cliente",
+      "marketing",
+      "desarrollo"
+    ]
   },
   {
     "id": "ponytail",
@@ -5138,6 +5496,9 @@
       "EasyOCR",
       "PaddleOCR",
       "RapidOCR"
+    ],
+    "aplicaciones": [
+      "datos"
     ]
   },
   {
@@ -5164,6 +5525,9 @@
       "python-docx",
       "openpyxl",
       "pypandoc"
+    ],
+    "aplicaciones": [
+      "datos"
     ]
   },
   {
@@ -5191,6 +5555,11 @@
       "LM Studio",
       "Open WebUI",
       "AnythingLLM"
+    ],
+    "aplicaciones": [
+      "atencion-cliente",
+      "datos",
+      "infraestructura"
     ]
   },
   {
@@ -5216,6 +5585,10 @@
       "RocketChat",
       "Mattermost",
       "Zammad"
+    ],
+    "aplicaciones": [
+      "atencion-cliente",
+      "automation"
     ]
   },
   {
