@@ -5217,5 +5217,1370 @@
       "Mattermost",
       "Zammad"
     ]
+  },
+  {
+    "id": "last30days-skill",
+    "nombre": "last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "tipo": "Skills",
+    "categoria": "conocimiento",
+    "descripcion": "Skill que investiga un tema en Reddit, X, YouTube y Hacker News limitando la busqueda a los ultimos 30 dias. Valida si una idea tiene traccion real antes de invertir tiempo en construirla.",
+    "estrellas": 64282,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-13",
+    "tags": [
+      "research",
+      "validation",
+      "reddit",
+      "twitter",
+      "youtube",
+      "trends",
+      "skills"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Validar una idea de negocio o producto con senales reales de los ultimos 30 dias antes de escribir codigo",
+    "por_que": "Filtra el ruido de internet a una ventana de 30 dias, que es donde se ve si un tema esta vivo o ya paso.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Validacion de idea: consultar los ultimos 30 dias sobre un nicho antes de proponer un proyecto a un cliente.",
+      "Investigacion de competencia: ver de que se esta hablando en Reddit y X sobre un sector.",
+      "Preparacion de contenido: detectar los temas calientes de la semana para un post de LinkedIn."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "consultoria",
+      "datos",
+      "marketing"
+    ],
+    "pasos_implementacion": [
+      "Instalar la skill en el agente segun el README del repositorio",
+      "Definir el tema o la idea a validar",
+      "Ejecutar la consulta y revisar las fuentes de los ultimos 30 dias",
+      "Contrastar el volumen de menciones con la propia intuicion antes de decidir"
+    ],
+    "notas": "Util para la fase de descubrimiento de un diagnostico: valida si el dolor del cliente tiene senales reales de mercado.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "taste-skill",
+    "nombre": "taste-skill",
+    "url": "https://github.com/Leonxlnx/taste-skill",
+    "tipo": "Skills",
+    "categoria": "general",
+    "descripcion": "Le da criterio de diseno al agente. Corrige el gusto por defecto que hace que los productos generados con IA se vean genericos.",
+    "estrellas": 96383,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "design",
+      "taste",
+      "ui",
+      "skills",
+      "aesthetics",
+      "frontend"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Que el agente produzca interfaces con criterio estetico y no el look generico de IA",
+    "por_que": "96k estrellas y desarrollo activo diario. Ataca el problema mas visible de los productos hechos con IA: que todos se parecen.",
+    "alternativas": [
+      "ui-ux-pro-max-skill",
+      "no-ai-slop"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Rediseno de una landing: pedir al agente rehacer una pagina aplicando criterio de diseno.",
+      "Auditoria estetica: pasar una interfaz existente y pedir una critica con criterio.",
+      "Prototipo rapido: generar pantallas que no parezcan plantilla."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno",
+      "desarrollo",
+      "marketing"
+    ],
+    "pasos_implementacion": [
+      "Instalar la skill en el agente segun el README",
+      "Aplicarla sobre un proyecto web existente",
+      "Comparar el resultado con la version anterior antes de adoptarla"
+    ],
+    "notas": "Complementa a ui-ux-pro-max-skill (que aporta estilos y paletas) y a no-ai-slop (que quita el tufillo de IA en el texto).",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "no-ai-slop",
+    "nombre": "no-ai-slop",
+    "url": "https://github.com/petergyang/no-ai-slop",
+    "tipo": "Skills",
+    "categoria": "marketing",
+    "descripcion": "Elimina mas de 20 patrones tipicos de texto generado por IA, para que los correos y las webs suenen a persona y no a modelo.",
+    "estrellas": 12374,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-09-02",
+    "tags": [
+      "writing",
+      "humanize",
+      "copywriting",
+      "text",
+      "ai-detection",
+      "skills"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Que los textos para clientes no delaten que fueron generados por IA",
+    "por_que": "Complementa a humanizer y humanizalo: ellos reescriben, esta skill quita los tics concretos que delatan al modelo.",
+    "alternativas": [
+      "humanizer",
+      "humanizalo"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Propuestas comerciales: limpiar el texto antes de enviarlo a un cliente.",
+      "Correos en frio: quitar el tono acartonado que baja la tasa de respuesta.",
+      "Contenido web: revisar la pagina de un cliente antes de publicar."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "marketing",
+      "consultoria"
+    ],
+    "pasos_implementacion": [
+      "Instalar la skill en el agente segun el README",
+      "Pasar el texto por la skill antes de enviarlo",
+      "Revisar que no se hayan perdido datos concretos en la reescritura"
+    ],
+    "notas": "Obligatoria en el flujo de PropulsarIA: todo entregable de cliente deberia pasar por aqui.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "frontend-slides",
+    "nombre": "frontend-slides",
+    "url": "https://github.com/zarazhangrui/frontend-slides",
+    "tipo": "Skills",
+    "categoria": "general",
+    "descripcion": "Genera presentaciones en formato web a partir de contenido. El agente arma el deck y queda listo para compartir por enlace.",
+    "estrellas": 30661,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-06-23",
+    "tags": [
+      "slides",
+      "presentations",
+      "pitch",
+      "web",
+      "skills",
+      "frontend"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Convertir contenido en una presentacion web presentable para un cliente o una charla",
+    "por_que": "30k estrellas con licencia MIT. Evita la friccion de maquetar diapositivas a mano en PowerPoint.",
+    "alternativas": [
+      "mckinsey-visualization"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Pitch de propuesta: convertir una propuesta tecnica en un deck web que se pueda enviar por enlace.",
+      "Capacitacion: armar el material de una sesion de formacion en IA para un equipo.",
+      "Charla o evento: preparar la presentacion de un tema sin disenador."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno",
+      "ventas",
+      "consultoria"
+    ],
+    "pasos_implementacion": [
+      "Instalar la skill en el agente segun el README",
+      "Entregar el contenido o el documento base",
+      "Revisar el resultado en el navegador y ajustar el tono visual"
+    ],
+    "notas": "Ojo con el ultimo commit (junio 2026): menos actividad que el resto de la lista, vigilar que siga mantenido.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "brag",
+    "nombre": "brag",
+    "url": "https://github.com/latent-spaces/brag",
+    "tipo": "Skills",
+    "categoria": "marketing",
+    "descripcion": "Convierte el proyecto que acabas de construir en un video corto de lanzamiento, sin editor ni herramientas de video.",
+    "estrellas": 15941,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-13",
+    "tags": [
+      "video",
+      "launch",
+      "marketing",
+      "content-creation",
+      "short-video",
+      "skills"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Producir el video de lanzamiento de un producto propio o de un cliente sin editor",
+    "por_que": "Cierra el ciclo de construir y mostrarlo. Activo (octubre 2026) y con 16k estrellas.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Lanzamiento de un producto propio: generar el video de anuncio de PropulsarIA.",
+      "Caso de exito de cliente: convertir un proyecto entregado en pieza de difusion.",
+      "Contenido para redes: producir el video corto de la semana sin editor."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "video",
+      "marketing"
+    ],
+    "pasos_implementacion": [
+      "Instalar la skill segun el README del repositorio",
+      "Apuntarla al proyecto o al repositorio del que se quiere el video",
+      "Revisar el resultado y ajustar el mensaje antes de publicar"
+    ],
+    "notas": "Se combina con Remotion y OpenMotion para produccion de video mas elaborada.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "claude-for-legal",
+    "nombre": "claude-for-legal",
+    "url": "https://github.com/anthropics/claude-for-legal",
+    "tipo": "Skills",
+    "categoria": "consultoria",
+    "descripcion": "Plugins oficiales de Anthropic para revision de contratos, NDAs y documentos legales.",
+    "estrellas": 9673,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "legal",
+      "contracts",
+      "nda",
+      "documents",
+      "claude",
+      "skills"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Hacer una primera revision de contratos y NDAs antes de pagar horas de abogado",
+    "por_que": "Es de Anthropic (los creadores de Claude) y es oficial, no una skill comunitaria. 9,7k estrellas.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Revision de NDA: pasar un acuerdo de confidencialidad antes de firmarlo.",
+      "Contratos de prestacion de servicios: detectar clausulas de riesgo en una propuesta de cliente.",
+      "Primera pasada de cumplimiento: revisar un contrato antes de escalarlo a un abogado."
+    ],
+    "modelos_limitados": [
+      "claude"
+    ],
+    "es_agnostico": false,
+    "como_hacer_agnostico": "Los plugins estan empaquetados para Claude (Claude Code / Claude Desktop). Para hacerlo agnostico: extraer las instrucciones de revision a un SKILL.md de Hermes y usar el modelo que se prefiera; la logica de revision de clausulas es portable, el empaquetado no.",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "consultoria",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Instalar los plugins oficiales de Anthropic segun el repositorio",
+      "Cargar el documento a revisar",
+      "Usar la salida como insumo de la revision, nunca como sustituto del abogado"
+    ],
+    "notas": "El repo lo confirma: es apoyo de primera revision, no asesoria legal. Declararlo asi al cliente.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "markitdown",
+    "nombre": "MarkItDown",
+    "url": "https://github.com/microsoft/markitdown",
+    "tipo": "Herramienta",
+    "categoria": "datos",
+    "descripcion": "Convierte PDF, Word, Excel, PowerPoint, HTML e imagenes a Markdown limpio para alimentar cualquier modelo. Microsoft lo abrio al publico tras usarlo internamente.",
+    "estrellas": 190251,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-04",
+    "tags": [
+      "markdown",
+      "pdf",
+      "office",
+      "documents",
+      "conversion",
+      "text-extraction",
+      "microsoft"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Convertir documentos sucios en texto que un modelo pueda leer sin perder estructura",
+    "por_que": "Es el repo mas estrellado de toda esta tanda (190k) y es de Microsoft. Resuelve el paso previo a cualquier RAG: limpiar el documento.",
+    "alternativas": [
+      "docling",
+      "pandoc"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Preparar documentos para un agente: convertir el manual de procesos de un cliente a Markdown.",
+      "Extraccion de datos de Excel: pasar plantillas a texto para que el modelo las analice.",
+      "Digitalizacion de PDFs escaneados: combinarlo con OCR antes del modelo."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Instalar: pip install markitdown",
+      "Convertir un archivo: markitdown documento.pdf > documento.md",
+      "Revisar el Markdown resultante antes de alimentar al modelo",
+      "Para OCR de escaneados, pasar primero por Tesseract"
+    ],
+    "notas": "Encaja directo con la regla de IA local en equipos limitados: convierte en texto lo que el modelo no puede leer.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "crawl4ai",
+    "nombre": "Crawl4AI",
+    "url": "https://github.com/unclecode/crawl4ai",
+    "tipo": "Herramienta",
+    "categoria": "datos",
+    "descripcion": "Toma cualquier web y la transforma en Markdown limpio listo para IA. Sin API keys ni cuentas: se instala y corre propio.",
+    "estrellas": 85549,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "scraping",
+      "crawler",
+      "markdown",
+      "llm",
+      "web-data",
+      "self-hosted"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Alimentar un agente con el contenido de una web sin depender de un servicio de pago",
+    "por_que": "85k estrellas (la lista que circula dice 51k, ya va muy por encima) y commit del mismo dia. Es la puerta de entrada al scraping para IA.",
+    "alternativas": [
+      "firecrawl",
+      "scrapling"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Base de conocimiento de un cliente: rastrear su web y convertirla en Markdown para un RAG.",
+      "Monitoreo de competencia: extraer periodicamente las paginas clave de un competidor.",
+      "Documentacion tecnica: convertir los docs de una libreria en texto consultable por el agente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Instalar: pip install crawl4ai",
+      "Ejecutar el crawler sobre la URL objetivo",
+      "Revisar el Markdown generado y limpiar el ruido de navegacion",
+      "Cargar el resultado en el sistema de conocimiento del agente"
+    ],
+    "notas": "Ya existe firecrawl en la caja: crawl4ai es la alternativa self-hosted sin coste por uso.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "crawlee",
+    "nombre": "Crawlee",
+    "url": "https://github.com/apify/crawlee",
+    "tipo": "Framework",
+    "categoria": "desarrollo",
+    "descripcion": "Framework de scraping con rotacion de proxies, reintentos automaticos, fingerprinting de navegador y colas de trabajo. Lo que las empresas de scraping cobran por miles al mes.",
+    "estrellas": 26154,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "scraping",
+      "proxies",
+      "crawler",
+      "automation",
+      "nodejs",
+      "python"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Rastrear a escala con fiabilidad, cuando un scraper simple se queda corto",
+    "por_que": "Es de Apify (empresa del sector) y trae resuelto lo aburrido: proxies, reintentos y deteccion. 26k estrellas.",
+    "alternativas": [
+      "scrapy",
+      "browser-use"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Rastreo de portales de convocatorias: recorrer listados que cambian de estructura.",
+      "Extraccion a granel: recolectar fichas de producto de cientos de paginas.",
+      "Monitoreo continuo: dejar un crawler corriendo con reintentos sin vigilancia."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Instalar: npm install crawlee (o pip para Python)",
+      "Definir el crawler y las colas de peticiones",
+      "Configurar proxies y limites de concurrencia",
+      "Programar la ejecucion periodica"
+    ],
+    "notas": "Nivel N3: tiene sentido cuando el volumen o los bloqueos lo justifican. Para casos simples, autoscraper o Scrapling.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "scrapy",
+    "nombre": "Scrapy",
+    "url": "https://github.com/scrapy/scrapy",
+    "tipo": "Framework",
+    "categoria": "desarrollo",
+    "descripcion": "El framework de scraping de nivel industrial: mas de diez anos extrayendo millones de paginas para equipos de datos en empresas reales.",
+    "estrellas": 64812,
+    "licencia": "BSD-3-Clause",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "scraping",
+      "crawler",
+      "python",
+      "data-extraction",
+      "framework"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Proyectos de extraccion serios, con estructura de proyecto y mantenimiento a largo plazo",
+    "por_que": "Estandar de facto desde hace una decada. 64k estrellas y desarrollo activo. La opcion aburrida y segura.",
+    "alternativas": [
+      "crawlee",
+      "crawl4ai"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Extraccion estructurada: montar un pipeline de datos recurrente para un cliente.",
+      "Portales publicos: recolectar informacion de fuentes gubernamentales de forma programada.",
+      "Investigacion de mercado: recopilar precios o catalogos de varios competidores."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Instalar: pip install scrapy",
+      "Crear el proyecto: scrapy startproject nombre",
+      "Definir las arañas (spiders) por sitio",
+      "Exportar a JSON o CSV y programar la ejecucion"
+    ],
+    "notas": "Curva de aprendizaje mayor que Crawl4AI, pero la base de codigo aguanta anos en produccion.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "scrapling",
+    "nombre": "Scrapling",
+    "url": "https://github.com/D4Vinci/Scrapling",
+    "tipo": "Herramienta",
+    "categoria": "datos",
+    "descripcion": "Se adapta automaticamente cuando una web cambia su diseno y esquiva los sistemas anti-scraping. La tecnologia que suele venderse como premium.",
+    "estrellas": 87597,
+    "licencia": "BSD-3-Clause",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "scraping",
+      "anti-bot",
+      "adaptive",
+      "web-data",
+      "python"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Rastrear webs que cambian de estructura o bloquean scrapers normales, sin mantener selectores a mano",
+    "por_que": "87k estrellas y commit del mismo dia. Su valor real: no se rompe cuando el cliente redisenia la web.",
+    "alternativas": [
+      "crawl4ai",
+      "crawlee"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Webs que redisenan seguido: monitorear un portal sin rehacer el scraper cada vez.",
+      "Sitios con proteccion: extraer datos donde un scraper simple recibe un bloqueo.",
+      "Mantenimiento bajo: montar una extraccion que aguante meses sin tocarla."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Instalar: pip install scrapling",
+      "Extraer con el modo adaptativo activado",
+      "Verificar el resultado tras un cambio de diseno del sitio",
+      "Combinar con curl_cffi si el bloqueo es por fingerprint"
+    ],
+    "notas": "Resuelve el mismo dolor que curl-impersonate pero con mantenimiento activo.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "scrcpy",
+    "nombre": "scrcpy",
+    "url": "https://github.com/Genymobile/scrcpy",
+    "tipo": "Herramienta",
+    "categoria": "desarrollo",
+    "descripcion": "Controla cualquier telefono Android desde el PC: espeja la pantalla y permite manejar apps que solo existen en movil.",
+    "estrellas": 152157,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "android",
+      "screen-mirroring",
+      "mobile",
+      "automation",
+      "adb"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Operar aplicaciones que solo existen en movil desde el computador",
+    "por_que": "152k estrellas, de los proyectos mas maduros de GitHub. Sin coste y sin instalar nada en el telefono mas alla de ADB.",
+    "alternativas": [
+      "artemis"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Apps mobile-only: manejar plataformas que no tienen version web desde el PC.",
+      "Soporte a cliente: ver la pantalla del telefono de un usuario sin desplazarse.",
+      "Se combina con Artemis para automatizar flujos Android completos."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Descargar el binario para el sistema operativo",
+      "Activar depuracion USB en el telefono y conectarlo por cable",
+      "Ejecutar: scrcpy",
+      "Para inalambrico: scrcpy --tcpip=<ip> tras emparejar"
+    ],
+    "notas": "La pareja de Artemis: scrcpy da los ojos y el control, Artemis automatiza las instrucciones en lenguaje natural.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "curl-cffi",
+    "nombre": "curl_cffi",
+    "url": "https://github.com/lexiforest/curl_cffi",
+    "tipo": "Herramienta",
+    "categoria": "desarrollo",
+    "descripcion": "Cliente HTTP en Python que imita el fingerprint de navegadores reales (Chrome, Safari, Firefox). Las peticiones parecen humanas.",
+    "estrellas": 6716,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-09",
+    "tags": [
+      "http",
+      "fingerprint",
+      "anti-bot",
+      "curl",
+      "python",
+      "requests"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Hacer peticiones que no sean bloqueadas por deteccion de bots, desde Python",
+    "por_que": "Es la evolucion mantenida del enfoque de curl-impersonate, que lleva dos anos sin actualizarse. Mismo autor que el fork vivo.",
+    "alternativas": [
+      "scrapling",
+      "curl-impersonate"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "APIs protegidas: consumir endpoints que rechazan clientes HTTP normales.",
+      "Scraping de bajo nivel: reemplazar requests cuando el sitio bloquea por fingerprint.",
+      "Complemento de Scrapling cuando el bloqueo es por huella TLS."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "desarrollo",
+      "datos"
+    ],
+    "pasos_implementacion": [
+      "Instalar: pip install curl_cffi",
+      "Reemplazar requests por curl_cffi.requests",
+      "Elegir el navegador a imitar: impersonate='chrome'",
+      "Verificar la respuesta y respetar los limites del sitio"
+    ],
+    "notas": "ALERTA: no entrar por lwthiker/curl-impersonate (ultimo push julio 2024, dos anos parado). Este es el camino mantenido.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "autoscraper",
+    "nombre": "AutoScraper",
+    "url": "https://github.com/alirezamika/autoscraper",
+    "tipo": "Herramienta",
+    "categoria": "datos",
+    "descripcion": "Le muestras un ejemplo del dato que buscas y aprende el patron solo, para toda la web. Casi sin selectores CSS ni mantenimiento.",
+    "estrellas": 8050,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-07-29",
+    "tags": [
+      "scraping",
+      "automl",
+      "python",
+      "selectors",
+      "web-data"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Extraer datos de una web sin escribir ni mantener selectores CSS",
+    "por_que": "Pocas lineas de Python y aprende del ejemplo. Ideal para quien no quiere pelear con selectores.",
+    "alternativas": [
+      "scrapling",
+      "crawl4ai"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Extraccion rapida: sacar listados de un sitio mostrando un solo ejemplo.",
+      "Prototipos: validar si un dato es extraible antes de montar algo grande.",
+      "Proyectos de cliente sin perfil tecnico: el patron se aprende, no se programa."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Instalar: pip install autoscraper",
+      "Definir la lista de ejemplo con el dato buscado",
+      "Entrenar el scraper con la URL modelo",
+      "Aplicarlo a las demas URLs y revisar el resultado"
+    ],
+    "notas": "Buena puerta de entrada al scraping. Si el sitio cambia mucho, Scrapling aguanta mejor.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "kimi-k3-in-c",
+    "nombre": "Kimi K3 in C",
+    "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
+    "tipo": "Herramienta",
+    "categoria": "infraestructura",
+    "descripcion": "Kimi K3 (2,78 billones de parametros) corriendo inferencia en una sola CPU con 8,24 GB de RAM. Implementacion portable en C99.",
+    "estrellas": 9049,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-02",
+    "tags": [
+      "llm",
+      "inference",
+      "cpu",
+      "c99",
+      "quantization",
+      "local-ai"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Correr un modelo de frontera en un equipo sin GPU, que es exactamente el caso de los clientes con PC limitado",
+    "por_que": "Es la respuesta tecnica a la restriccion mas comun de los clientes de PropulsarIA: no tienen GPU. 8,24 GB en CPU es un hito.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Equipos sin GPU: evaluar si un cliente con 8-16 GB de RAM puede correr un modelo grande en local.",
+      "IA privada: procesar datos sensibles sin que salgan de la empresa.",
+      "Demostracion tecnica: mostrar en una propuesta que el modelo local es viable."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura",
+      "agentes"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repositorio y compilar con el Makefile incluido",
+      "Descargar los pesos del modelo segun el README",
+      "Ejecutar la inferencia y medir velocidad y consumo de RAM",
+      "Comparar la calidad contra un modelo pequeno tipo phi4-mini"
+    ],
+    "notas": "Coincide con el caso real documentado: PC de 8 GB RAM sin GPU. Candidato fuerte para la propuesta de IA local.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "kitten-tts",
+    "nombre": "Kitten TTS",
+    "url": "https://github.com/KittenML/KittenTTS",
+    "tipo": "Herramienta",
+    "categoria": "infraestructura",
+    "descripcion": "Modelo de texto a voz open source que corre en CPU. Sintesis de voz sin tarjeta grafica y sin servicios de pago.",
+    "estrellas": 15960,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-06",
+    "tags": [
+      "tts",
+      "voice",
+      "speech",
+      "cpu",
+      "local-ai",
+      "audio"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Generar voz para contenido o asistentes sin GPU y sin coste por caracter",
+    "por_que": "Corre en CPU con 15,9k estrellas. Permite locuciones para video y respuestas por voz en local.",
+    "alternativas": [
+      "handy",
+      "openwhispr"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Locucion para video: generar la voz de un video de producto sin narrador.",
+      "Asistente por voz: dar respuesta hablada a un agente sin servicio externo.",
+      "Accesibilidad: convertir documentos a audio para un cliente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "video",
+      "infraestructura"
+    ],
+    "pasos_implementacion": [
+      "Instalar segun el README del repositorio",
+      "Sintetizar una frase de prueba y evaluar la calidad",
+      "Medir el rendimiento en un equipo sin GPU",
+      "Integrar la salida de audio en el flujo de contenido"
+    ],
+    "notas": "Encaja con la linea de IA local en equipos limitados: voz sin GPU.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "openhuman",
+    "nombre": "OpenHuman",
+    "url": "https://github.com/tinyhumansai/openhuman",
+    "tipo": "Framework",
+    "categoria": "infraestructura",
+    "descripcion": "Harness de agentes de codigo abierto orientado a eficiencia: permite correr mas de 500 agentes en un VPS de 10 dolares.",
+    "estrellas": 41993,
+    "licencia": "GPL-3.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "agent",
+      "harness",
+      "multi-agent",
+      "self-hosted",
+      "infrastructure"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Correr muchos agentes con poco presupuesto de infraestructura",
+    "por_que": "42k estrellas y actividad diaria. Ataca el costo marginal de operar agentes, que es lo que frena a las PYMES.",
+    "alternativas": [
+      "agent-zero",
+      "superagi"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Operacion de agentes a bajo costo: montar varios agentes para un cliente sin VPS caro.",
+      "Escalado por volumen: atender mas tareas sin multiplicar la factura de nube.",
+      "Laboratorio propio: probar arquitecturas multiagente en un servidor pequeno."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
+    ],
+    "pasos_implementacion": [
+      "Revisar el README y los requisitos del sistema",
+      "Desplegar en un VPS segun las instrucciones",
+      "Medir consumo real con la carga prevista",
+      "Escalar solo si el uso lo justifica"
+    ],
+    "notas": "Licencia GPL-3.0: si se integra en un producto que se distribuye, revisar la implicacion de la licencia.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "vercel-agent-skills",
+    "nombre": "Vercel Agent Skills",
+    "url": "https://github.com/vercel-labs/agent-skills",
+    "tipo": "Skills",
+    "categoria": "desarrollo",
+    "descripcion": "Coleccion oficial de skills de agente publicada por Vercel Labs.",
+    "estrellas": 32426,
+    "licencia": "Sin licencia declarada",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "skills",
+      "vercel",
+      "development",
+      "deployment",
+      "agent-skills"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Usar las skills oficiales de Vercel como base para desplegar proyectos web con agente",
+    "por_que": "32k estrellas y respaldo de Vercel Labs. Las skills de despliegue ahorran el trabajo manual de publicar.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Despliegue de proyectos: usar las skills para publicar una web de cliente sin friccion.",
+      "Workflows de frontend: incorporar las convenciones oficiales al agente.",
+      "Base de skills propias: partir de un estandar probado para escribir las de PropulsarIA."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "desarrollo",
+      "agentes"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repositorio: git clone https://github.com/vercel-labs/agent-skills",
+      "Revisar las skills disponibles y su proposito",
+      "Instalar las relevantes en el agente",
+      "Adaptar las que se reutilicen al estandar SKILL.md propio"
+    ],
+    "notas": "Sin licencia declarada: verificar antes de usarlo en un entregable de cliente.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "anatomy-3d",
+    "nombre": "Anatomy (ilustraciones 3D)",
+    "url": "https://github.com/wheresryan22/anatomy",
+    "tipo": "Skills",
+    "categoria": "general",
+    "descripcion": "Skill de agente para crear ilustraciones isometricas detalladas e interactivas de maquinas y sistemas del mundo real.",
+    "estrellas": 9974,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "illustration",
+      "3d",
+      "isometric",
+      "design",
+      "skills",
+      "diagrams"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Explicar maquinaria o sistemas complejos con ilustraciones isometricas claras",
+    "por_que": "9,9k estrellas, MIT y actividad diaria. Convierte un concepto tecnico en una imagen que se entiende sin leer.",
+    "alternativas": [
+      "excalidraw",
+      "mckinsey-visualization"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Material de capacitacion: ilustrar una maquina o un equipo en un manual de proceso.",
+      "Propuesta tecnica: mostrar visualmente como funciona el sistema propuesto.",
+      "Contenido divulgativo: ilustrar un concepto de IA para una presentacion."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno",
+      "consultoria"
+    ],
+    "pasos_implementacion": [
+      "Instalar la skill en el agente segun el README",
+      "Describir la maquina o el sistema a ilustrar",
+      "Revisar el resultado y ajustar el nivel de detalle",
+      "Exportar la imagen para el documento final"
+    ],
+    "notas": "Se complementa con Excalidraw para bocetos rapidos y con mckinsey-visualization para laminas de analisis.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "call-center-ai",
+    "nombre": "Call Center AI",
+    "url": "https://github.com/microsoft/call-center-ai",
+    "tipo": "Herramienta",
+    "categoria": "atencion-cliente",
+    "descripcion": "Permite que un agente IA haga o reciba una llamada telefonica con una simple peticion a la API.",
+    "estrellas": 6660,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-07-01",
+    "tags": [
+      "call-center",
+      "voice",
+      "telephony",
+      "ai-agent",
+      "microsoft",
+      "customer-support"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Automatizar llamadas de atencion o confirmacion con un agente de voz",
+    "por_que": "Es de Microsoft y usa licencia Apache-2.0. Baja la barrera de montar un agente de voz telefonico.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Confirmacion de citas: llamar al cliente para confirmar o reagendar.",
+      "Encuestas telefonicas: llamar tras un servicio para medir satisfaccion.",
+      "Atencion de primer nivel: recibir llamadas y resolver consultas simples con voz."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "atencion-cliente",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Desplegar el servicio en Azure segun el README",
+      "Configurar el numero de telefono y las credenciales",
+      "Definir el guion y las respuestas del agente",
+      "Probar llamadas reales antes de ponerlo con clientes"
+    ],
+    "notas": "El commit es de julio 2026; verificar que siga mantenido antes de ofrecerlo como servicio.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "youtube-automation-agent",
+    "nombre": "YouTube Automation Agent",
+    "url": "https://github.com/darkzOGx/youtube-automation-agent",
+    "tipo": "Agente IA",
+    "categoria": "marketing",
+    "descripcion": "Gestion totalmente automatizada de un canal de YouTube con agentes: crea, optimiza y publica videos de larga duracion.",
+    "estrellas": 4336,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "youtube",
+      "video",
+      "automation",
+      "content-creation",
+      "ai-agent"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Operar un canal de contenido sin equipo de produccion",
+    "por_que": "Automatiza el ciclo completo del canal. 4,3k estrellas y actividad del mismo dia.",
+    "alternativas": [
+      "faceless-content",
+      "remotion"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Canal corporativo: publicar contenido de marca de forma sostenida sin productor.",
+      "Contenido divulgativo: escalar publicacion de videos sobre IA.",
+      "Proyecto de cliente: montar la operacion de contenido de un negocio local."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "video",
+      "marketing",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repositorio y seguir el README",
+      "Configurar las credenciales de YouTube (API) y del modelo",
+      "Definir la linea editorial del canal",
+      "Publicar un primo video de prueba antes de automatizar del todo"
+    ],
+    "notas": "Verificar el cumplimiento de las politicas de YouTube sobre contenido automatizado antes de escalar.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "taskview",
+    "nombre": "TaskView",
+    "url": "https://github.com/Gimanh/taskview-community",
+    "tipo": "Herramienta",
+    "categoria": "operaciones",
+    "descripcion": "Plataforma self-hosted de gestion de proyectos y tareas, enfocada en claridad y responsabilidad por tarea.",
+    "estrellas": 1333,
+    "licencia": "Sin licencia declarada",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "tasks",
+      "project-management",
+      "self-hosted",
+      "productivity"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Organizar proyectos y tareas de un equipo en una herramienta propia, sin pagar SaaS",
+    "por_que": "Self-hosted y activo. Alternativa liviana a las herramientas de gestion que se cobran por usuario.",
+    "alternativas": [
+      "super-productivity",
+      "notion"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Gestion interna: organizar los proyectos de PropulsarIA sin coste por usuario.",
+      "Roadmap de cliente: dar al cliente un tablero propio alojado donde se prefiera.",
+      "Seguimiento de implementacion: dejar visible el avance de un proyecto en curso."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "automation",
+      "consultoria"
+    ],
+    "pasos_implementacion": [
+      "Revisar los requisitos del README",
+      "Desplegar en un servidor o en local",
+      "Crear el proyecto y cargar las tareas iniciales",
+      "Definir el uso del equipo antes de migrar trabajo real"
+    ],
+    "notas": "1,3k estrellas: proyecto joven. Sin licencia declarada, verificar antes de usarlo con datos de cliente.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "waha",
+    "nombre": "WAHA (WhatsApp HTTP API)",
+    "url": "https://github.com/devlikeapro/waha",
+    "tipo": "Herramienta",
+    "categoria": "atencion-cliente",
+    "descripcion": "API HTTP de WhatsApp en un clic, con multiples motores (navegador o Cloud API). Alternativa mantenida a los conectores abandonados.",
+    "estrellas": 7591,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "whatsapp",
+      "api",
+      "messaging",
+      "automation",
+      "self-hosted"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Automatizar WhatsApp con una API propia cuando se quiere evitar depender de un servicio caido",
+    "por_que": "7,6k estrellas y actividad diaria. Sustituye a lharries/whatsapp-mcp, que lleva 15 meses sin actualizacion.",
+    "alternativas": [
+      "chatwoot",
+      "evolution-go",
+      "whatsapp-mcp"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Atencion automatizada: conectar WhatsApp a un agente de respuestas.",
+      "Notificaciones: enviar recordatorios y avisos a clientes por WhatsApp.",
+      "Migracion: reemplazar un conector abandonado sin cambiar el flujo del negocio."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "atencion-cliente",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Desplegar WAHA con Docker segun el README",
+      "Elegir el motor (navegador o Cloud API oficial)",
+      "Vincular el numero y probar envio y recepcion",
+      "Conectar la API al CRM o al agente"
+    ],
+    "notas": "Aviso: WhatsApp banea numeros personales usados para automatizacion masiva. Para clientes, preferir la Cloud API oficial.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "artemis",
+    "nombre": "Artemis (Google)",
+    "url": "https://github.com/google/artemis",
+    "tipo": "Agente IA",
+    "categoria": "desarrollo",
+    "descripcion": "Convierte instrucciones en lenguaje natural en automatizacion fiable de Android. Captura registros y se integra con asistentes de codigo como Codex y Claude Code via MCP.",
+    "estrellas": 11701,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-01",
+    "tags": [
+      "android",
+      "automation",
+      "testing",
+      "mcp",
+      "ai-agents",
+      "google"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Automatizar pruebas y flujos completos en Android a partir de una instruccion escrita",
+    "por_que": "Es de Google (equipo Pixel-Test-Engineering) y logra mas de 99% de exito en el benchmark AndroidWorld. 11,7k estrellas.",
+    "alternativas": [
+      "scrcpy"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Pruebas de app movil: ejecutar un flujo completo en Android desde una instruccion de texto.",
+      "Operacion de apps mobile-only: automatizar tareas que solo se pueden hacer en el telefono.",
+      "QA de cliente: verificar que una app funciona tras un cambio, con evidencia en registro."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Instalar segun el README: uv run artemis",
+      "Conectar el dispositivo Android o el emulador",
+      "Escribir la instruccion en lenguaje natural",
+      "Revisar la consola de prueba visual y los registros"
+    ],
+    "notas": "Se combina con scrcpy: scrcpy da pantalla y control, Artemis automatiza la logica. Respaldo de Google, poco riesgo.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "rea",
+    "nombre": "REA",
+    "url": "https://github.com/morluto/rea",
+    "tipo": "Agente IA",
+    "categoria": "desarrollo",
+    "descripcion": "Ingenieria inversa asistida por agentes: analiza como funciona una aplicacion, desde su comportamiento hasta sus binarios nativos, para reconstruir su logica.",
+    "estrellas": 241229,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-15",
+    "tags": [
+      "reverse-engineering",
+      "agents",
+      "binary-analysis",
+      "claude-code",
+      "codex",
+      "cli"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Entender como funciona una aplicacion ajena para reconstruir una funcion o integrarla",
+    "por_que": "241k estrellas: uno de los repositorios mas grandes de GitHub y en tendencia activa. Analiza desde el comportamiento hasta el binario.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Reconstruir una funcion: estudiar como resuelve algo una app y construir la version propia.",
+      "Integracion con sistemas cerrados: entender el comportamiento de un sistema sin documentacion.",
+      "Auditoria tecnica: analizar una app que un cliente ya usa antes de reemplazarla."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Clonar e instalar segun el README",
+      "Conectar REA al agente de codigo (Claude Code, Codex u otro)",
+      "Apuntarlo a la aplicacion o al binario a analizar",
+      "Usar el analisis como insumo: la reconstruccion la hace el agente con sus herramientas"
+    ],
+    "notas": "Uso responsable: analizar software de terceros puede chocar con sus terminos de uso o con la ley de propiedad intelectual. Usarlo sobre software propio o con autorizacion.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "soup",
+    "nombre": "Soup",
+    "url": "https://github.com/MakazhanAlpamys/Soup",
+    "tipo": "Herramienta",
+    "categoria": "infraestructura",
+    "descripcion": "Ajuste fino y post-entrenamiento de LLM con un solo comando y un archivo YAML. Su streaming por capas entrena un modelo de 8B en una GPU de portatil con 4 GB.",
+    "estrellas": 9028,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "fine-tuning",
+      "llm",
+      "lora",
+      "dpo",
+      "gguf",
+      "llmops",
+      "cli"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Entrenar un modelo con los datos propios de un cliente sin contratar GPU en la nube",
+    "por_que": "Baja el entrenamiento a hardware de portatil (4 GB de VRAM para un modelo de 8B). 9k estrellas y actividad diaria.",
+    "alternativas": [
+      "unsloth",
+      "train-llm-from-scratch"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Modelo propio de un cliente: ajustar un LLM con sus documentos para atender su dominio.",
+      "Ahorro de nube: entrenar en local y exportar a GGUF para Ollama.",
+      "Alineacion: usar DPO para ajustar el tono de las respuestas de un asistente."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura",
+      "datos"
+    ],
+    "pasos_implementacion": [
+      "Instalar segun el README del repositorio",
+      "Preparar el dataset propio en el formato esperado",
+      "Definir el entrenamiento en el YAML (modelo, LoRA, epocas)",
+      "Entrenar, exportar a GGUF y probar en Ollama"
+    ],
+    "notas": "Requisito real: una GPU aunque sea modesta. En un equipo sin GPU no aplica; ahi la via es kimi-k3-in-c o modelos pequenos en CPU.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "photocraft",
+    "nombre": "PhotoCraft",
+    "url": "https://github.com/storytold/photocraft",
+    "tipo": "Herramienta",
+    "categoria": "general",
+    "descripcion": "Editor de fotografia open source escrito desde cero en Rust: capas, mascaras, capas de ajuste, estilos de capa, tipografia, vectores y soporte nativo de PSD.",
+    "estrellas": 61055,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "image-editing",
+      "photoshop-alternative",
+      "rust",
+      "psd",
+      "design"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Editar imagenes de forma profesional sin pagar suscripcion a Adobe",
+    "por_que": "61k estrellas y lee y escribe PSD nativo, que es lo que ata a la gente a Photoshop. Activo cada dia.",
+    "alternativas": [
+      "open-higgsfield",
+      "comfyui"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Piezas para cliente: editar imagenes de marca sin licencia de Adobe.",
+      "Flujo con PSD: abrir y guardar archivos de Photoshop de un cliente sin perder capas.",
+      "Ahorro de licencias: reemplazar la suscripcion mensual en un equipo de diseno pequeno."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno",
+      "video"
+    ],
+    "pasos_implementacion": [
+      "Descargar el binario desde el repositorio",
+      "Abrir un PSD existente para comprobar la compatibilidad de capas",
+      "Probar el flujo habitual: capas, mascaras y exportacion",
+      "Migrar de Photoshop solo si el flujo critico funciona"
+    ],
+    "notas": "Existe una suite hermana, ArtCraft, con 13 apps que imitan el resto del catalogo de Adobe (FilmCraft para video, LightCraft para fotografia). Proyecto independiente, no afiliado a Adobe.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
+  },
+  {
+    "id": "inditextech",
+    "nombre": "INDITEX Tech (organizacion)",
+    "url": "https://github.com/InditexTech",
+    "tipo": "Recursos",
+    "categoria": "general",
+    "descripcion": "Organizacion de INDITEX Tech (el grupo de Zara) que aloja sus contribuciones a software libre. 40 repositorios publicos.",
+    "estrellas": 0,
+    "licencia": "Sin licencia declarada",
+    "ultimo_commit": "2026-10-08",
+    "tags": [
+      "inditex",
+      "open-source",
+      "organization",
+      "enterprise",
+      "foss"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Referencia de como una empresa grande del retail estructura su aporte a software libre",
+    "por_que": "40 repositorios publicos. Es una organizacion, no un repositorio unico: agrupa herramientas internas que INDITEX libero.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Referencia de gobernanza: ver como una empresa grande organiza su aporte open source.",
+      "Ferramentas concretas: revisar mcp-teams-server y karatetools-oss.",
+      "Argumento de propuesta: mostrar que companias del tamano de INDITEX publican su herramienta interna."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "desarrollo",
+      "consultoria"
+    ],
+    "pasos_implementacion": [
+      "Entrar en github.com/InditexTech y revisar la lista de repositorios",
+      "Filtrar por actividad y estrellas para encontrar los utiles",
+      "Revisar la licencia de cada repo antes de reutilizarlo"
+    ],
+    "notas": "ADVERTENCIA: los repositorios propios de la organizacion tienen muy pocas estrellas (0-3). No es un repo estrella; entro por peticion explicita. Candidato a salir si prima el criterio de traccion.",
+    "fuente": "linkedin",
+    "fecha_guardado": "2026-10-15"
   }
 ]
