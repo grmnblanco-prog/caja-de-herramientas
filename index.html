@@ -177,6 +177,12 @@
   .tag-purple { background: rgba(139,92,246,0.1); color: #7C3AED; }
   .tag-red { background: rgba(239,68,68,0.1); color: #DC2626; }
   .tag-orange { background: rgba(232,99,58,0.1); color: #E8633A; }
+  /* Distintivo de riesgo: borde y negrita para que no se confunda con una etiqueta normal */
+  .tag-riesgo {
+    background: rgba(245,158,11,0.14); color: #B45309;
+    border: 1px solid rgba(217,119,6,0.4);
+    font-weight: 700;
+  }
 
   .tag-clickable { cursor: pointer; }
   .tag-clickable:hover { opacity: 0.8; }
@@ -533,6 +539,7 @@ var __t = {
     casos_uso: "Casos de uso", pasos_impl: "Pasos para implementar",
     modelos_lim: "Modelos limitados", es_agnostico: "Es agnostico",
     como_agnostico: "Como hacerlo agnostico", notas: "Notas",
+    riesgo_whatsapp: "Riesgo: baneo de WhatsApp",
     abrir_repo: "Abrir repo",
     agnostico: "Agnostico", limitado_a: "Limitado a:",
     si: "Si", no: "No",
@@ -562,6 +569,7 @@ var __t = {
     casos_uso: "Use cases", pasos_impl: "Steps to implement",
     modelos_lim: "Model limits", es_agnostico: "Model agnostic",
     como_agnostico: "How to make agnostic", notas: "Notes",
+    riesgo_whatsapp: "Risk: WhatsApp ban",
     abrir_repo: "Open repo",
     agnostico: "Model agnostic", limitado_a: "Limited to:",
     si: "Yes", no: "No",
@@ -673,6 +681,14 @@ function statusLabel(estado) {
   return m[estado] || estado;
 }
 
+/* Detecta si las notas de un recurso advierten de riesgo de baneo de WhatsApp.
+   No usa campo nuevo en el JSON: se deriva del texto de 'notas'. */
+function riesgoWhatsApp(r) {
+  var n = r && r.notas;
+  if (!n) return false;
+  return /baneo|banea\b|no oficial|no es API oficial|metodos no oficiales/i.test(n);
+}
+
 function render() {
   // Sort by stars descending
   if(typeof recursos !== 'undefined' && recursos.length) recursos.sort(function(a,b) { return (b.estrellas||0) - (a.estrellas||0); });
@@ -735,6 +751,7 @@ function render() {
               '<span class="' + statusClass(r.estado) + '">' + statusLabel(r.estado) + '</span>' +
             '</div>' +
             '<div class="card-meta">' +
+              (riesgoWhatsApp(r) ? '<span class="tag tag-riesgo" title="' + r.notas + '">' + __("riesgo_whatsapp") + '</span> ' : "") +
               (r.nivel_recomendado ? '<span class="tag tag-blue">' + r.nivel_recomendado + '</span> ' : "") +
               (r.aplicacion && r.aplicacion.length ? r.aplicacion.map(function(a) { return '<span class="tag tag-orange">' + a + '</span>'; }).join("") : "") +
               (r.licencia ? r.licencia : "") +
