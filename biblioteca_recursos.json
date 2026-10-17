@@ -3365,7 +3365,7 @@
     ],
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
-    "notas": "Ya lo usamos en el pipeline Kaggle+ngrok. Pilar del stack local del usuario (PC modesto limitado a modelos ~3B).",
+    "notas": "Ya lo usamos en el pipeline Kaggle+ngrok. Pilar del stack local del usuario (equipo modesto con 16 GB: caben modelos 7-8B, pero la CPU los hace lentos; phi4-mini ~3B sigue siendo lo agil para conversar).",
     "estado": "nuevo",
     "aplicaciones": [
       "infraestructura",
@@ -3417,7 +3417,7 @@
     ],
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
-    "notas": "Alternativa a Ollama para hardware minimo. GGUF es la via para modelos <4B en el PC del usuario.",
+    "notas": "Alternativa a Ollama para hardware minimo. En el PC del usuario (16 GB) caben GGUF de hasta 8B; por debajo de 4B es donde la velocidad sigue siendo comoda.",
     "estado": "nuevo",
     "aplicaciones": [
       "infraestructura",
@@ -6311,7 +6311,7 @@
     "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
     "tipo": "Herramienta",
     "categoria": "infraestructura",
-    "descripcion": "Kimi K3 (2,78 billones de parametros) corriendo inferencia en una sola CPU con 8,24 GB de RAM. Implementacion portable en C99.",
+    "descripcion": "Kimi K3 (2,78 billones de parametros) con inferencia en una sola CPU. El motor ocupa 8,24 GB; el checkpoint son 1,56 TB en disco y se transmite entero en cada token. Portable en C99.",
     "estrellas": 9049,
     "licencia": "Apache-2.0",
     "ultimo_commit": "2026-10-02",
@@ -6323,16 +6323,16 @@
       "quantization",
       "local-ai"
     ],
-    "nivel_recomendado": "N3",
-    "para_que": "Correr un modelo de frontera en un equipo sin GPU, que es exactamente el caso de los clientes con PC limitado",
-    "por_que": "Es la respuesta tecnica a la restriccion mas comun de los clientes de PropulsarIA: no tienen GPU. 8,24 GB en CPU es un hito.",
+    "nivel_recomendado": "N1",
+    "para_que": "Estudiar cuantizacion extrema: un modelo de 2,78 T con el motor en 8,24 GB de RAM, transmitiendo el checkpoint desde disco",
+    "por_que": "Hito de ingenieria, no herramienta de produccion: 32,69 s/token medidos con 8 GB de RAM. Interesante como referencia tecnica; inviable para atender a un cliente.",
     "alternativas": [],
     "contiene_sub_recursos": false,
     "sub_recursos": [],
     "casos_de_uso": [
-      "Equipos sin GPU: evaluar si un cliente con 8-16 GB de RAM puede correr un modelo grande en local.",
-      "IA privada: procesar datos sensibles sin que salgan de la empresa.",
-      "Demostracion tecnica: mostrar en una propuesta que el modelo local es viable."
+      "Referencia tecnica: entender cuantizacion extrema y streaming desde disco en C99.",
+      "Calibrar expectativas: explica por que un modelo enorme NO es viable en un PC aunque quepa.",
+      "Investigacion: seguir tecnicas de inferencia en CPU sin BLAS ni framework."
     ],
     "modelos_limitados": [],
     "es_agnostico": true,
@@ -6348,7 +6348,7 @@
       "Ejecutar la inferencia y medir velocidad y consumo de RAM",
       "Comparar la calidad contra un modelo pequeno tipo phi4-mini"
     ],
-    "notas": "Coincide con el caso real documentado: PC de 8 GB RAM sin GPU. Candidato fuerte para la propuesta de IA local.",
+    "notas": "NO es candidato para propuestas. Los 8,24 GB son el pico del MOTOR; el modelo vive en disco (1,56 TB) y se relee en cada paso: 26-33 s/token. Para clientes con PC limitado, phi4-mini (~3B).",
     "fuente": "linkedin",
     "fecha_guardado": "2026-10-15"
   },
