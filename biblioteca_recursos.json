@@ -3299,7 +3299,7 @@
     "alternativas": [],
     "casos_de_uso": [
       "Analisis financiero asistido: usar los agentes analistas para evaluar companias. El framework estructura bull/bear debates.",
-      "Educacion en trading: para clientes que quieren aprender trading simulado con agentes IA (relevante al un caso real: educar en herramientas legitimas).",
+      "Educacion en trading: para clientes que quieren aprender trading simulado con agentes de IA, dentro de un marco formativo.",
       "Trading con supervision: los agentes generan recomendaciones; el humano decide. Nunca ejecucion automatica (riesgo legal).",
       "Backtesting de estrategias con multiples perspectivas de agentes."
     ],
@@ -3314,7 +3314,7 @@
     ],
     "fecha_guardado": "2026-09-27",
     "fuente": "recomendacion",
-    "notas": "Trading multi-agente. OJO: en Colombia la captacion ilegal de dineros es penal (un caso real del usuario); este repo es educativo/analitico, no capta dineros.",
+    "notas": "Trading multi-agente. OJO: en Colombia la captacion ilegal de dineros es un delito penal; este repo es educativo y analitico, no capta dineros ni gestiona fondos de terceros.",
     "estado": "nuevo",
     "aplicaciones": [
       "agentes",
@@ -3351,7 +3351,7 @@
       "LLMs locales: usar `ollama run` para ejecutar modelos en el PC del cliente sin servicios cloud.",
       "Base para agentes: exponer el modelo local via API OpenAI-compatible en http://localhost:11434 y conectar Chatbox, Open WebUI o Hermes.",
       "Privacidad: datos que no salen de la maquina. Ideal para clientes con requisitos de confidencialidad.",
-      "Pipeline Kaggle: ya usado con Qwen en Kaggle + ngrok para chat remoto."
+      "Acceso remoto: exponer el modelo en la red local o mediante un tunel para consultarlo desde otro equipo."
     ],
     "modelos_limitados": [],
     "es_agnostico": true,
@@ -3365,7 +3365,7 @@
     ],
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
-    "notas": "Ya lo usamos en el pipeline Kaggle+ngrok. Pilar del stack local del usuario (equipo modesto con 16 GB: caben modelos 7-8B, pero la CPU los hace lentos; phi4-mini ~3B sigue siendo lo agil para conversar).",
+    "notas": "El motor mas simple para LLMs locales: un comando y ya. Sirve API OpenAI-compatible, asi que cualquier cliente habla con el. En equipos sin GPU conviene quedarse en modelos de 3-4B.",
     "estado": "nuevo",
     "aplicaciones": [
       "infraestructura",
@@ -3400,7 +3400,7 @@
       "ollama"
     ],
     "casos_de_uso": [
-      "CPU-only: ejecutar modelos cuantizados en maquinas sin GPU como el PC del usuario (equipo modesto).",
+      "CPU-only: ejecutar modelos cuantizados en equipos sin GPU dedicada.",
       "Modelos GGUF: el formato estandar de modelos cuantizados (Q4_K_S, Q5_K_M) para RAM limitada.",
       "llama.cpp server: exponer la API OpenAI-compatible para Chatbox u Open WebUI sin Ollama.",
       "Edge: run modelos en Raspberry Pi o servidores tiny."
@@ -3417,7 +3417,7 @@
     ],
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
-    "notas": "Alternativa a Ollama para hardware minimo. En el PC del usuario (16 GB) caben GGUF de hasta 8B; por debajo de 4B es donde la velocidad sigue siendo comoda.",
+    "notas": "Alternativa a Ollama para hardware modesto. Manda el ancho de banda de memoria: un denso de 3-4B se mantiene fluido sin GPU; de 7-8B en adelante depende del equipo.",
     "estado": "nuevo",
     "aplicaciones": [
       "infraestructura",
@@ -3507,7 +3507,7 @@
       "Produccion con GPU: servir modelos a muchos usuarios con PagedAttention y batching.",
       "Cloud GPU: en Kaggle/Colab/RunPod, vLLM sirve el modelo para agentes remotos.",
       "API OpenAI-compatible: vLLM expone /v1/chat/completions para conectar cualquier cliente.",
-      "Benchmarks: throughput optimo en GPUs dedicadas (no en el PC del usuario)."
+      "Benchmarks: throughput optimo en GPUs dedicadas; no aporta nada relevante en CPU."
     ],
     "modelos_limitados": [],
     "es_agnostico": true,
@@ -3521,7 +3521,7 @@
     ],
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
-    "notas": "Para produccion con GPU (Kaggle/RunPod). No para el PC del usuario (0 GPU util).",
+    "notas": "Para produccion con GPU dedicada. No tiene sentido en equipos sin GPU util.",
     "estado": "nuevo",
     "aplicaciones": [
       "infraestructura",
@@ -3713,7 +3713,7 @@
       "axolotl"
     ],
     "casos_de_uso": [
-      "Modelos para clientes: fine-tune un modelo de 7-8B sobre los datos del cliente (FAQ, tono, procesos) en una GPU 16GB.",
+      "Modelos para clientes: fine-tune un modelo de 7-8B sobre los datos del cliente (FAQ, tono, procesos) en una GPU con 16 GB o mas de VRAM.",
       "Ahorro de VRAM: Unsloth reduce consumo hasta 70-80% vs metodos normales.",
       "Kaggle/Colab: correr fine-tuning en T4/L4 gratis o baratos.",
       "Exportar GGUF: fine-tune y exportar a GGUF para ejecutar con llama.cpp en el PC del cliente."
@@ -3815,7 +3815,7 @@
       "Macs de clientes: aprovechar el Neural Engine y unificated memory para LLMs locales en MacBooks.",
       "Fine-tuning en Mac: ajustar modelos directamente en Apple Silicon con MLX.",
       "Exportar/integrar: modelos MLX para apps macOS.",
-      "Complemento: si el cliente es Mac (no Windows como el PC del usuario) es la via optima."
+      "Complemento: en equipos Mac con Apple Silicon es la via optima para correr modelos."
     ],
     "modelos_limitados": [
       "gemini"
@@ -3831,7 +3831,7 @@
     ],
     "fecha_guardado": "2026-09-27",
     "fuente": "linkedin",
-    "notas": "Solo Apple Silicon. No aplica al PC del usuario (Windows/AMD) pero si a clientes con Macs.",
+    "notas": "Solo Apple Silicon (M1 en adelante). En Mac es la ruta mas eficiente; en Windows o Linux no aplica.",
     "estado": "nuevo",
     "aplicaciones": [
       "infraestructura",
@@ -4859,7 +4859,7 @@
     "estado": "nuevo",
     "nivel": "N2",
     "fuente": "LinkedIn",
-    "notas": "Requerimiento: glibc 2.32+ (Ubuntu 22.04+, Debian 11+). El PC local del usuario (AMD A12) no soporta Docker pero sí la CLI nativa.",
+    "notas": "Requerimiento: glibc 2.32+ (Ubuntu 22.04+, Debian 11+). Si no se puede usar Docker, existe la CLI nativa.",
     "sub_recursos": []
   },
   {
@@ -6325,7 +6325,7 @@
     ],
     "nivel_recomendado": "N1",
     "para_que": "Estudiar cuantizacion extrema: un modelo de 2,78 T con el motor en 8,24 GB de RAM, transmitiendo el checkpoint desde disco",
-    "por_que": "Hito de ingenieria, no herramienta de produccion: 32,69 s/token medidos con 8 GB de RAM. Interesante como referencia tecnica; inviable para atender a un cliente.",
+    "por_que": "Hito de ingenieria, no herramienta de produccion: el repositorio reporta 32,69 s/token (8 tokens en 261,5 s) en un equipo de 8 GB. Referencia tecnica, no herramienta de atencion.",
     "alternativas": [],
     "contiene_sub_recursos": false,
     "sub_recursos": [],
