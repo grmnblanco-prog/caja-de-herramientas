@@ -1,6 +1,9 @@
 import re
+from pathlib import Path
 
-with open("C:/Users/User/Desktop/caja-de-herramientas/index.html", encoding="utf-8") as f:
+RUTA_HTML = Path(__file__).resolve().parent.parent / "index.html"
+
+with open(RUTA_HTML, encoding="utf-8") as f:
     html = f.read()
 
 # Replace "No hay recursos" message in render function
@@ -70,7 +73,7 @@ html = html.replace(
     '" + __("kit_desc") + "'
 )
 
-with open("C:/Users/User/Desktop/caja-de-herramientas/index.html", "w", encoding="utf-8") as f:
+with open(RUTA_HTML, "w", encoding="utf-8") as f:
     f.write(html)
 
 print("All replacements done")
