@@ -7292,4 +7292,201 @@
     "fuente": "busqueda-propia",
     "fecha_guardado": "2026-10-20"
   }
+,
+  {
+    "id": "harness2",
+    "nombre": "Harness Cuadrado",
+    "url": "https://github.com/google-research/harness2",
+    "tipo": "Framework",
+    "categoria": "desarrollo",
+    "descripcion": "Framework de investigacion que mejora el rendimiento de un agente optimizando su arnes — prompts, herramientas, memoria y barreras — sin modificar los pesos del modelo.",
+    "estrellas": 14570,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-14",
+    "tags": [
+      "agent-harness",
+      "recursive",
+      "self-improvement",
+      "research",
+      "prompts",
+      "guardrails"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Mejorar un agente sin cambiar de modelo, ajustando solo lo que lo rodea",
+    "por_que": "Publicado por Google Research. Su valor no es la herramienta sino la evidencia: subio 11,5 puntos un benchmark de trabajo de oficina con los pesos del modelo congelados. Demuestra con numeros que el diseno del arnes pesa mas que la eleccion de modelo.",
+    "alternativas": [
+      "ecc",
+      "deepseek-harness"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Argumento tecnico: respaldar con una fuente de Google la tesis de que el arnes importa mas que el modelo.",
+      "Optimizacion estructurada: probar cambios en prompts, herramientas y memoria de forma sistematica en vez de a ojo.",
+      "Investigacion: punto de partida para estudiar como se evalua un agente sin tocar sus pesos."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Optimiza componentes externos al modelo, asi que aplica a cualquier agente.",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "desarrollo"
+    ],
+    "pasos_implementacion": [
+      "Leer el articulo y entender los dos niveles de recursion",
+      "Revisar que componentes externos optimiza",
+      "Elegir un agente propio y medir su linea base",
+      "Aplicar las mejoras de arnes y volver a medir"
+    ],
+    "notas": "Se incorpora como excepcion puntual a la regla de 20.000 estrellas. Es mas un marco de investigacion que una herramienta lista para produccion: aporta metodo y evidencia.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-20"
+  },
+  {
+    "id": "aipoch-open-science",
+    "nombre": "AIPOCH Open-Science",
+    "url": "https://github.com/aipoch/open-science",
+    "tipo": "Plataforma",
+    "categoria": "conocimiento",
+    "descripcion": "Banco de trabajo de investigacion local-first y agnostico de modelo: agentes cientificos, ejecucion de Python y R, conectores de datos y artefactos trazables.",
+    "estrellas": 5310,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-10-20",
+    "tags": [
+      "research",
+      "local-first",
+      "model-agnostic",
+      "python",
+      "r",
+      "provenance",
+      "reproducible"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Ejecutar analisis reproducibles con agentes, dejando registro de cada paso y de su procedencia",
+    "por_que": "El patron vale aunque el publico objetivo sea cientifico: cada resultado deja registro del codigo ejecutado y de donde salieron los datos. Eso es exactamente lo que hace defendible un entregable ante un cliente.",
+    "alternativas": [
+      "jupyter-live-kernel"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Trazabilidad de entregables: aplicar la idea de procedencia a informes con cifras, para poder reconstruir de donde salio cada dato.",
+      "Ejecucion reproducible: separar el codigo del resultado y guardar ambos como evidencia.",
+      "Revision: incorporar un paso de verificacion antes de dar un analisis por terminado."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Agnostico de modelo por diseno: se conecta a distintos proveedores o a una pasarela compatible.",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "datos",
+      "consultoria"
+    ],
+    "pasos_implementacion": [
+      "Revisar como estructura el registro de ejecucion y la procedencia",
+      "Tomar ese esquema como modelo para los informes propios",
+      "Probar la ejecucion de Python o R dentro del banco de trabajo",
+      "Adaptar solo lo que aporte al flujo de trabajo actual"
+    ],
+    "notas": "Se incorpora como excepcion puntual a la regla de 20.000 estrellas. Su publico es cientifico, asi que conviene tomar el patron de trazabilidad y no la herramienta completa.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-20"
+  },
+  {
+    "id": "pilotdeck",
+    "nombre": "PilotDeck",
+    "url": "https://github.com/OpenBMB/PilotDeck",
+    "tipo": "Framework",
+    "categoria": "infraestructura",
+    "descripcion": "Sistema operativo de agentes con aislamiento por espacio de trabajo: cada proyecto tiene su propio sistema de archivos, su memoria y su conjunto de skills.",
+    "estrellas": 4819,
+    "licencia": "AGPL-3.0",
+    "ultimo_commit": "2026-10-20",
+    "tags": [
+      "agent-os",
+      "workspace",
+      "isolation",
+      "memory",
+      "skills",
+      "multi-task"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Aislar varios proyectos de agente para que no interfieran entre si",
+    "por_que": "La idea que aporta es el aislamiento por espacio de trabajo: archivos, memoria y skills separados por proyecto. Eso acota lo que el agente puede recuperar en cada momento y evita que el trabajo en paralelo se estorbe.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Referencia de arquitectura: estudiar como separa archivos, memoria y skills por espacio de trabajo.",
+      "Multiples proyectos a la vez: evitar que el contexto de un proyecto contamine a otro.",
+      "Acumulacion de skills: un conjunto de skills que crece por proyecto en vez de global."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "El aislamiento y la memoria son capas externas al modelo.",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura"
+    ],
+    "pasos_implementacion": [
+      "Leer como define un espacio de trabajo",
+      "Comparar con la estructura de proyectos propia",
+      "Tomar prestada la separacion de memoria por proyecto si no existe",
+      "Antes de instalarlo, revisar la implicacion de la licencia"
+    ],
+    "notas": "Se incorpora como excepcion puntual a la regla de 20.000 estrellas. ATENCION: licencia AGPL-3.0, que impone obligaciones sobre el codigo que se distribuye o se ofrece por red. No usar en un entregable de cliente sin revisar la implicacion. Viene del mismo equipo que otros modelos del ecosistema chino de pesos abiertos.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-20"
+  },
+  {
+    "id": "flectar-mail",
+    "nombre": "Flectar Mail",
+    "url": "https://github.com/flectar/mail",
+    "tipo": "Aplicacion",
+    "categoria": "general",
+    "descripcion": "Cliente de correo nativo escrito en Rust con almacenamiento local: consume entre 20 y 140 MB de memoria frente a los 800 MB habituales de los clientes basados en navegador.",
+    "estrellas": 1402,
+    "licencia": "AGPL-3.0",
+    "ultimo_commit": "2026-10-20",
+    "tags": [
+      "email",
+      "rust",
+      "native",
+      "lightweight",
+      "local-first",
+      "openpgp",
+      "calendar"
+    ],
+    "nivel_recomendado": "N1",
+    "para_que": "Gestionar el correo en un equipo con poca memoria, sin ceder datos a un servicio web",
+    "por_que": "Reduce el consumo de memoria en un orden de magnitud. Integra correo, calendario y contactos, admite firmas OpenPGP y no depende de un motor de navegador embebido. Relevante para equipos modestos donde cada megabyte cuenta.",
+    "alternativas": [
+      "himalaya"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Equipos con poca memoria: sustituir un cliente pesado cuando el ancho de banda o la RAM son la limitacion.",
+      "Privacidad: mantener el correo en local sin depender de un servicio externo.",
+      "Firma y cifrado: usar OpenPGP integrado sin complementos de terceros."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "No usa modelo de IA; es una aplicacion de escritorio independiente.",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "infraestructura"
+    ],
+    "pasos_implementacion": [
+      "Descargar el instalador para el sistema operativo en uso",
+      "Configurar las cuentas de correo",
+      "Importar las firmas o claves OpenPGP existentes",
+      "Comparar el consumo de memoria con el cliente anterior"
+    ],
+    "notas": "Se incorpora como excepcion puntual a la regla de 20.000 estrellas. ATENCION: licencia AGPL-3.0. Muy por debajo del umbral de estrellas, pero resuelve un problema concreto de equipos con poca memoria. Es una aplicacion de escritorio, no una herramienta de IA.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-20"
+  }
 ]
