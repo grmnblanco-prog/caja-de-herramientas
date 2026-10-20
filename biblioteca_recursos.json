@@ -5327,7 +5327,7 @@
     "tipo": "Framework",
     "categoria": "general",
     "descripcion": "Optimizacion de agents: skills, memoria, seguridad. Compatible con Claude Code, Codex, Cursor, OpenCode.",
-    "estrellas": 210000,
+    "estrellas": 284649,
     "licencia": "MIT",
     "ultimo_commit": "",
     "tags": [
@@ -7141,5 +7141,155 @@
     ],
     "contiene_sub_recursos": false,
     "sub_recursos": []
+  }
+,
+  {
+    "id": "paperclip",
+    "nombre": "Paperclip",
+    "url": "https://github.com/paperclipai/paperclip",
+    "tipo": "Plataforma",
+    "categoria": "operaciones",
+    "descripcion": "Orquestacion open source para equipos de agentes: asigna objetivos, sigue el trabajo y controla el costo desde un solo panel.",
+    "estrellas": 105105,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-20",
+    "tags": [
+      "agent-orchestration",
+      "multi-agent",
+      "dashboard",
+      "cost-tracking",
+      "nodejs",
+      "react"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Coordinar varios agentes como un equipo de trabajo, con objetivos y seguimiento de costo por agente",
+    "por_que": "105k estrellas. Resuelve el problema que aparece cuando ya hay mas de un agente: quien hace que, cuanto cuesta y que quedo hecho. Servidor Node con interfaz React.",
+    "alternativas": [
+      "openhuman",
+      "agent-zero"
+    ],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Equipos de agentes: repartir objetivos entre varios agentes y ver el avance en un panel unico.",
+      "Control de costo: medir el gasto por agente antes de que sorprenda la factura.",
+      "Trazabilidad: dejar registro de que hizo cada agente y cuando, util en trabajos con supervision."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Trae los agentes que ya existan; la plataforma orquesta, no impone un modelo.",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "infraestructura",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Clonar el repositorio y levantar el servidor Node",
+      "Abrir el panel y conectar los agentes existentes",
+      "Definir objetivos y repartirlos entre agentes",
+      "Revisar el panel de costos tras la primera semana"
+    ],
+    "notas": "Encaja cuando ya hay varios agentes sueltos y se pierde la cuenta de que hace cada uno. Antes de eso, sobra.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-20"
+  },
+  {
+    "id": "ppt-master",
+    "nombre": "PPT Master",
+    "url": "https://github.com/hugohe3/ppt-master",
+    "tipo": "Skills",
+    "categoria": "general",
+    "descripcion": "Convierte documentos o temas en presentaciones PowerPoint nativas y editables: formas reales, transiciones, graficos con datos, narracion en audio desde las notas y soporte para plantillas .pptx propias.",
+    "estrellas": 64433,
+    "licencia": "MIT",
+    "ultimo_commit": "2026-10-19",
+    "tags": [
+      "powerpoint",
+      "pptx",
+      "skills",
+      "slides",
+      "documents",
+      "charts",
+      "narration"
+    ],
+    "nivel_recomendado": "N2",
+    "para_que": "Generar presentaciones editables a partir de un documento, una URL o un tema",
+    "por_que": "64k estrellas. La diferencia con otros generadores es que el resultado es nativo y editable, no imagenes: cada forma y cada grafico se puede modificar despues. Respeta plantillas propias.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Presentaciones de propuesta: partir del documento base y obtener una presentacion editable para ajustar a mano.",
+      "Materiales de formacion: generar diapositivas con narracion en audio desde las notas del orador.",
+      "Plantilla corporativa: usar el .pptx propio como base para mantener la identidad visual."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "Es un arnes de flujo de trabajo; funciona con distintos modelos mediante la interfaz de skills del agente anfitrion.",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "diseno",
+      "consultoria",
+      "automation"
+    ],
+    "pasos_implementacion": [
+      "Instalar la skill en el agente que se use",
+      "Preparar el documento de entrada y, si aplica, la plantilla .pptx",
+      "Generar la presentacion y revisar que las formas sean editables",
+      "Ajustar a mano lo que necesite el acabado final"
+    ],
+    "notas": "El propio autor advierte que es un ARNES, no un agente completo: la herramienta aporta el flujo y el modelo pone el techo. Para calidad alta pide un modelo con ventana de contexto muy grande.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-20"
+  },
+  {
+    "id": "cli-anything",
+    "nombre": "CLI-Anything",
+    "url": "https://github.com/HKUDS/CLI-Anything",
+    "tipo": "Framework",
+    "categoria": "desarrollo",
+    "descripcion": "Genera una interfaz de linea de comandos completa para cualquier programa con codigo fuente, en siete fases, para que un agente pueda operarlo.",
+    "estrellas": 55599,
+    "licencia": "Apache-2.0",
+    "ultimo_commit": "2026-09-22",
+    "tags": [
+      "cli",
+      "agent-native",
+      "automation",
+      "harness",
+      "skills",
+      "gimp",
+      "libreoffice"
+    ],
+    "nivel_recomendado": "N3",
+    "para_que": "Dar interfaz de agente a un programa que solo tiene interfaz grafica, sin reescribirlo",
+    "por_que": "55k estrellas. Ataca el problema de los programas que solo se manejan con raton: los expone por linea de comandos para que un agente los opere. Ya aplicado a GIMP, Blender, Inkscape, LibreOffice, OBS y Kdenlive, con mas de 1.100 pruebas.",
+    "alternativas": [],
+    "contiene_sub_recursos": false,
+    "sub_recursos": [],
+    "casos_de_uso": [
+      "Software existente: exponer una aplicacion de escritorio al agente sin tocar su codigo.",
+      "Automatizacion de escritorio: repetir en lote tareas que hoy se hacen a mano en una interfaz grafica.",
+      "Integracion con agentes: conectar el programa generado a Claude Code, Codex u OpenClaw."
+    ],
+    "modelos_limitados": [],
+    "es_agnostico": true,
+    "como_hacer_agnostico": "El resultado es un paquete de Python con interfaz de linea de comandos, utilizable por cualquier agente.",
+    "estado": "nuevo",
+    "aplicaciones": [
+      "agentes",
+      "desarrollo",
+      "infraestructura"
+    ],
+    "pasos_implementacion": [
+      "Instalar el plugin desde el marketplace del agente",
+      "Apuntarlo al codigo fuente o al repositorio del programa objetivo",
+      "Revisar el arnes generado en la carpeta agent-harness",
+      "Ejecutar las pruebas incluidas antes de usarlo en produccion"
+    ],
+    "notas": "Cada arnes generado incluye sus propias pruebas, lo cual permite confiar en el resultado antes de automatizar algo. Genera codigo: revisarlo, no darlo por bueno a ciegas.",
+    "fuente": "busqueda-propia",
+    "fecha_guardado": "2026-10-20"
   }
 ]
